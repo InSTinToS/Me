@@ -1,12 +1,13 @@
 import { styled } from '@app/styles'
 
 export const ColorPicker = styled('input', {
-  bg: 'transparent',
+  "&[type='color']": {
+    size: '$12',
+    borderWidth: '1px',
+    borderStyle: 'solid',
 
-  padding: 0,
-  margin: 0,
-  size: '$12',
-  border: 'solid red 1px'
+    bg: 'transparent'
+  }
 })
 
 export const Main = styled('main', {
