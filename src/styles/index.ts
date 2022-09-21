@@ -36,9 +36,10 @@ export const globalStyles = globalCss({
   '*': {
     margin: 0,
     padding: 0,
+    boxSizing: 'border-box',
+
     fontSize: '$3',
-    fontFamily: '$roboto',
-    boxSizing: 'border-box'
+    fontFamily: '$roboto'
   },
 
   body: {
@@ -46,7 +47,9 @@ export const globalStyles = globalCss({
 
     theme: '$secondary',
 
-    ul: { listStyle: 'none' },
+    ul: {
+      listStyle: 'none'
+    },
 
     ...reset.button,
     ...reset.inputText,

@@ -1,8 +1,24 @@
 import { styled } from '@app/styles'
+import { scrollbar } from '@app/styles/utils/scrollbar'
 
 import { Search as SearchIcon } from '@app/components/atoms/Icon/icons/Search'
 
 import { hexToRgba } from '@app/utils/colors'
+
+export const TechsList = styled('ul', {
+  display: 'flex',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+
+  mt: '$8',
+  maxHeight: '80vh',
+  overflowY: 'scroll',
+
+  ...scrollbar({
+    track: { display: 'none' },
+    thumb: { radius: '$5', width: '$1', color: '#ffffff' }
+  })
+})
 
 export const Search = styled(SearchIcon, {
   size: '$6',
@@ -44,7 +60,6 @@ export const Style = styled('section', {
   position: 'relative',
   zIndex: 2,
 
-  px: '$6',
-  py: '$12',
-  windowSize: 100
+  px: '$4',
+  py: '$12'
 })
