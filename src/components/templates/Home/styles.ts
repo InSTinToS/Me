@@ -1,21 +1,9 @@
 import { styled } from '@app/styles'
 
-export const ColorPicker = styled('input', {
-  "&[type='color']": {
-    size: '$12',
-    borderWidth: '1px',
-    borderStyle: 'solid',
+export const Background = styled('div', {
+  position: 'fixed',
+  left: 0,
+  top: 0,
 
-    bg: 'transparent'
-  }
-})
-
-export const Main = styled('main', {
-  flexCenter: 'row',
-
-  windowSize: 100,
-
-  color: '$secondary',
-
-  '@lg': { flexDirection: 'row' }
+  windowSize: 100
 })

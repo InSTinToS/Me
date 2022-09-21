@@ -8,6 +8,7 @@ export const radius = {
   5: pxToRem(12),
   6: pxToRem(16),
   7: pxToRem(24),
+  8: pxToRem(48),
 
   full: '100%'
 }
