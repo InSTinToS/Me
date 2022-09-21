@@ -1,4 +1,4 @@
 export interface ICustomThemeState {
   color: string
-  contrast: string
+  contrast: '#ffffff' | '#000000'
 }

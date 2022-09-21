@@ -1,3 +1,5 @@
+import { pxToRem } from '@app/utils/pxToRem'
+
 export const fonts = {
   family: { roboto: 'Roboto, sans-serif' },
   weights: {
@@ -12,18 +14,15 @@ export const fonts = {
     9: 900
   },
   sizes: {
-    1: '0.75rem',
-    2: '0.875rem',
-    3: '1rem',
-    4: '1.125rem',
-    5: '1.25rem',
-    6: '1.5rem',
-    7: '1.875rem',
-    8: '2.25rem',
-    9: '3rem',
-    10: '3.75rem',
-    11: '4.5rem',
-    12: '6rem',
-    13: '8rem'
+    1: pxToRem(12),
+    2: pxToRem(14),
+    3: pxToRem(16),
+    4: pxToRem(18),
+    5: pxToRem(20),
+    6: pxToRem(22),
+    7: pxToRem(24),
+    8: pxToRem(26),
+    9: pxToRem(28),
+    10: pxToRem(30)
   }
 }

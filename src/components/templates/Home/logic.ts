@@ -2,7 +2,7 @@ import { ICustomThemeState } from './types'
 
 import { theme } from '@app/styles'
 
-import { TInputProps } from '@app/types/react.types'
+import { TButtonProps, TInputProps } from '@app/types/react.types'
 
 import { blackOrWhiteByContrast, hexToRgba } from '@app/utils/colors'
 
@@ -25,11 +25,18 @@ export const useHome = () => {
     })
   }
 
+  const onResetClick: TButtonProps['onClick'] = () => {
+    setCustomTheme({
+      color: initialColor,
+      contrast: blackOrWhiteByContrast(initialColor)
+    })
+  }
+
   const bgGradient = `
     linear-gradient(32.87deg, ${customTheme.color} 20%, 
     ${hexToRgba(customTheme.color, 0.7)} 80%,
     ${hexToRgba(customTheme.color, 0.5)} 100%);
   `
 
-  return { onColorChange, customTheme, bgGradient }
+  return { onColorChange, customTheme, bgGradient, onResetClick }
 }

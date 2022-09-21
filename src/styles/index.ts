@@ -42,13 +42,14 @@ export const globalStyles = globalCss({
   },
 
   body: {
+    minWidth: '$xs',
+
     theme: '$secondary',
 
-    ul: {
-      listStyle: 'none'
-    },
+    ul: { listStyle: 'none' },
 
     ...reset.button,
+    ...reset.inputText,
     ...reset.inputColor
   }
 })

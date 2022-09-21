@@ -1,4 +1,11 @@
 export const reset = {
+  inputText: {
+    'input[type="text"]': {
+      border: 'none',
+      outline: 'none',
+      backgroundColor: 'transparent'
+    }
+  },
   inputColor: {
     'input[type="color"]': {
       border: 'none',

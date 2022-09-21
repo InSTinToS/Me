@@ -1,6 +1,27 @@
 import { styled } from '@app/styles'
 
 import { Gmail as GmailIcon } from '@app/components/atoms/Icon/icons/Gmail'
+import { Reset as ResetIcon } from '@app/components/atoms/Icon/icons/Reset'
+
+export const CustomColor = styled('div', {
+  gridArea: 'color',
+  flexCenter: 'row',
+
+  ml: 'auto'
+})
+
+export const ResetButton = styled('button', { mr: '$1' })
+
+export const Reset = styled(ResetIcon, {
+  size: '$6',
+
+  variants: {
+    color: {
+      white: { 'path + path': { fill: '#ffffff' } },
+      black: { 'path + path': { fill: '#000000' } }
+    }
+  }
+})
 
 export const Gmail = styled(GmailIcon, {
   radius: '$full',
@@ -9,6 +30,8 @@ export const Gmail = styled(GmailIcon, {
 })
 
 export const Social = styled('ul', {
+  gridArea: 'social',
+
   display: 'flex',
   alignItems: 'center',
 
@@ -36,6 +59,10 @@ export const ColorPicker = styled('input', {
 })
 
 export const Avatar = styled('div', {
+  gridArea: 'avatar',
+
+  justifySelf: 'center',
+
   my: '$6',
   size: '$64',
   radius: '$8',
@@ -44,16 +71,22 @@ export const Avatar = styled('div', {
 })
 
 export const Name = styled('h1', {
+  gridArea: 'name',
+
   fontSize: '$5',
-  fontWeight: '$4'
+  fontWeight: '$4',
+  textAlign: 'center'
 })
 
 export const Occupation = styled('h2', {
+  gridArea: 'occupation',
+
   mb: '$4',
   mt: '$2',
 
   fontSize: '$4',
-  fontWeight: '$3'
+  fontWeight: '$3',
+  textAlign: 'center'
 })
 
 export const NavbarList = styled('ul', {
@@ -78,7 +111,13 @@ export const Style = styled('header', {
   position: 'relative',
   zIndex: 2,
 
-  flexCenter: 'col',
+  display: 'grid',
+  grid: `
+    'social     color' 
+    'avatar     avatar'
+    'name       name'
+    'occupation occupation'
+  `,
 
   px: '$8',
   pt: '$4',

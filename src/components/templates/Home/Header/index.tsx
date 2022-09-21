@@ -1,17 +1,22 @@
 import {
   Avatar,
   ColorPicker,
+  CustomColor,
   Gmail,
   Name,
   Navbar,
   NavbarList,
   Occupation,
+  Reset,
+  ResetButton,
   Social,
   Style
 } from './styles'
 import { IHeaderProps } from './types'
 
 import { NavbarItem } from './NavbarItem'
+
+import { theme } from '@app/styles'
 
 import { Github } from '@app/components/atoms/Icon/icons/Github'
 import { House } from '@app/components/atoms/Icon/icons/House'
@@ -20,7 +25,11 @@ import { Phone } from '@app/components/atoms/Icon/icons/Phone'
 import { Tech } from '@app/components/atoms/Icon/icons/Tech'
 import { Whatsapp } from '@app/components/atoms/Icon/icons/Whatsapp'
 
-export const Header = ({ customTheme, onColorChange }: IHeaderProps) => (
+export const Header = ({
+  customTheme,
+  onResetClick,
+  onColorChange
+}: IHeaderProps) => (
   <Style>
     <Social>
       <li>
@@ -38,13 +47,21 @@ export const Header = ({ customTheme, onColorChange }: IHeaderProps) => (
       <li>
         <Github />
       </li>
+    </Social>
+
+    <CustomColor>
+      {customTheme.color !== theme.colors.primary.value && (
+        <ResetButton type='button' onClick={onResetClick}>
+          <Reset color={customTheme.color === '#ffffff' ? 'white' : 'black'} />
+        </ResetButton>
+      )}
 
       <ColorPicker
         type='color'
         onChange={onColorChange}
-        defaultValue={customTheme.color}
+        value={customTheme.color}
       />
-    </Social>
+    </CustomColor>
 
     <Avatar />
 
