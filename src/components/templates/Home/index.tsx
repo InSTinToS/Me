@@ -2,6 +2,7 @@ import { useHome } from './logic'
 import { Background } from './styles'
 
 import { Header } from './Header'
+import { Projects } from './Projects'
 import { Techs } from './Techs'
 
 import Head from 'next/head'
@@ -27,7 +28,9 @@ export const Home = () => {
 
       <Techs customTheme={customTheme} />
 
-      <Background css={{ background: bgGradient }}></Background>
+      <Projects />
+
+      <Background css={{ background: bgGradient }} />
     </>
   )
 }

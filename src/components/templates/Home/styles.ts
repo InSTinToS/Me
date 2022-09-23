@@ -5,6 +5,6 @@ export const Background = styled('div', {
   left: 0,
   top: 0,
 
-  windowSize: 100,
-  minWidth: '$xs'
+  minWidth: '$xs',
+  windowSize: 100
 })

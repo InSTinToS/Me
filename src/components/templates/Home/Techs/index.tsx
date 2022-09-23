@@ -6,37 +6,37 @@ import { ITechCardProps } from './TechCard/types'
 
 const techs: ITechCardProps[] = [
   {
-    name: 'Styled Components',
+    name: 'Styled Components1',
     path: '/react.png',
     progress: 'high'
   },
   {
-    name: 'Styled Components',
+    name: 'Styled Components2',
     path: '/react.png',
     progress: 'high'
   },
   {
-    name: 'Styled Components',
+    name: 'Styled Components3',
     path: '/react.png',
     progress: 'high'
   },
   {
-    name: 'Styled Components',
+    name: 'Styled Components4',
     path: '/react.png',
     progress: 'high'
   },
   {
-    name: 'Styled Components',
+    name: 'Styled Components5',
     path: '/react.png',
     progress: 'high'
   },
   {
-    name: 'Styled Components',
+    name: 'Styled Components6',
     path: '/react.png',
     progress: 'high'
   },
   {
-    name: 'Styled Components',
+    name: 'Styled Components7',
     path: '/react.png',
     progress: 'high'
   }
