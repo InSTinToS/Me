@@ -12,11 +12,9 @@ export const Projects = () => {
     <Style>
       <Header>
         <Slider
-          min={0}
-          max={100}
-          step={10}
           name='project'
           value={project}
+          stepsQuantity={10}
           onValueChange={onProjectChange}
         />
       </Header>
@@ -44,7 +42,7 @@ export const Projects = () => {
                 <Arrow />
               </button>
 
-              <ul>
+              {/* <ul>
                 {files.map(file => (
                   <li key={file.dir}>
                     {file.isVideo ? (
@@ -54,7 +52,7 @@ export const Projects = () => {
                     )}
                   </li>
                 ))}
-              </ul>
+              </ul> */}
 
               <button type='button'>
                 <Arrow />
