@@ -1,4 +1,4 @@
-import { pxToRem } from '@app/utils/pxToRem'
+import { pxToRem } from '@app/utils/pxAndRem'
 
 export const fonts = {
   family: { roboto: 'Roboto, sans-serif' },

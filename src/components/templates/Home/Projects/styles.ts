@@ -3,9 +3,8 @@ import { styled } from '@app/styles'
 export const Header = styled('header', {
   flexCenter: 'row',
 
-  p: '$10',
-
-  border: 'solid red 1px'
+  px: '$4',
+  py: '$10'
 })
 
 export const Style = styled('main', {

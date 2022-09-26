@@ -1,9 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
 import { useProjects } from './logic'
 import { Header, Style } from './styles'
 
-import { Arrow } from '@app/components/atoms/Icon/icons/Arrow'
+import { Project } from './Project'
+
+import { theme } from '@app/styles'
+
 import { Slider } from '@app/components/atoms/Slider'
+
+import { remToPxNumber } from '@app/utils/pxAndRem'
 
 export const Projects = () => {
   const { projects, onProjectChange, project } = useProjects()
@@ -14,53 +18,16 @@ export const Projects = () => {
         <Slider
           name='project'
           value={project}
-          stepsQuantity={10}
+          stepsQuantity={5}
           onValueChange={onProjectChange}
+          thumbSize={remToPxNumber(theme.sizes[8].value)}
+          stepPadding={remToPxNumber(theme.sizes[2].value)}
         />
       </Header>
 
-      {projects.map(
-        ({ files, name, paragraphs, date, location, occupation, subtitle }) => (
-          <article key={name}>
-            <header>
-              <h3>{name}</h3>
-
-              <p>
-                {occupation && occupation + '\n'}
-                {subtitle && subtitle + '\n'}
-                {location && location + '\n'}
-                {date?.start && date.start} {date?.end && `-> ${date.end}`}
-              </p>
-            </header>
-
-            {paragraphs.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-
-            <footer>
-              <button type='button'>
-                <Arrow />
-              </button>
-
-              {/* <ul>
-                {files.map(file => (
-                  <li key={file.dir}>
-                    {file.isVideo ? (
-                      <video src={file.dir} />
-                    ) : (
-                      <img src={file.dir} alt={file.alt} />
-                    )}
-                  </li>
-                ))}
-              </ul> */}
-
-              <button type='button'>
-                <Arrow />
-              </button>
-            </footer>
-          </article>
-        )
-      )}
+      {projects.map(data => (
+        <Project key={data.name} {...data} />
+      ))}
     </Style>
   )
 }

@@ -7,7 +7,7 @@ const projects: IProject[] = [
     name: 'SteamsLab',
     location: 'Universidade Anhembi Morumbi',
     subtitle: 'Projeto de iniciação Científica',
-    occupation: 'Desenvolvedor Front-end & Designer UI/UX',
+    occupations: ['Desenvolvedor Front-end', 'Designer UI/UX'],
     date: { start: '06/2019', end: '12/2021' },
     files: [
       { alt: 'Full app', dir: 'steamsLab/full.mp4', isVideo: true },

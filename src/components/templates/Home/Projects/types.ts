@@ -2,7 +2,7 @@ export interface IProject {
   name: string
   subtitle?: string
   location?: string
-  occupation?: string
+  occupations?: string[]
   paragraphs: string[]
   date?: {
     start: string
