@@ -98,13 +98,13 @@ export const NavbarList = styled('ul', {
 })
 
 export const Navbar = styled('nav', {
-  position: 'absolute',
-  bottom: 0,
   left: 0,
 
   py: '$4',
   px: '$8',
-  width: '100%'
+  width: '100%',
+  background: 'rgba(0, 0, 0, 0.5)',
+  boxShadow: '0px 10px 8px 2px rgba(0,0,0,0.3)'
 })
 
 export const Style = styled('header', {
@@ -121,9 +121,7 @@ export const Style = styled('header', {
 
   px: '$8',
   pt: '$4',
-  pb: 'calc($4 * 2 + $7)',
 
   color: '#ffffff',
-  background: 'rgba(0, 0, 0, 0.5)',
-  boxShadow: '0px 10px 8px 2px rgba(0,0,0,0.3)'
+  background: 'rgba(0, 0, 0, 0.5)'
 })

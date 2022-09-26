@@ -4,8 +4,6 @@ import {
   CustomColor,
   Gmail,
   Name,
-  Navbar,
-  NavbarList,
   Occupation,
   Reset,
   ResetButton,
@@ -14,75 +12,58 @@ import {
 } from './styles'
 import { IHeaderProps } from './types'
 
-import { NavbarItem } from './NavbarItem'
-
 import { theme } from '@app/styles'
 
 import { Github } from '@app/components/atoms/Icon/icons/Github'
-import { House } from '@app/components/atoms/Icon/icons/House'
 import { Linkedin } from '@app/components/atoms/Icon/icons/Linkedin'
-import { Phone } from '@app/components/atoms/Icon/icons/Phone'
-import { Tech } from '@app/components/atoms/Icon/icons/Tech'
 import { Whatsapp } from '@app/components/atoms/Icon/icons/Whatsapp'
 
-export const Header = ({
-  customTheme,
-  onResetClick,
-  onColorChange
-}: IHeaderProps) => (
-  <Style>
-    <Social>
-      <li>
-        <Gmail />
-      </li>
+import { forwardRef } from 'react'
 
-      <li>
-        <Whatsapp />
-      </li>
+export const Header = forwardRef<any, IHeaderProps>(
+  ({ customTheme, onResetClick, onColorChange, ...props }, ref) => (
+    <Style ref={ref} {...props}>
+      <Social>
+        <li>
+          <Gmail />
+        </li>
 
-      <li>
-        <Linkedin />
-      </li>
+        <li>
+          <Whatsapp />
+        </li>
 
-      <li>
-        <Github />
-      </li>
-    </Social>
+        <li>
+          <Linkedin />
+        </li>
 
-    <CustomColor>
-      {customTheme.color !== theme.colors.primary.value && (
-        <ResetButton type='button' onClick={onResetClick}>
-          <Reset color={customTheme.color === '#ffffff' ? 'white' : 'black'} />
-        </ResetButton>
-      )}
+        <li>
+          <Github />
+        </li>
+      </Social>
 
-      <ColorPicker
-        type='color'
-        onChange={onColorChange}
-        value={customTheme.color}
-      />
-    </CustomColor>
+      <CustomColor>
+        {customTheme.color !== theme.colors.primary.value && (
+          <ResetButton type='button' onClick={onResetClick}>
+            <Reset
+              color={customTheme.color === '#ffffff' ? 'white' : 'black'}
+            />
+          </ResetButton>
+        )}
 
-    <Avatar />
+        <ColorPicker
+          type='color'
+          onChange={onColorChange}
+          value={customTheme.color}
+        />
+      </CustomColor>
 
-    <Name>Miguel Andrade Barreto</Name>
+      <Avatar />
 
-    <Occupation>Desenvolvedor Web</Occupation>
+      <Name>Miguel Andrade Barreto</Name>
 
-    <Navbar>
-      <NavbarList>
-        <NavbarItem>
-          <House />
-        </NavbarItem>
-
-        <NavbarItem>
-          <Tech />
-        </NavbarItem>
-
-        <NavbarItem id='phone'>
-          <Phone />
-        </NavbarItem>
-      </NavbarList>
-    </Navbar>
-  </Style>
+      <Occupation>Desenvolvedor Web</Occupation>
+    </Style>
+  )
 )
+
+Header.displayName = 'Header'
