@@ -10,7 +10,15 @@ import { SmartFixedNav } from '@app/components/utilities/SmartFixedNav'
 import Head from 'next/head'
 
 export const Home = () => {
-  const { customTheme, onColorChange, bgGradient, onResetClick } = useHome()
+  const {
+    techsRef,
+    navItems,
+    bgGradient,
+    projectsRef,
+    customTheme,
+    onColorChange,
+    onResetClick
+  } = useHome()
 
   return (
     <>
@@ -23,7 +31,7 @@ export const Home = () => {
       </Head>
 
       <SmartFixedNav
-        nav={<Navbar />}
+        nav={<Navbar items={navItems} />}
         aboveContent={
           <Header
             customTheme={customTheme}
@@ -33,9 +41,9 @@ export const Home = () => {
         }
       />
 
-      <Techs customTheme={customTheme} />
+      <Techs customTheme={customTheme} ref={techsRef} />
 
-      <Projects />
+      <Projects ref={projectsRef} />
 
       <Background css={{ background: bgGradient }} />
     </>

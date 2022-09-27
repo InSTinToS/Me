@@ -1,11 +1,11 @@
 import { styled } from '@app/styles'
 
 export const NavbarList = styled('ul', {
-  flexCenter: 'row',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 
-  width: '100%',
-
-  '#phone': { ml: 'auto' }
+  width: '100%'
 })
 
 export const Style = styled('nav', {

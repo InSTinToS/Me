@@ -9,11 +9,13 @@ import { Slider } from '@app/components/atoms/Slider'
 
 import { remToPxNumber } from '@app/utils/pxAndRem'
 
-export const Projects = () => {
+import { forwardRef } from 'react'
+
+export const Projects = forwardRef<any, any>((props, ref) => {
   const { projects, onProjectChange, project } = useProjects()
 
   return (
-    <Style>
+    <Style ref={ref} {...props}>
       <Header>
         <Slider
           name='project'
@@ -30,4 +32,6 @@ export const Projects = () => {
       ))}
     </Style>
   )
-}
+})
+
+Projects.displayName = 'Projects'

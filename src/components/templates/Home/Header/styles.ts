@@ -89,24 +89,6 @@ export const Occupation = styled('h2', {
   textAlign: 'center'
 })
 
-export const NavbarList = styled('ul', {
-  flexCenter: 'row',
-
-  width: '100%',
-
-  '#phone': { ml: 'auto' }
-})
-
-export const Navbar = styled('nav', {
-  left: 0,
-
-  py: '$4',
-  px: '$8',
-  width: '100%',
-  background: 'rgba(0, 0, 0, 0.5)',
-  boxShadow: '0px 10px 8px 2px rgba(0,0,0,0.3)'
-})
-
 export const Style = styled('header', {
   position: 'relative',
   zIndex: 2,

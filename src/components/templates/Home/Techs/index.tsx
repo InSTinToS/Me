@@ -4,6 +4,8 @@ import { ITechsProps } from './types'
 import { TechCard } from './TechCard'
 import { ITechCardProps } from './TechCard/types'
 
+import { forwardRef } from 'react'
+
 const techs: ITechCardProps[] = [
   {
     name: 'Styled Components1',
@@ -42,24 +44,24 @@ const techs: ITechCardProps[] = [
   }
 ]
 
-export const Techs = ({ customTheme }: ITechsProps) => {
-  return (
-    <Style>
-      <Filter css={{ borderBottomColor: customTheme.contrast }}>
-        <Search css={{ fill: customTheme.contrast }} />
+export const Techs = forwardRef<any, ITechsProps>(({ customTheme }, ref) => (
+  <Style ref={ref}>
+    <Filter css={{ borderBottomColor: customTheme.contrast }}>
+      <Search css={{ fill: customTheme.contrast }} />
 
-        <Input
-          type='text'
-          placeholder='Pesquisar tecnologia...'
-          color={customTheme.contrast === '#ffffff' ? 'white' : 'black'}
-        />
-      </Filter>
+      <Input
+        type='text'
+        placeholder='Pesquisar tecnologia...'
+        color={customTheme.contrast === '#ffffff' ? 'white' : 'black'}
+      />
+    </Filter>
 
-      <TechsList>
-        {techs.map(tech => (
-          <TechCard {...tech} key={tech.name} />
-        ))}
-      </TechsList>
-    </Style>
-  )
-}
+    <TechsList>
+      {techs.map(tech => (
+        <TechCard {...tech} key={tech.name} />
+      ))}
+    </TechsList>
+  </Style>
+))
+
+Techs.displayName = 'Techs'
