@@ -7,23 +7,32 @@ import { Linkedin as LinkedinIcon } from '@app/components/atoms/Icon/icons/Linke
 import { remToPx } from '@app/utils/pxAndRem'
 
 export const File = styled('div', {
-  mb: '$6',
-  maxWidth: '100%'
+  size: '100%'
 })
 
 export const RightArrow = styled('button', {
   flex: 1,
-  flexCenter: 'row'
+  flexCenter: 'row',
+
+  mt: '$4'
 })
 
 export const LeftArrow = styled(RightArrow, {
-  rotate: '-180deg'
+  svg: { rotate: '-180deg' }
 })
 
 export const Arrow = styled(ArrowIcon, {
   size: '$6',
 
   fill: '#ffffff'
+})
+
+export const Files = styled('ul', {
+  flexCenter: 'row',
+
+  li: {
+    width: '100%'
+  }
 })
 
 export const Footer = styled('footer', {

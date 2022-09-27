@@ -15,7 +15,7 @@ export const GlobalProvider = ({ children }: IChildrenProps) => (
   <QueryClientProvider client={reactQueryClient}>
     <ReduxProvider store={store}>
       <ThemeProvider>
-        <ReactQueryDevtools />
+        {/* <ReactQueryDevtools /> */}
         <RadixProvider>{children}</RadixProvider>
       </ThemeProvider>
     </ReduxProvider>

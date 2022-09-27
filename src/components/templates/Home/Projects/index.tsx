@@ -5,7 +5,7 @@ import { Project } from './Project'
 
 import { theme } from '@app/styles'
 
-import { Slider } from '@app/components/atoms/Slider'
+import { Slider } from '@app/components/molecules/Slider'
 
 import { remToPxNumber } from '@app/utils/pxAndRem'
 

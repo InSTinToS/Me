@@ -4,6 +4,10 @@ import { radius } from './radius'
 import { size } from './size'
 
 export const utils = {
+  b1: (color: string) => ({
+    border: `solid 1px ${color}`
+  }),
+
   theme: (theme: string) => {
     const [color, scale] = theme.split('_')
 

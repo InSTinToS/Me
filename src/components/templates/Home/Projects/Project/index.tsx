@@ -1,3 +1,4 @@
+import { useProject } from './logic'
 import {
   Arrow,
   Date,
@@ -16,6 +17,12 @@ import {
 } from './styles'
 import { IProjectProps } from './types'
 
+import { theme } from '@app/styles'
+
+import { HorizontalList } from '@app/components/molecules/HorizontalList'
+
+import { remToPxNumber } from '@app/utils/pxAndRem'
+
 export const Project = ({
   name,
   date,
@@ -24,51 +31,65 @@ export const Project = ({
   location,
   occupations,
   paragraphs
-}: IProjectProps) => (
-  <Style>
-    <Header>
-      <Linkedin />
+}: IProjectProps) => {
+  const {
+    ulRef,
+    showLeftArrow,
+    showRightArrow,
+    onLeftArrowClick,
+    onRightArrowClick
+  } = useProject()
 
-      <Title>{name}</Title>
+  return (
+    <Style>
+      <Header>
+        <Linkedin />
 
-      <Date>
-        {date?.start && date.start} {date?.end && `-> ${date.end}`}
-      </Date>
+        <Title>{name}</Title>
 
-      <Github />
-    </Header>
+        <Date>
+          {date?.start && date.start} {date?.end && `-> ${date.end}`}
+        </Date>
 
-    <Info>
-      {occupations?.map((occupation, index) => (
-        <InfoItem key={index}>{occupation}</InfoItem>
+        <Github />
+      </Header>
+
+      <Info>
+        {occupations?.map((occupation, index) => (
+          <InfoItem key={index}>{occupation}</InfoItem>
+        ))}
+
+        <InfoItem>{subtitle}</InfoItem>
+        <InfoItem>{location}</InfoItem>
+      </Info>
+
+      {paragraphs?.map((paragraph, index) => (
+        <Paragraph key={index}>{paragraph}</Paragraph>
       ))}
 
-      <InfoItem>{subtitle}</InfoItem>
-      <InfoItem>{location}</InfoItem>
-    </Info>
-
-    {paragraphs?.map((paragraph, index) => (
-      <Paragraph key={index}>{paragraph}</Paragraph>
-    ))}
-
-    <Footer>
-      <ul>
-        <li key={files[0].dir}>
-          {files[0].isVideo ? (
-            <File as='video' src={files[0].dir} />
-          ) : (
-            <File as='img' src={files[0].dir} alt={files[0].alt} />
+      <Footer>
+        <HorizontalList ref={ulRef} gap={remToPxNumber(theme.sizes[10].value)}>
+          {files.map(file =>
+            file.isVideo ? (
+              <File key={file.dir} as='video' src={file.dir} controls />
+            ) : (
+              <File key={file.dir} as='img' src={file.dir} alt={file.alt} />
+            )
           )}
-        </li>
-      </ul>
+        </HorizontalList>
 
-      <LeftArrow type='button'>
-        <Arrow />
-      </LeftArrow>
+        {showLeftArrow && (
+          <LeftArrow type='button' onClick={onLeftArrowClick}>
+            <Arrow />
+          </LeftArrow>
+        )}
 
-      <RightArrow type='button'>
-        <Arrow />
-      </RightArrow>
-    </Footer>
-  </Style>
-)
+        {showRightArrow && (
+          <RightArrow type='button' onClick={onRightArrowClick}>
+            <Arrow />
+          </RightArrow>
+        )}
+      </Footer>
+    </Style>
+  )
+}

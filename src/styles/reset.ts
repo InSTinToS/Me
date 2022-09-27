@@ -14,5 +14,12 @@ export const reset = {
       '&::-webkit-color-swatch-wrapper': { padding: 0 }
     }
   },
-  button: { button: { border: 'none', backgroundColor: 'transparent' } }
+  button: {
+    button: {
+      cursor: 'pointer',
+
+      border: 'none',
+      backgroundColor: 'transparent'
+    }
+  }
 }
