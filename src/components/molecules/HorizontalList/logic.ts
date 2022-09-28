@@ -1,4 +1,10 @@
-import { IPageState, IUseHorizontalListParams } from './types'
+import {
+  IHorizontalListForwarded,
+  IInfoState,
+  IUseHorizontalListParams
+} from './types'
+
+import { useAnimations } from './animations'
 
 import {
   useCallback,
@@ -8,63 +14,58 @@ import {
   useState
 } from 'react'
 
-const getShowButtons = (index: number, maxLength: number) => ({
-  showLeftButton: index !== 0,
-  showRightButton: index < maxLength - 1
-})
-
 export const useHorizontalList = ({
-  gap,
   children,
   ref: receivedRef
 }: IUseHorizontalListParams) => {
-  const liRef = useRef<HTMLDivElement>(null)
   const ulRef = useRef<HTMLUListElement>(null)
 
   const [ulWidth, setUlWidth] = useState(0)
-  const [liHeight, setLiHeight] = useState(0)
-  const [page, setPage] = useState<IPageState>({ index: 0, dir: 1 })
+  const [pageInfo, setPageInfo] = useState<IInfoState>({
+    showLeftButton: false,
+    showRightButton: true,
+    page: { dir: 1, index: 0 }
+  })
 
-  const variants = {
-    enter: (direction: number) => ({
-      y: '-50%',
-      opacity: 0.5,
-      x: direction > 0 ? ulWidth : -ulWidth
-    }),
-    center: { x: 0, opacity: 1, y: '-50%' },
-    exit: (direction: number) => ({
-      y: '-50%',
-      opacity: 0.5,
-      x: direction > 0 ? -ulWidth : ulWidth
-    })
-  }
+  const { liAnimations, presenceAnimations } = useAnimations({
+    ulWidth,
+    pageInfo
+  })
 
-  const getInfo = useCallback(
-    () => ({ page, ...getShowButtons(page.index, children.length) }),
-    [children, page]
-  )
+  const getInfo = useCallback(() => pageInfo, [pageInfo])
 
-  const paginate = useCallback(
-    (direction: 'left' | 'right') => {
-      const directionNumber = direction === 'right' ? 1 : -1
-      const newIndex = page.index + directionNumber
+  const paginate: IHorizontalListForwarded['paginate'] = useCallback(
+    directionOrPage => {
+      let newIndex: number
+      let directionNumber: number
 
-      const { showLeftButton, showRightButton } = getShowButtons(
-        newIndex,
-        children.length
-      )
+      if (typeof directionOrPage === 'number') {
+        directionNumber = pageInfo.page.index < directionOrPage ? 1 : -1
+        newIndex = directionOrPage
+      } else {
+        directionNumber = directionOrPage === 'right' ? 1 : -1
+        newIndex = pageInfo.page.index + directionNumber
+      }
 
-      const newPage = { dir: directionNumber, index: newIndex }
       const isOnLimit = newIndex < 0 || newIndex > children.length
-      const info = { page: newPage, showLeftButton, showRightButton }
 
-      if (isOnLimit) return info
+      const buttons = {
+        showLeftButton: newIndex !== 0,
+        showRightButton: newIndex < children.length - 1
+      }
 
-      setPage(newPage)
+      if (isOnLimit) return { page: pageInfo.page, ...buttons }
 
-      return info
+      const newInfo = {
+        page: { dir: directionNumber, index: newIndex },
+        ...buttons
+      }
+
+      setPageInfo(newInfo)
+
+      return newInfo
     },
-    [children, page.index]
+    [children.length, pageInfo]
   )
 
   useImperativeHandle(receivedRef, () => ({ paginate, getInfo }), [
@@ -73,16 +74,8 @@ export const useHorizontalList = ({
   ])
 
   useEffect(() => {
-    const clientWidth = ulRef.current?.clientWidth
+    setUlWidth(ulRef.current?.clientWidth || 0)
+  }, [])
 
-    clientWidth && setUlWidth(gap ? clientWidth + gap : clientWidth)
-  }, [gap, ulRef])
-
-  useEffect(() => {
-    setTimeout(() => {
-      liRef.current?.clientHeight && setLiHeight(liRef.current?.clientHeight)
-    }, 100)
-  }, [page])
-
-  return { page, variants, ulRef, liHeight, liRef }
+  return { page: pageInfo.page, liAnimations, ulRef, presenceAnimations }
 }

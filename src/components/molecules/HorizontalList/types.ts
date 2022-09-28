@@ -1,29 +1,31 @@
 import { ReactNode } from 'react'
 
-export interface IInfo {
-  page: IPageState
-  showLeftButton: boolean
-  showRightButton: boolean
-}
-
-export interface IPageState {
+export interface IPage {
   dir: number
   index: number
 }
 
+export interface IInfoState {
+  page: IPage
+  showLeftButton: boolean
+  showRightButton: boolean
+}
+
 export interface IHorizontalListProps {
-  gap?: number
-  duration?: number
   children: ReactNode[]
 }
 
 export interface IUseHorizontalListParams {
   ref?: any
-  gap?: IHorizontalListProps['gap']
   children: IHorizontalListProps['children']
 }
 
-export interface IHorizontalListForwarded {
-  getInfo: () => IInfo
-  paginate: (direction: 'left' | 'right') => IInfo
+export interface IHorizontalListForwarded extends HTMLDivElement {
+  getInfo: () => IInfoState
+  paginate: (directionOrPage: 'left' | 'right' | number) => IInfoState
+}
+
+export interface IUseAnimationsParams {
+  ulWidth: number
+  pageInfo: IInfoState
 }

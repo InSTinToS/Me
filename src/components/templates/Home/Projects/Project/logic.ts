@@ -1,13 +1,13 @@
 import {
   IHorizontalListForwarded,
-  IInfo
+  IInfoState
 } from '@app/components/molecules/HorizontalList/types'
 
 import { useEffect, useRef, useState } from 'react'
 
 export const useProject = () => {
-  const [info, setInfo] = useState<IInfo>()
   const ulRef = useRef<IHorizontalListForwarded>(null)
+  const [info, setInfo] = useState<IInfoState>()
 
   const onLeftArrowClick = () => {
     ulRef.current?.paginate && setInfo(ulRef.current.paginate('left'))

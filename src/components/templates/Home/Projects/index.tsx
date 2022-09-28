@@ -5,6 +5,7 @@ import { Project } from './Project'
 
 import { theme } from '@app/styles'
 
+import { HorizontalList } from '@app/components/molecules/HorizontalList'
 import { Slider } from '@app/components/molecules/Slider'
 
 import { remToPxNumber } from '@app/utils/pxAndRem'
@@ -12,7 +13,7 @@ import { remToPxNumber } from '@app/utils/pxAndRem'
 import { forwardRef } from 'react'
 
 export const Projects = forwardRef<any, any>((props, ref) => {
-  const { projects, onProjectChange, project } = useProjects()
+  const { projects, projectsRef, onProjectChange, project } = useProjects()
 
   return (
     <Style ref={ref} {...props}>
@@ -27,9 +28,11 @@ export const Projects = forwardRef<any, any>((props, ref) => {
         />
       </Header>
 
-      {projects.map(data => (
-        <Project key={data.name} {...data} />
-      ))}
+      <HorizontalList ref={projectsRef}>
+        {projects.map(data => (
+          <Project key={data.name} {...data} />
+        ))}
+      </HorizontalList>
     </Style>
   )
 })
