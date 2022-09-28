@@ -7,15 +7,14 @@ import { useEffect, useRef, useState } from 'react'
 
 export const useProject = () => {
   const ulRef = useRef<IHorizontalListForwarded>(null)
+
   const [info, setInfo] = useState<IInfoState>()
 
-  const onLeftArrowClick = () => {
+  const onLeftArrowClick = () =>
     ulRef.current?.paginate && setInfo(ulRef.current.paginate('left'))
-  }
 
-  const onRightArrowClick = () => {
+  const onRightArrowClick = () =>
     ulRef.current?.paginate && setInfo(ulRef.current.paginate('right'))
-  }
 
   useEffect(() => {
     setInfo(ulRef.current?.getInfo())

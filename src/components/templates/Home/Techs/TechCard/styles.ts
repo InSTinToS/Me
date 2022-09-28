@@ -1,14 +1,13 @@
 import { styled } from '@app/styles'
 
+import { motion } from 'framer-motion'
+
 export const Image = styled('img', {
-  gridArea: 'image',
   mx: 'auto',
   height: '$11'
 })
 
 export const Progress = styled('hr', {
-  gridArea: 'progress',
-
   width: '100%',
 
   mt: '$4',
@@ -18,35 +17,34 @@ export const Progress = styled('hr', {
 
   variants: {
     progress: {
-      low: {},
-      medium: {},
+      low: { borderColor: '$error' },
+      medium: { borderColor: '$warning' },
       high: { borderColor: '$success' }
     }
   }
 })
 
 export const Name = styled('div', {
-  gridArea: 'name',
+  flexCenter: 'row',
+  flex: 1,
 
   mx: 'auto',
+  height: '$11',
 
   textAlign: 'center',
 
   color: '#ffffff'
 })
 
-export const Style = styled('li', {
-  display: 'grid',
-  alignItems: 'center',
-  justifyContent: 'center',
-  grid: `
-    'image    name'
-    'progress progress' / 1fr 2fr
-  `,
+export const Style = styled(motion.li, {
+  flexWrap: 'wrap',
+  flexCenter: 'row',
 
-  m: '$8',
+  m: '$4',
   p: '$4',
+  width: '$55',
   radius: '$4',
+  height: '$25',
   maxWidth: '$55',
 
   background: 'rgba(255,255,255,0.2)'

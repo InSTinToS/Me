@@ -1,67 +1,34 @@
+import { useTechs } from './logic'
 import { Filter, Input, Search, Style, TechsList } from './styles'
 import { ITechsProps } from './types'
 
 import { TechCard } from './TechCard'
-import { ITechCardProps } from './TechCard/types'
 
 import { forwardRef } from 'react'
 
-const techs: ITechCardProps[] = [
-  {
-    name: 'Styled Components1',
-    path: '/react.png',
-    progress: 'high'
-  },
-  {
-    name: 'Styled Components2',
-    path: '/react.png',
-    progress: 'high'
-  },
-  {
-    name: 'Styled Components3',
-    path: '/react.png',
-    progress: 'high'
-  },
-  {
-    name: 'Styled Components4',
-    path: '/react.png',
-    progress: 'high'
-  },
-  {
-    name: 'Styled Components5',
-    path: '/react.png',
-    progress: 'high'
-  },
-  {
-    name: 'Styled Components6',
-    path: '/react.png',
-    progress: 'high'
-  },
-  {
-    name: 'Styled Components7',
-    path: '/react.png',
-    progress: 'high'
-  }
-]
+export const Techs = forwardRef<any, ITechsProps>(({ customTheme }, ref) => {
+  const { onSearchChange, techList } = useTechs()
 
-export const Techs = forwardRef<any, ITechsProps>(({ customTheme }, ref) => (
-  <Style ref={ref}>
-    <Filter css={{ borderBottomColor: customTheme.contrast }}>
-      <Search css={{ fill: customTheme.contrast }} />
+  return (
+    <Style ref={ref}>
+      <Filter css={{ borderBottomColor: customTheme.contrast }}>
+        <Search css={{ fill: customTheme.contrast }} />
 
-      <Input
-        type='text'
-        placeholder='Pesquisar tecnologia...'
-        color={customTheme.contrast === '#ffffff' ? 'white' : 'black'}
-      />
-    </Filter>
+        <Input
+          type='text'
+          onChange={onSearchChange}
+          placeholder='Pesquisar tecnologia...'
+          color={customTheme.contrast === '#ffffff' ? 'white' : 'black'}
+        />
+      </Filter>
 
-    <TechsList>
-      {techs.map(tech => (
-        <TechCard {...tech} key={tech.name} />
-      ))}
-    </TechsList>
-  </Style>
-))
+      <TechsList>
+        {techList.map(tech => (
+          <TechCard {...tech} key={tech.name} />
+        ))}
+      </TechsList>
+    </Style>
+  )
+})
 
 Techs.displayName = 'Techs'

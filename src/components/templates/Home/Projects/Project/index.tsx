@@ -17,11 +17,7 @@ import {
 } from './styles'
 import { IProjectProps } from './types'
 
-import { theme } from '@app/styles'
-
 import { HorizontalList } from '@app/components/molecules/HorizontalList'
-
-import { remToPxNumber } from '@app/utils/pxAndRem'
 
 export const Project = ({
   name,
@@ -68,7 +64,7 @@ export const Project = ({
       ))}
 
       <Footer>
-        <HorizontalList ref={ulRef} gap={remToPxNumber(theme.sizes[10].value)}>
+        <HorizontalList ref={ulRef}>
           {files.map(file =>
             file.isVideo ? (
               <File key={file.dir} as='video' src={file.dir} controls />

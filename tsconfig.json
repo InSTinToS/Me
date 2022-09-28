@@ -14,9 +14,9 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "baseUrl": ".",
-    "paths": { "@app/*": ["./src/*"] },
     "lib": ["dom", "dom.iterable", "esnext"],
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": { "@app/*": ["./src/*"], "@public/*": ["./public/*"] }
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

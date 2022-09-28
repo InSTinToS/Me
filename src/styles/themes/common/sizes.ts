@@ -38,6 +38,7 @@ export const sizes = {
   19: pxToRem(76),
   20: pxToRem(80),
   24: pxToRem(96),
+  25: pxToRem(98),
   28: pxToRem(112),
   32: pxToRem(128),
   36: pxToRem(144),

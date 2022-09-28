@@ -21,7 +21,7 @@ export const Projects = forwardRef<any, any>((props, ref) => {
         <Slider
           name='project'
           value={project}
-          stepsQuantity={5}
+          stepsQuantity={projects.length}
           onValueChange={onProjectChange}
           thumbSize={remToPxNumber(theme.sizes[8].value)}
           stepPadding={remToPxNumber(theme.sizes[2].value)}
