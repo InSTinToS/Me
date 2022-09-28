@@ -2,44 +2,24 @@ import {
   Avatar,
   ColorPicker,
   CustomColor,
-  Gmail,
   Name,
   Occupation,
   Reset,
   ResetButton,
-  Social,
   Style
 } from './styles'
 import { IHeaderProps } from './types'
 
 import { theme } from '@app/styles'
 
-import { Github } from '@app/components/atoms/Icon/icons/Github'
-import { Linkedin } from '@app/components/atoms/Icon/icons/Linkedin'
-import { Whatsapp } from '@app/components/atoms/Icon/icons/Whatsapp'
+import { Social } from '@app/components/molecules/Social'
 
 import { forwardRef } from 'react'
 
 export const Header = forwardRef<any, IHeaderProps>(
   ({ customTheme, onResetClick, onColorChange, ...props }, ref) => (
     <Style ref={ref} {...props}>
-      <Social>
-        <li>
-          <Gmail />
-        </li>
-
-        <li>
-          <Whatsapp />
-        </li>
-
-        <li>
-          <Linkedin />
-        </li>
-
-        <li>
-          <Github />
-        </li>
-      </Social>
+      <Social />
 
       <CustomColor>
         {customTheme.color !== theme.colors.primary.value && (

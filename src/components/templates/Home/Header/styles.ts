@@ -1,6 +1,5 @@
-import { styled } from '@app/styles'
+import { styled, theme } from '@app/styles'
 
-import { Gmail as GmailIcon } from '@app/components/atoms/Icon/icons/Gmail'
 import { Reset as ResetIcon } from '@app/components/atoms/Icon/icons/Reset'
 
 export const CustomColor = styled('div', {
@@ -23,27 +22,6 @@ export const Reset = styled(ResetIcon, {
   }
 })
 
-export const Gmail = styled(GmailIcon, {
-  radius: '$full',
-
-  bg: '#ffffff'
-})
-
-export const Social = styled('ul', {
-  gridArea: 'social',
-
-  display: 'flex',
-  alignItems: 'center',
-
-  width: '100%',
-
-  li: {
-    size: '$8',
-
-    '& + li': { ml: '$4' }
-  }
-})
-
 export const ColorPicker = styled('input', {
   "&[type='color']": {
     ml: 'auto',
@@ -54,7 +32,11 @@ export const ColorPicker = styled('input', {
     overflow: 'hidden',
 
     bg: 'transparent',
-    border: 'solid #ffffff'
+    border: 'solid #ffffff',
+
+    '@md': {
+      alignSelf: 'flex-start'
+    }
   }
 })
 
@@ -75,7 +57,12 @@ export const Name = styled('h1', {
 
   fontSize: '$5',
   fontWeight: '$4',
-  textAlign: 'center'
+  textAlign: 'center',
+
+  '@md': {
+    alignSelf: 'flex-end',
+    justifySelf: 'flex-start'
+  }
 })
 
 export const Occupation = styled('h2', {
@@ -86,7 +73,11 @@ export const Occupation = styled('h2', {
 
   fontSize: '$4',
   fontWeight: '$3',
-  textAlign: 'center'
+  textAlign: 'center',
+
+  '@md': {
+    justifySelf: 'flex-start'
+  }
 })
 
 export const Style = styled('header', {
@@ -105,5 +96,13 @@ export const Style = styled('header', {
   pt: '$4',
 
   color: '#ffffff',
-  background: 'rgba(0, 0, 0, 0.5)'
+  background: 'rgba(0, 0, 0, 0.5)',
+
+  '@md': {
+    display: 'grid',
+    grid: `
+      'avatar  name       color' 
+      'avatar  occupation color' / ${theme.sizes['72'].value} 1fr 1fr
+    `
+  }
 })
