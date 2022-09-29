@@ -1,6 +1,8 @@
-import { styled } from '@app/styles'
+import { styled, theme } from '@app/styles'
 
 import { Social as OriginalSocial } from '@app/components/molecules/Social'
+
+import { hexToRgba } from '@app/utils/colors'
 
 export const Social = styled(OriginalSocial, {
   display: 'none',
@@ -32,6 +34,6 @@ export const Style = styled('nav', {
 
   width: '100%',
 
-  background: 'rgba(0, 0, 0, 0.5)',
-  boxShadow: '0px 10px 8px 2px rgba(0,0,0,0.3)'
+  boxShadow: '0px 10px 8px 2px rgba(0,0,0,0.3)',
+  background: hexToRgba(theme.colors.black.value, 0.5)
 })

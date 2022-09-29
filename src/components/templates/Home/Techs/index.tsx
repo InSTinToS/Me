@@ -1,12 +1,11 @@
 import { useTechs } from './logic'
 import { Filter, Input, Search, Style, TechsList } from './styles'
-import { ITechsProps } from './types'
 
 import { TechCard } from './TechCard'
 
 import { forwardRef } from 'react'
 
-export const Techs = forwardRef<any, ITechsProps>(({ ...props }, ref) => {
+export const Techs = forwardRef<any, any>(({ ...props }, ref) => {
   const { onSearchChange, techList, themeState } = useTechs()
 
   return (

@@ -47,9 +47,7 @@ export const globalStyles = globalCss({
 
     theme: '$secondary',
 
-    ul: {
-      listStyle: 'none'
-    },
+    ul: { listStyle: 'none' },
 
     ...reset.button,
     ...reset.inputText,

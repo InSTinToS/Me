@@ -2,16 +2,21 @@ import { styled, theme } from '@app/styles'
 
 import { Social as OriginalSocial } from '@app/components/molecules/Social'
 
-export const Avatar = styled('div', {
-  gridArea: 'avatar',
+import { hexToRgba } from '@app/utils/colors'
 
-  justifySelf: 'center',
+export const Occupation = styled('h2', {
+  gridArea: 'occupation',
 
-  my: '$6',
-  size: '$64',
-  radius: '$8',
+  mb: '$4',
+  mt: '$2',
 
-  bg: '$white'
+  fontSize: '$4',
+  fontWeight: '$3',
+  textAlign: 'center',
+
+  '@md': {
+    justifySelf: 'flex-start'
+  }
 })
 
 export const Name = styled('h1', {
@@ -27,19 +32,16 @@ export const Name = styled('h1', {
   }
 })
 
-export const Occupation = styled('h2', {
-  gridArea: 'occupation',
+export const Avatar = styled('div', {
+  gridArea: 'avatar',
 
-  mb: '$4',
-  mt: '$2',
+  justifySelf: 'center',
 
-  fontSize: '$4',
-  fontWeight: '$3',
-  textAlign: 'center',
+  my: '$6',
+  size: '$64',
+  radius: '$8',
 
-  '@md': {
-    justifySelf: 'flex-start'
-  }
+  bg: '$white'
 })
 
 export const Social = styled(OriginalSocial, {
@@ -66,7 +68,7 @@ export const Style = styled('header', {
   pt: '$4',
 
   color: '$white',
-  background: 'rgba(0, 0, 0, 0.5)',
+  background: hexToRgba(theme.colors.black.value, 0.5),
 
   '@md': {
     display: 'grid',

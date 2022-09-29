@@ -15,8 +15,6 @@ export const Style = styled('ul', {
   li: {
     size: '$8',
 
-    '& + li': {
-      ml: '$4'
-    }
+    '& + li': { ml: '$4' }
   }
 })

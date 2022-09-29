@@ -2,7 +2,7 @@ import { useChangeTheme } from './logic'
 import { ColorPicker, Reset, ResetButton, Style } from './styles'
 
 export const ChangeTheme = () => {
-  const { onResetClick, onColorChange, showReset, themeState } =
+  const { showReset, themeState, onResetClick, onColorChange } =
     useChangeTheme()
 
   return (

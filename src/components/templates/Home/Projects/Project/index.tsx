@@ -58,6 +58,7 @@ export const Project = ({
           ))}
 
           <InfoItem>{subtitle}</InfoItem>
+
           <InfoItem>{location}</InfoItem>
         </Info>
 

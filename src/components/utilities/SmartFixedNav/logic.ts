@@ -8,7 +8,6 @@ const navUnfixed: CSS = { position: 'relative', top: 0 }
 export const useSmartFixedNav = ({ aboveContent, nav }: any) => {
   const navRef = useRef<HTMLDivElement>(null)
   const aboveRef = useRef<HTMLDivElement>(null)
-
   const [navCSS, setNavCSS] = useState<CSS>(navUnfixed)
 
   const navHeight = navRef.current?.clientHeight || 0

@@ -14,7 +14,6 @@ import { useRef } from 'react'
 export const useHome = () => {
   const techsRef = useRef<HTMLDivElement>(null)
   const projectsRef = useRef<HTMLDivElement>(null)
-
   const themeState = useAppSelector(({ theme }) => theme)
 
   const navItems: INavbarProps['items'] = [

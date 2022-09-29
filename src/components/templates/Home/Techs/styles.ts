@@ -1,4 +1,4 @@
-import { styled } from '@app/styles'
+import { styled, theme } from '@app/styles'
 import { scrollbar } from '@app/styles/utils/scrollbar'
 
 import { Search as SearchIcon } from '@app/components/atoms/Icon/icons/Search'
@@ -32,11 +32,6 @@ export const TechsList = styled('ul', {
   }
 })
 
-export const Search = styled(SearchIcon, {
-  size: '$6',
-  minSize: '$6'
-})
-
 export const Input = styled('input', {
   ml: '$4',
   width: '100%',
@@ -48,15 +43,20 @@ export const Input = styled('input', {
       white: {
         color: '$white',
 
-        '&::placeholder': { color: hexToRgba('$white', 0.7) }
+        '&::placeholder': { color: hexToRgba(theme.colors.white.value, 0.7) }
       },
       black: {
         color: '$black',
 
-        '&::placeholder': { color: hexToRgba('$black', 0.7) }
+        '&::placeholder': { color: hexToRgba(theme.colors.black.value, 0.7) }
       }
     }
   }
+})
+
+export const Search = styled(SearchIcon, {
+  size: '$6',
+  minSize: '$6'
 })
 
 export const Filter = styled('div', {

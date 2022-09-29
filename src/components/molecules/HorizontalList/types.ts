@@ -1,16 +1,5 @@
 import { ReactNode } from 'react'
 
-export interface IPage {
-  dir: number
-  index: number
-}
-
-export interface IInfoState {
-  page: IPage
-  showLeftButton: boolean
-  showRightButton: boolean
-}
-
 export interface IHorizontalListProps {
   children: ReactNode[]
 }
@@ -28,4 +17,15 @@ export interface IHorizontalListForwarded extends HTMLDivElement {
 export interface IUseAnimationsParams {
   ulWidth: number
   pageInfo: IInfoState
+}
+
+export interface IPage {
+  dir: number
+  index: number
+}
+
+export interface IInfoState {
+  page: IPage
+  showLeftButton: boolean
+  showRightButton: boolean
 }

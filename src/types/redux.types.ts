@@ -7,6 +7,9 @@ import {
   PayloadAction
 } from '@reduxjs/toolkit'
 
+export type TStoreDispatch = typeof store.dispatch
+export type TStoreState = ReturnType<typeof store.getState>
+
 export type TReducer<SliceState, Payload = SliceState> = CaseReducer<
   SliceState,
   PayloadAction<Payload>
@@ -15,10 +18,6 @@ export type TReducer<SliceState, Payload = SliceState> = CaseReducer<
 export type TExtraReducers<State> = (
   _builder: ActionReducerMapBuilder<State>
 ) => void
-
-export type TStoreState = ReturnType<typeof store.getState>
-
-export type TStoreDispatch = typeof store.dispatch
 
 export type TPayloadCreator<Return, Params> = AsyncThunkPayloadCreator<
   Return,

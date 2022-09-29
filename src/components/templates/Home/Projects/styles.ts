@@ -1,4 +1,6 @@
-import { styled } from '@app/styles'
+import { styled, theme } from '@app/styles'
+
+import { hexToRgba } from '@app/utils/colors'
 
 export const Header = styled('header', {
   flexCenter: 'row',
@@ -19,6 +21,6 @@ export const Style = styled('main', {
   pb: '$10',
 
   color: '$white',
-  background: 'rgba(0, 0, 0, 0.5)',
-  boxShadow: '0px 10px 8px 2px rgba(0,0,0,0.3)'
+  boxShadow: '0px 10px 8px 2px rgba(0,0,0,0.3)',
+  background: hexToRgba(theme.colors.black.value, 0.5)
 })

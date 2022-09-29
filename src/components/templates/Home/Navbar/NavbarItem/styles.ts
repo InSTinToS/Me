@@ -15,7 +15,7 @@ export const Button = styled('button', {
 
   height: '$7',
 
-  svg: { size: '$7' }
+  svg: { size: '$7', fill: '$white' }
 })
 
 export const Style = styled('li', {

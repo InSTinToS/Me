@@ -1,22 +1,24 @@
 import { Avatar, Name, Occupation, Social, Style } from './styles'
-import { IHeaderProps } from './types'
+import { IHeaderForwarded, IHeaderProps } from './types'
 
 import { ChangeTheme } from '@app/components/molecules/ChangeTheme'
 
 import { forwardRef } from 'react'
 
-export const Header = forwardRef<any, IHeaderProps>(({ ...props }, ref) => (
-  <Style ref={ref} {...props}>
-    <Social />
+export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
+  ({ ...props }, ref) => (
+    <Style ref={ref} {...props}>
+      <Social />
 
-    <ChangeTheme />
+      <ChangeTheme />
 
-    <Avatar />
+      <Avatar />
 
-    <Name>Miguel Andrade Barreto</Name>
+      <Name>Miguel Andrade Barreto</Name>
 
-    <Occupation>Desenvolvedor Web</Occupation>
-  </Style>
-))
+      <Occupation>Desenvolvedor Web</Occupation>
+    </Style>
+  )
+)
 
 Header.displayName = 'Header'

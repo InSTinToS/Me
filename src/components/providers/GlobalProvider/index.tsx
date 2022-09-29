@@ -7,7 +7,7 @@ import { reactQueryClient } from '@app/services/api'
 
 import { IChildrenProps } from '@app/types/react.types'
 
-import { ReactQueryDevtools } from 'react-query/devtools'
+// import { ReactQueryDevtools } from 'react-query/devtools'
 import { QueryClientProvider } from 'react-query/react'
 import { Provider as ReduxProvider } from 'react-redux'
 

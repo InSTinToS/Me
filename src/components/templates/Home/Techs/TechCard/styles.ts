@@ -4,11 +4,6 @@ import { hexToRgba } from '@app/utils/colors'
 
 import { motion } from 'framer-motion'
 
-export const Image = styled('img', {
-  mx: 'auto',
-  height: '$11'
-})
-
 export const Progress = styled('hr', {
   width: '100%',
 
@@ -20,20 +15,24 @@ export const Progress = styled('hr', {
   variants: {
     progress: {
       low: { borderColor: '$error' },
-      medium: { borderColor: '$warning' },
-      high: { borderColor: '$success' }
+      high: { borderColor: '$success' },
+      medium: { borderColor: '$warning' }
     }
   }
+})
+
+export const Image = styled('img', {
+  mx: 'auto',
+  height: '$11'
 })
 
 export const Name = styled('div', {
   flexCenter: 'row',
   flex: 1,
+  textAlign: 'center',
 
   mx: 'auto',
   height: '$11',
-
-  textAlign: 'center',
 
   color: '$white'
 })
@@ -51,12 +50,8 @@ export const Style = styled(motion.li, {
 
   variants: {
     color: {
-      white: {
-        background: hexToRgba(theme.colors.white.value, 0.3)
-      },
-      black: {
-        background: hexToRgba(theme.colors.black.value, 0.3)
-      }
+      white: { background: hexToRgba(theme.colors.white.value, 0.3) },
+      black: { background: hexToRgba(theme.colors.black.value, 0.3) }
     }
   }
 })

@@ -6,8 +6,10 @@ import { Linkedin as LinkedinIcon } from '@app/components/atoms/Icon/icons/Linke
 
 import { remToPx } from '@app/utils/pxAndRem'
 
-export const File = styled('div', {
-  width: '100%'
+export const Arrow = styled(ArrowIcon, {
+  size: '$6',
+
+  fill: '$white'
 })
 
 export const RightArrow = styled('button', {
@@ -21,18 +23,10 @@ export const LeftArrow = styled(RightArrow, {
   svg: { rotate: '-180deg' }
 })
 
-export const Arrow = styled(ArrowIcon, {
-  size: '$6',
-
-  fill: '$white'
-})
-
 export const Files = styled('ul', {
   flexCenter: 'row',
 
-  li: {
-    width: '100%'
-  }
+  li: { width: '100%' }
 })
 
 export const Paragraph = styled('p', {
@@ -42,8 +36,23 @@ export const Paragraph = styled('p', {
 
   '& + p': { mt: '$4' },
 
+  '@xl': { gridArea: 'p' }
+})
+
+export const File = styled('div', {
+  width: '100%'
+})
+
+export const Footer = styled('footer', {
+  flexWrap: 'wrap',
+  flexCenter: 'row',
+
+  pt: '$6',
+
   '@xl': {
-    gridArea: 'p'
+    gridArea: 'footer',
+
+    p: 0
   }
 })
 
@@ -60,6 +69,16 @@ export const InfoItem = styled('li', {
     content: '•',
 
     fontWeight: 'bold'
+  }
+})
+
+export const Info = styled('ul', {
+  py: '$4'
+})
+
+export const Paragraphs = styled('div', {
+  '@xl': {
+    gridArea: 'paragraphs'
   }
 })
 
@@ -87,31 +106,6 @@ export const Linkedin = styled(LinkedinIcon, {
   gridArea: 'linkedin',
 
   size: '$8'
-})
-
-export const Footer = styled('footer', {
-  flexWrap: 'wrap',
-  flexCenter: 'row',
-
-  pt: '$6',
-
-  '@xl': {
-    gridArea: 'footer',
-
-    p: 0
-  }
-})
-
-export const Info = styled('ul', {
-  py: '$4',
-
-  '@xl': {}
-})
-
-export const Paragraphs = styled('div', {
-  '@xl': {
-    gridArea: 'paragraphs'
-  }
 })
 
 export const Header = styled('header', {

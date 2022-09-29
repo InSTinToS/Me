@@ -9,3 +9,5 @@ export interface INavbarProps extends HTMLAttributes<HTMLDivElement> {
     onClick?: TButtonProps['onClick']
   }[]
 }
+
+export interface INavbarForwarded extends HTMLDivElement {}
