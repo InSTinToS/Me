@@ -119,9 +119,14 @@ export const Style = styled('header', {
 
   '@md': {
     display: 'grid',
+    gridColumnGap: '$6',
     grid: `
       'avatar  name       color' 
-      'avatar  occupation color' / ${theme.sizes['72'].value} 1fr 1fr
+      'avatar  occupation color' / ${theme.sizes['64'].value} 1fr 1fr
     `
+  },
+
+  '@2xl': {
+    px: `calc(((100vw - ${theme.sizes['2xl'].value}) / 2) + ${theme.sizes[8].value})`
   }
 })

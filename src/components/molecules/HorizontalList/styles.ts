@@ -3,7 +3,8 @@ import { styled } from '@app/styles'
 import { motion } from 'framer-motion'
 
 export const ListItem = styled(motion.li, {
-  position: 'relative'
+  position: 'relative',
+  flexCenter: 'row'
 })
 
 export const List = styled(motion.ul, {})

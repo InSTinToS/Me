@@ -7,8 +7,8 @@ import { hexToRgba } from '@app/utils/colors'
 
 export const TechsList = styled('ul', {
   display: 'flex',
-  justifyContent: 'space-evenly',
   flexWrap: 'wrap',
+  justifyContent: 'space-evenly',
 
   mt: '$8',
   maxHeight: '80vh',
@@ -60,14 +60,9 @@ export const Style = styled('section', {
   position: 'relative',
   zIndex: 2,
 
-  px: '$4',
+  px: '$8',
   py: '$12',
-
-  '@sm': {
-    px: '$10'
-  },
-
-  '@md': {
-    px: '$16'
-  }
+  mx: 'auto',
+  maxWidth: '$2xl',
+  minHeight: '100vh'
 })

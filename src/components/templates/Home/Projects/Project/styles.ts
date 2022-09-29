@@ -7,7 +7,12 @@ import { Linkedin as LinkedinIcon } from '@app/components/atoms/Icon/icons/Linke
 import { remToPx } from '@app/utils/pxAndRem'
 
 export const File = styled('div', {
-  size: '100%'
+  width: '100%',
+
+  '@lg': {
+    width: 'auto',
+    maxHeight: '70vh'
+  }
 })
 
 export const RightArrow = styled('button', {
@@ -35,19 +40,15 @@ export const Files = styled('ul', {
   }
 })
 
-export const Footer = styled('footer', {
-  py: '$6',
-  flexCenter: 'row',
-  flexWrap: 'wrap'
-})
-
 export const Paragraph = styled('p', {
   fontSize: '$4',
   fontWeight: '$2',
   textIndent: remToPx(theme.sizes[4].value),
 
-  '& + p': {
-    mt: '$4'
+  '& + p': { mt: '$4' },
+
+  '@xl': {
+    gridArea: 'p'
   }
 })
 
@@ -65,10 +66,6 @@ export const InfoItem = styled('li', {
 
     fontWeight: 'bold'
   }
-})
-
-export const Info = styled('ul', {
-  py: '$4'
 })
 
 export const Github = styled(GithubIcon, {
@@ -97,6 +94,31 @@ export const Linkedin = styled(LinkedinIcon, {
   size: '$8'
 })
 
+export const Footer = styled('footer', {
+  flexWrap: 'wrap',
+  flexCenter: 'row',
+
+  pt: '$6',
+
+  '@xl': {
+    gridArea: 'footer',
+
+    p: 0
+  }
+})
+
+export const Info = styled('ul', {
+  py: '$4',
+
+  '@xl': {}
+})
+
+export const Paragraphs = styled('div', {
+  '@xl': {
+    gridArea: 'paragraphs'
+  }
+})
+
 export const Header = styled('header', {
   display: 'grid',
   grid: `
@@ -104,9 +126,26 @@ export const Header = styled('header', {
     'linkedin date  github' 1fr / auto 1fr auto
   `,
 
-  alignItems: 'center'
+  alignItems: 'center',
+
+  '@xl': {
+    gridArea: 'header'
+  }
 })
 
 export const Style = styled('article', {
-  px: '$4'
+  px: '$8',
+  maxWidth: '$2xl',
+
+  '@xl': {
+    display: 'grid',
+    gridRowGap: '$4',
+    gridColumnGap: '$12',
+    alignItems: 'center',
+    justifyContent: 'center',
+    grid: `
+      'header     header' 
+      'paragraphs footer'  / 1fr 3fr
+    `
+  }
 })

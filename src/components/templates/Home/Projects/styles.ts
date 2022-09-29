@@ -3,15 +3,20 @@ import { styled } from '@app/styles'
 export const Header = styled('header', {
   flexCenter: 'row',
 
-  px: '$4',
-  py: '$10'
+  px: '$8',
+  py: '$10',
+
+  '@xl': {
+    mx: 'auto',
+    maxWidth: '$2xl'
+  }
 })
 
 export const Style = styled('main', {
   position: 'relative',
   zIndex: 2,
 
-  minHeight: '100vh',
+  pb: '$10',
 
   color: '#ffffff',
   background: 'rgba(0, 0, 0, 0.5)',

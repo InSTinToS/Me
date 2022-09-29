@@ -11,6 +11,7 @@ import {
   LeftArrow,
   Linkedin,
   Paragraph,
+  Paragraphs,
   RightArrow,
   Style,
   Title
@@ -50,18 +51,20 @@ export const Project = ({
         <Github />
       </Header>
 
-      <Info>
-        {occupations?.map((occupation, index) => (
-          <InfoItem key={index}>{occupation}</InfoItem>
+      <Paragraphs>
+        <Info>
+          {occupations?.map((occupation, index) => (
+            <InfoItem key={index}>{occupation}</InfoItem>
+          ))}
+
+          <InfoItem>{subtitle}</InfoItem>
+          <InfoItem>{location}</InfoItem>
+        </Info>
+
+        {paragraphs?.map((paragraph, index) => (
+          <Paragraph key={index}>{paragraph}</Paragraph>
         ))}
-
-        <InfoItem>{subtitle}</InfoItem>
-        <InfoItem>{location}</InfoItem>
-      </Info>
-
-      {paragraphs?.map((paragraph, index) => (
-        <Paragraph key={index}>{paragraph}</Paragraph>
-      ))}
+      </Paragraphs>
 
       <Footer>
         <HorizontalList ref={ulRef}>

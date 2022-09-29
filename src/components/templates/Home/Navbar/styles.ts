@@ -17,19 +17,19 @@ export const NavbarList = styled('ul', {
   alignItems: 'center',
   justifyContent: 'space-between',
 
+  py: '$4',
+  px: '$8',
+  mx: 'auto',
   width: '100%',
+  maxWidth: '$2xl',
 
-  '@md': {
-    justifyContent: 'flex-start'
-  }
+  '@md': { justifyContent: 'flex-start' }
 })
 
 export const Style = styled('nav', {
-  zIndex: 3,
   position: 'relative',
+  zIndex: 3,
 
-  py: '$4',
-  px: '$8',
   width: '100%',
 
   background: 'rgba(0, 0, 0, 0.5)',
