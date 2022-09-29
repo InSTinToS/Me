@@ -2,6 +2,8 @@ import { styled, theme } from '@app/styles'
 
 import { Reset as ResetIcon } from '@app/components/atoms/Icon/icons/Reset'
 
+import { Social as OriginalSocial } from '@app/components/molecules/Social'
+
 export const CustomColor = styled('div', {
   gridArea: 'color',
   flexCenter: 'row',
@@ -9,7 +11,16 @@ export const CustomColor = styled('div', {
   ml: 'auto'
 })
 
-export const ResetButton = styled('button', { mr: '$1' })
+export const ResetButton = styled('button', {
+  mr: '$1',
+
+  '@md': {
+    alignSelf: 'flex-start',
+
+    mt: '$1',
+    mr: '$3'
+  }
+})
 
 export const Reset = styled(ResetIcon, {
   size: '$6',
@@ -77,6 +88,14 @@ export const Occupation = styled('h2', {
 
   '@md': {
     justifySelf: 'flex-start'
+  }
+})
+
+export const Social = styled(OriginalSocial, {
+  gridArea: 'social',
+
+  '@md': {
+    display: 'none'
   }
 })
 

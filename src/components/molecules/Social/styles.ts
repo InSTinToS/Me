@@ -9,20 +9,14 @@ export const Gmail = styled(GmailIcon, {
 })
 
 export const Style = styled('ul', {
-  gridArea: 'social',
-
   display: 'flex',
   alignItems: 'center',
-
-  width: '100%',
 
   li: {
     size: '$8',
 
-    '& + li': { ml: '$4' }
-  },
-
-  '@md': {
-    display: 'none'
+    '& + li': {
+      ml: '$4'
+    }
   }
 })

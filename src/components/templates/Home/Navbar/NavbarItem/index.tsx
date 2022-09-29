@@ -1,14 +1,17 @@
-import { Style } from './styles'
+import { Button, Label, Style } from './styles'
 import { INavbarItem } from './types'
 
 export const NavbarItem = ({
+  label,
   children,
   onButtonClick,
   ...props
 }: INavbarItem) => (
   <Style {...props}>
-    <button type='button' onClick={onButtonClick}>
+    <Button type='button' onClick={onButtonClick}>
       {children}
-    </button>
+
+      <Label>{label}</Label>
+    </Button>
   </Style>
 )

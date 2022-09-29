@@ -1,9 +1,42 @@
 import { styled } from '@app/styles'
 
+export const Label = styled('span', {
+  display: 'none',
+
+  ml: '$4',
+
+  color: '#ffff',
+
+  '@md': { display: 'inline' }
+})
+
+export const Button = styled('button', {
+  flexCenter: 'row',
+
+  height: '$7',
+
+  svg: { size: '$7' }
+})
+
 export const Style = styled('li', {
   flexCenter: 'row',
 
-  '& + li': { ml: '$6' },
+  '&:first-child': { display: 'none' },
 
-  'button > *': { size: '$7' }
+  '@md': {
+    px: '$4',
+
+    borderLeft: '#ffffff solid 1px',
+
+    '&:first-child': {
+      display: 'flex',
+
+      pl: 0,
+      borderLeft: 'none',
+
+      span: { display: 'none' }
+    },
+
+    '&:nth-child(2)': { display: 'none' }
+  }
 })

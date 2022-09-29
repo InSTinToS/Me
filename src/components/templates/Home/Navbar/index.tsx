@@ -1,4 +1,4 @@
-import { NavbarList, Style } from './styles'
+import { NavbarList, Social, Style } from './styles'
 import { INavbarProps } from './types'
 
 import { NavbarItem } from './NavbarItem'
@@ -9,11 +9,13 @@ export const Navbar = forwardRef<any, INavbarProps>(
   ({ items, ...props }, ref) => (
     <Style ref={ref} {...props}>
       <NavbarList>
-        {items?.map(({ icon, onClick }, index) => (
-          <NavbarItem onButtonClick={onClick} key={index}>
+        {items?.map(({ icon, onClick, label }) => (
+          <NavbarItem label={label} onButtonClick={onClick} key={label}>
             {icon}
           </NavbarItem>
         ))}
+
+        <Social />
       </NavbarList>
     </Style>
   )

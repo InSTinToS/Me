@@ -6,13 +6,12 @@ import {
   Occupation,
   Reset,
   ResetButton,
+  Social,
   Style
 } from './styles'
 import { IHeaderProps } from './types'
 
 import { theme } from '@app/styles'
-
-import { Social } from '@app/components/molecules/Social'
 
 import { forwardRef } from 'react'
 

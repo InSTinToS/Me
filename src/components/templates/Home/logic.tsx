@@ -4,6 +4,7 @@ import { INavbarProps } from './Navbar/types'
 
 import { theme } from '@app/styles'
 
+import { House } from '@app/components/atoms/Icon/icons/House'
 import { Phone } from '@app/components/atoms/Icon/icons/Phone'
 import { Project } from '@app/components/atoms/Icon/icons/Project'
 import { Tech } from '@app/components/atoms/Icon/icons/Tech'
@@ -21,24 +22,35 @@ export const useHome = () => {
     color: initialColor,
     contrast: blackOrWhiteByContrast(initialColor)
   })
+
   const techsRef = useRef<HTMLDivElement>(null)
   const projectsRef = useRef<HTMLDivElement>(null)
 
   const navItems: INavbarProps['items'] = [
     {
+      icon: <House />,
+      label: 'Home',
+      onClick: () => {
+        globalThis.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    },
+    {
       icon: <Phone />,
+      label: 'Contato',
       onClick: () => {
         globalThis.scrollTo({ top: 0, behavior: 'smooth' })
       }
     },
     {
       icon: <Tech />,
+      label: 'Tecnologia',
       onClick: () => {
         techsRef.current?.scrollIntoView({ behavior: 'smooth' })
       }
     },
     {
       icon: <Project />,
+      label: 'Projeto',
       onClick: () => {
         projectsRef.current?.scrollIntoView({ behavior: 'smooth' })
       }
