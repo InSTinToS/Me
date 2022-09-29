@@ -14,10 +14,22 @@ export const TechsList = styled('ul', {
   maxHeight: '80vh',
   overflowY: 'scroll',
 
-  ...scrollbar({
-    track: { display: 'none' },
-    thumb: { radius: '$5', width: '$1', color: '#ffffff' }
-  })
+  variants: {
+    color: {
+      white: {
+        ...scrollbar({
+          track: { display: 'none' },
+          thumb: { radius: '$5', width: '$1', color: '$white' }
+        })
+      },
+      black: {
+        ...scrollbar({
+          track: { display: 'none' },
+          thumb: { radius: '$5', width: '$1', color: '$black' }
+        })
+      }
+    }
+  }
 })
 
 export const Search = styled(SearchIcon, {
@@ -34,14 +46,14 @@ export const Input = styled('input', {
   variants: {
     color: {
       white: {
-        color: '#ffffff',
+        color: '$white',
 
-        '&::placeholder': { color: hexToRgba('#ffffff', 0.7) }
+        '&::placeholder': { color: hexToRgba('$white', 0.7) }
       },
       black: {
-        color: '#000000',
+        color: '$black',
 
-        '&::placeholder': { color: hexToRgba('#000000', 0.7) }
+        '&::placeholder': { color: hexToRgba('$black', 0.7) }
       }
     }
   }

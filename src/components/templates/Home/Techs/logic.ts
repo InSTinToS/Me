@@ -1,5 +1,7 @@
 import { ITechCardProps } from './TechCard/types'
 
+import { useAppSelector } from '@app/hooks/useAppSelector'
+
 import { TInputProps } from '@app/types/react.types'
 
 import { techs } from '@public/techs'
@@ -7,6 +9,8 @@ import { techs } from '@public/techs'
 import { useEffect, useState } from 'react'
 
 export const useTechs = () => {
+  const themeState = useAppSelector(({ theme }) => theme)
+
   const [searchValue, setSearchValue] = useState<string>()
   const [techList, setTechList] = useState<ITechCardProps[]>(techs)
 
@@ -24,5 +28,5 @@ export const useTechs = () => {
     )
   }, [searchValue])
 
-  return { onSearchChange, techList }
+  return { onSearchChange, techList, themeState }
 }

@@ -1,4 +1,6 @@
-import { styled } from '@app/styles'
+import { styled, theme } from '@app/styles'
+
+import { hexToRgba } from '@app/utils/colors'
 
 import { motion } from 'framer-motion'
 
@@ -33,7 +35,7 @@ export const Name = styled('div', {
 
   textAlign: 'center',
 
-  color: '#ffffff'
+  color: '$white'
 })
 
 export const Style = styled(motion.li, {
@@ -47,5 +49,14 @@ export const Style = styled(motion.li, {
   height: '$25',
   maxWidth: '$55',
 
-  background: 'rgba(255,255,255,0.2)'
+  variants: {
+    color: {
+      white: {
+        background: hexToRgba(theme.colors.white.value, 0.3)
+      },
+      black: {
+        background: hexToRgba(theme.colors.black.value, 0.3)
+      }
+    }
+  }
 })

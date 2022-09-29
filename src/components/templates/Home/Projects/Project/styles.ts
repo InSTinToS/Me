@@ -7,12 +7,7 @@ import { Linkedin as LinkedinIcon } from '@app/components/atoms/Icon/icons/Linke
 import { remToPx } from '@app/utils/pxAndRem'
 
 export const File = styled('div', {
-  width: '100%',
-
-  '@lg': {
-    width: 'auto',
-    maxHeight: '70vh'
-  }
+  width: '100%'
 })
 
 export const RightArrow = styled('button', {
@@ -29,7 +24,7 @@ export const LeftArrow = styled(RightArrow, {
 export const Arrow = styled(ArrowIcon, {
   size: '$6',
 
-  fill: '#ffffff'
+  fill: '$white'
 })
 
 export const Files = styled('ul', {

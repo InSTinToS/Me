@@ -9,5 +9,5 @@ export const Style = styled('svg', {
 
   transform: 'translate(-50%,-50%)',
 
-  fill: '#ffffff'
+  fill: '$white'
 })

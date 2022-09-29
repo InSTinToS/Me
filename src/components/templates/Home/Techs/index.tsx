@@ -6,23 +6,23 @@ import { TechCard } from './TechCard'
 
 import { forwardRef } from 'react'
 
-export const Techs = forwardRef<any, ITechsProps>(({ customTheme }, ref) => {
-  const { onSearchChange, techList } = useTechs()
+export const Techs = forwardRef<any, ITechsProps>(({ ...props }, ref) => {
+  const { onSearchChange, techList, themeState } = useTechs()
 
   return (
-    <Style ref={ref}>
-      <Filter css={{ borderBottomColor: customTheme.contrast }}>
-        <Search css={{ fill: customTheme.contrast }} />
+    <Style ref={ref} {...props}>
+      <Filter css={{ borderBottomColor: themeState.contrast }}>
+        <Search css={{ fill: themeState.contrast }} />
 
         <Input
           type='text'
           onChange={onSearchChange}
+          color={themeState.contrastName}
           placeholder='Pesquisar tecnologia...'
-          color={customTheme.contrast === '#ffffff' ? 'white' : 'black'}
         />
       </Filter>
 
-      <TechsList>
+      <TechsList color={themeState.contrastName}>
         {techList.map(tech => (
           <TechCard {...tech} key={tech.name} />
         ))}

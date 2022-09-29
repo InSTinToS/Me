@@ -3,12 +3,22 @@ import { ITechCardProps } from './types'
 
 import { transition } from '@app/styles/transition'
 
-export const TechCard = ({ name, path, progress }: ITechCardProps) => (
-  <Style layoutId={name} transition={transition}>
-    {path && <Image src={path} alt={name} />}
+import { useAppSelector } from '@app/hooks/useAppSelector'
 
-    <Name>{name}</Name>
+export const TechCard = ({ name, path, progress }: ITechCardProps) => {
+  const themeState = useAppSelector(({ theme }) => theme)
 
-    <Progress progress={progress} />
-  </Style>
-)
+  return (
+    <Style
+      layoutId={name}
+      transition={transition}
+      color={themeState.contrastName}
+    >
+      {path && <Image src={path} alt={name} />}
+
+      <Name>{name}</Name>
+
+      <Progress progress={progress} />
+    </Style>
+  )
+}

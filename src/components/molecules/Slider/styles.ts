@@ -11,7 +11,7 @@ export const Track = styled(Slider.Track, {
 
   height: '$px',
 
-  bg: '#ffffff'
+  bg: '$white'
 })
 
 export const Thumb = styled(Slider.Thumb, {
@@ -21,7 +21,7 @@ export const Thumb = styled(Slider.Thumb, {
   outline: 'none',
 
   bg: 'transparent',
-  border: 'solid 2px #ffffff',
+  border: 'solid 2px $white',
   boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
 
   '&:hover': { cursor: 'ew-resize' },

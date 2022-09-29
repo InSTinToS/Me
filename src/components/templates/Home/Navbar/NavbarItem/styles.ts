@@ -5,7 +5,7 @@ export const Label = styled('span', {
 
   ml: '$4',
 
-  color: '#ffff',
+  color: '$white',
 
   '@md': { display: 'inline' }
 })
@@ -26,7 +26,7 @@ export const Style = styled('li', {
   '@md': {
     px: '$4',
 
-    borderLeft: '#ffffff solid 1px',
+    borderLeft: '$white solid 1px',
 
     '&:first-child': {
       display: 'flex',

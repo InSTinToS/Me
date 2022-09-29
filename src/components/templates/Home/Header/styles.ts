@@ -1,55 +1,6 @@
 import { styled, theme } from '@app/styles'
 
-import { Reset as ResetIcon } from '@app/components/atoms/Icon/icons/Reset'
-
 import { Social as OriginalSocial } from '@app/components/molecules/Social'
-
-export const CustomColor = styled('div', {
-  gridArea: 'color',
-  flexCenter: 'row',
-
-  ml: 'auto'
-})
-
-export const ResetButton = styled('button', {
-  mr: '$1',
-
-  '@md': {
-    alignSelf: 'flex-start',
-
-    mt: '$1',
-    mr: '$3'
-  }
-})
-
-export const Reset = styled(ResetIcon, {
-  size: '$6',
-
-  variants: {
-    color: {
-      white: { 'path + path': { fill: '#ffffff' } },
-      black: { 'path + path': { fill: '#000000' } }
-    }
-  }
-})
-
-export const ColorPicker = styled('input', {
-  "&[type='color']": {
-    ml: 'auto',
-
-    size: '$8',
-    radius: '$full',
-    borderWidth: '$2',
-    overflow: 'hidden',
-
-    bg: 'transparent',
-    border: 'solid #ffffff',
-
-    '@md': {
-      alignSelf: 'flex-start'
-    }
-  }
-})
 
 export const Avatar = styled('div', {
   gridArea: 'avatar',
@@ -60,7 +11,7 @@ export const Avatar = styled('div', {
   size: '$64',
   radius: '$8',
 
-  bg: '#ffffff'
+  bg: '$white'
 })
 
 export const Name = styled('h1', {
@@ -114,7 +65,7 @@ export const Style = styled('header', {
   px: '$8',
   pt: '$4',
 
-  color: '#ffffff',
+  color: '$white',
   background: 'rgba(0, 0, 0, 0.5)',
 
   '@md': {
