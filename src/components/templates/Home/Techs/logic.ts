@@ -2,9 +2,9 @@ import { ITechCardProps } from './TechCard/types'
 
 import { useAppSelector } from '@app/hooks/useAppSelector'
 
-import { TInputProps } from '@app/types/react.types'
+import { techs } from '@app/services/staticData/techs'
 
-import { techs } from '@public/techs'
+import { TInputProps } from '@app/types/react.types'
 
 import { useEffect, useState } from 'react'
 

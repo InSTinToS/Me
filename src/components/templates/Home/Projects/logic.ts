@@ -1,6 +1,6 @@
 import { IHorizontalListForwarded } from '@app/components/molecules/HorizontalList/types'
 
-import { projects } from '@public/projects'
+import { projects } from '@app/services/staticData/projects'
 
 import { useRef, useState } from 'react'
 
