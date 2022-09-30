@@ -17,6 +17,7 @@
     "@hookform/resolvers": "^2.9.7",
     "@radix-ui/react-collapsible": "^1.0.0",
     "@radix-ui/react-label": "^1.0.0",
+    "@radix-ui/react-slider": "^1.0.0",
     "@radix-ui/react-tooltip": "^1.0.0",
     "@reduxjs/toolkit": "^1.8.3",
     "@stitches/react": "^1.2.8",
