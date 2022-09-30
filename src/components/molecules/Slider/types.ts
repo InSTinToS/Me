@@ -1,6 +1,8 @@
 import { SliderProps } from '@radix-ui/react-slider'
 
 export interface ISliderProps extends SliderProps {
+  max?: number
+  min?: number
   thumbSize: number
   stepPadding: number
   stepsQuantity: number
