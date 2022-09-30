@@ -1,4 +1,4 @@
-import { IProject } from '@app/components/templates/Home/Projects/types'
+import { IProject } from '@app/components/templates/Home/Projects/Project/types'
 
 export const projects: IProject[] = [
   {
