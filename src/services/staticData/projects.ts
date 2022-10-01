@@ -44,7 +44,6 @@ export const projects: IProject[] = [
     date: { start: '01/2022' },
     subtitle: 'Clone UI da Nike',
     occupations: ['Desenvolvedor Front-end'],
-    files: [],
     links: {
       url: 'https://nike-vert.vercel.app/',
       project: 'https://github.com/InSTinToS/Nike'
@@ -66,7 +65,6 @@ export const projects: IProject[] = [
     date: { start: '01/2022' },
     subtitle: 'Clone UI do TikTok',
     occupations: ['Desenvolvedor Front-end'],
-    files: [],
     links: {
       url: 'https://next-tiktok-ten.vercel.app/',
       project: 'https://github.com/InSTinToS/Next-Tiktok'

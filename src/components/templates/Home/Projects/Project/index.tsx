@@ -76,35 +76,37 @@ export const Project = ({
         ))}
       </Paragraphs>
 
-      <Footer>
-        <HorizontalList ref={ulRef}>
-          {files.map(file =>
-            file.isVideo ? (
-              <File key={file.dir} as='video' src={file.dir} controls />
-            ) : (
-              <File key={file.dir} as='img' src={file.dir} alt={file.alt} />
-            )
-          )}
-        </HorizontalList>
+      {files && (
+        <Footer>
+          <HorizontalList ref={ulRef}>
+            {files.map(file =>
+              file.isVideo ? (
+                <File key={file.dir} as='video' src={file.dir} controls />
+              ) : (
+                <File key={file.dir} as='img' src={file.dir} alt={file.alt} />
+              )
+            )}
+          </HorizontalList>
 
-        <div style={{ display: 'flex' }}>
-          <LeftArrow
-            type='button'
-            disabled={!showLeftArrow}
-            onClick={onLeftArrowClick}
-          >
-            {showLeftArrow && <Arrow />}
-          </LeftArrow>
+          <div style={{ display: 'flex' }}>
+            <LeftArrow
+              type='button'
+              disabled={!showLeftArrow}
+              onClick={onLeftArrowClick}
+            >
+              {showLeftArrow && <Arrow />}
+            </LeftArrow>
 
-          <RightArrow
-            type='button'
-            onClick={onRightArrowClick}
-            disabled={!showRightArrow}
-          >
-            {showRightArrow && <Arrow />}
-          </RightArrow>
-        </div>
-      </Footer>
+            <RightArrow
+              type='button'
+              onClick={onRightArrowClick}
+              disabled={!showRightArrow}
+            >
+              {showRightArrow && <Arrow />}
+            </RightArrow>
+          </div>
+        </Footer>
+      )}
     </Style>
   )
 }
