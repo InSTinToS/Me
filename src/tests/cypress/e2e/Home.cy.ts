@@ -1,5 +1,7 @@
 describe('Home', () => {
-  it('', () => {})
+  it('', () => {
+    cy.visit('/')
+  })
 })
 
 export {}

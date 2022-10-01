@@ -10,18 +10,20 @@ export const Slider = ({
   thumbSize,
   stepPadding,
   stepsQuantity,
+  onSliderChange,
   ...props
 }: ISliderProps) => {
-  const { stepSize, dotsCSS } = useSlider({
+  const { stepSize, dotsCSS, onValueChange } = useSlider({
     max,
     min,
     thumbSize,
     stepPadding,
-    stepsQuantity
+    stepsQuantity,
+    onSliderChange
   })
 
   return (
-    <Style step={stepSize} {...props}>
+    <Style step={stepSize} onValueChange={onValueChange} {...props}>
       <Track>
         {dotsCSS.map((css, index) => (
           <Dot key={index} css={css} />

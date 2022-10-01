@@ -2,7 +2,7 @@ import { styled, theme } from '@app/styles'
 
 import { Arrow as ArrowIcon } from '@app/components/atoms/Icon/icons/Arrow'
 import { Github as GithubIcon } from '@app/components/atoms/Icon/icons/Github'
-import { Linkedin as LinkedinIcon } from '@app/components/atoms/Icon/icons/Linkedin'
+import { Link as LinkIcon } from '@app/components/atoms/Icon/icons/Link'
 
 import { remToPx } from '@app/utils/pxAndRem'
 
@@ -13,13 +13,17 @@ export const Arrow = styled(ArrowIcon, {
 })
 
 export const RightArrow = styled('button', {
-  flex: 1,
   flexCenter: 'row',
 
-  mt: '$4'
+  ml: '$8',
+  mt: '$4',
+  size: '$6'
 })
 
 export const LeftArrow = styled(RightArrow, {
+  ml: 0,
+  mr: '$8',
+
   svg: { rotate: '-180deg' }
 })
 
@@ -45,7 +49,7 @@ export const File = styled('div', {
 
 export const Footer = styled('footer', {
   flexWrap: 'wrap',
-  flexCenter: 'row',
+  flexCenter: 'col',
 
   pt: '$6',
 
@@ -102,17 +106,20 @@ export const Title = styled('h3', {
   textAlign: 'center'
 })
 
-export const Linkedin = styled(LinkedinIcon, {
-  gridArea: 'linkedin',
+export const URL = styled(LinkIcon, {
+  gridArea: 'link',
 
-  size: '$8'
+  fill: 'none',
+  stroke: '$info',
+
+  size: '$6'
 })
 
 export const Header = styled('header', {
   display: 'grid',
   grid: `
-    'linkedin title github' 1fr
-    'linkedin date  github' 1fr / auto 1fr auto
+    'link title github' 1fr
+    'link date  github' 1fr / auto 1fr auto
   `,
 
   alignItems: 'center',
@@ -130,7 +137,7 @@ export const Style = styled('article', {
     display: 'grid',
     gridRowGap: '$4',
     gridColumnGap: '$12',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'center',
     grid: `
       'header     header' 

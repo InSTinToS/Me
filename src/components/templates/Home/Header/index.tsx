@@ -3,6 +3,7 @@ import { IHeaderForwarded, IHeaderProps } from './types'
 
 import { ChangeTheme } from '@app/components/molecules/ChangeTheme'
 
+import Image from 'next/image'
 import { forwardRef } from 'react'
 
 export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
@@ -12,7 +13,15 @@ export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
 
       <ChangeTheme />
 
-      <Avatar />
+      <Avatar>
+        <Image
+          priority={true}
+          layout='fill'
+          objectFit='cover'
+          src='/avatar.png'
+          alt='Foto de perfil'
+        />
+      </Avatar>
 
       <Name>Miguel Andrade Barreto</Name>
 

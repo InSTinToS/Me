@@ -6,9 +6,8 @@ import {
 import { useEffect, useRef, useState } from 'react'
 
 export const useProject = () => {
-  const ulRef = useRef<IHorizontalListForwarded>(null)
-
   const [info, setInfo] = useState<IInfoState>()
+  const ulRef = useRef<IHorizontalListForwarded>(null)
 
   const onLeftArrowClick = () =>
     ulRef.current?.paginate && setInfo(ulRef.current.paginate('left'))

@@ -19,7 +19,9 @@ export const reset = {
       cursor: 'pointer',
 
       border: 'none',
-      backgroundColor: 'transparent'
+      backgroundColor: 'transparent',
+
+      '&:disabled': { cursor: 'default' }
     }
   }
 }

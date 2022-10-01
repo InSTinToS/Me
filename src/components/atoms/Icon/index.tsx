@@ -10,6 +10,7 @@ export const Icon = ({
   title,
   children,
   labelledBy,
+  linkTarget = '_self',
   ...props
 }: IIconProps) => {
   const { ariaLabelledBy, descId, titleId } = useIcon({ labelledBy })
@@ -26,7 +27,7 @@ export const Icon = ({
       <desc id={descId}>{desc}</desc>
 
       {href ? (
-        <Link href={href}>
+        <Link href={href} target={linkTarget}>
           <g>{children}</g>
         </Link>
       ) : (

@@ -14,9 +14,9 @@ export const Progress = styled('hr', {
 
   variants: {
     progress: {
-      low: { borderColor: '$error' },
+      low: { borderColor: '$error', mr: '75%' },
       high: { borderColor: '$success' },
-      medium: { borderColor: '$warning' }
+      medium: { borderColor: '$warning', mr: '50%' }
     }
   }
 })

@@ -6,6 +6,7 @@ export interface ISliderProps extends SliderProps {
   thumbSize: number
   stepPadding: number
   stepsQuantity: number
+  onSliderChange: (values: { value: number[]; index: number }) => void
 }
 
 export interface IUseSliderParams {
@@ -14,4 +15,5 @@ export interface IUseSliderParams {
   thumbSize: ISliderProps['thumbSize']
   stepPadding: ISliderProps['stepPadding']
   stepsQuantity: ISliderProps['stepsQuantity']
+  onSliderChange: ISliderProps['onSliderChange']
 }
