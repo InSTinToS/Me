@@ -18,15 +18,10 @@ export const Social = ({ ...props }) => (
       <Tooltip
         sideOffset={remToPxNumber(theme.sizes['2'].value)}
         content={<span>Copiar e-mail</span>}
-        trigger={
-          <button
-            onClick={() => {
-              navigator.clipboard.writeText(personal.email)
-            }}
-          >
-            <Gmail />
-          </button>
-        }
+        trigger={<Gmail title='gmail' />}
+        onTriggerClick={() => {
+          navigator.clipboard.writeText(personal.email)
+        }}
       />
     </li>
 
@@ -36,7 +31,7 @@ export const Social = ({ ...props }) => (
         href={`https://wa.me/${personal.phone}`}
         rel='author noreferrer external noopener'
       >
-        <Whatsapp />
+        <Whatsapp title='whatsapp' />
       </a>
     </li>
 
@@ -46,7 +41,7 @@ export const Social = ({ ...props }) => (
         href='https://www.linkedin.com/in/miguel-andrade-barreto-b0b410191/'
         rel='author noreferrer external noopener'
       >
-        <Linkedin />
+        <Linkedin title='linkedin' />
       </a>
     </li>
 
@@ -56,7 +51,7 @@ export const Social = ({ ...props }) => (
         href='https://github.com/InSTinToS'
         rel='author noreferrer external noopener'
       >
-        <Github />
+        <Github title='github' />
       </a>
     </li>
   </Style>

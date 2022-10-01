@@ -33,6 +33,8 @@ export const Name = styled('h1', {
 })
 
 export const Avatar = styled('div', {
+  position: 'relative',
+  overflow: 'hidden',
   gridArea: 'avatar',
 
   justifySelf: 'center',

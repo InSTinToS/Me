@@ -40,8 +40,9 @@ export const useSlider = ({
       left: `calc(${stepSize * i}% + ${fitSize[i]}px)`
     })
 
-  const onValueChange = (value: number) => {
-    onSliderChange && onSliderChange({ value: value, index: value / stepSize })
+  const onValueChange = (value: number[]) => {
+    onSliderChange &&
+      onSliderChange({ value: value, index: value[0] / stepSize })
   }
 
   return { getFitSize, stepSize, dotsCSS, thumbSize, onValueChange }

@@ -10,7 +10,7 @@ export const useProjects = () => {
 
   const onProjectChange = ({ value, index }: any) => {
     setProject(prev => {
-      if (prev[0] !== value) projectsRef.current?.paginate(index)
+      if (prev[0] !== value[0]) projectsRef.current?.paginate(index)
 
       return value
     })

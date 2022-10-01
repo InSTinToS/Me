@@ -4,10 +4,17 @@ import { ITooltipProps } from './types'
 import * as RadixTooltip from '@radix-ui/react-tooltip'
 import React from 'react'
 
-export const Tooltip = ({ content, trigger, sideOffset }: ITooltipProps) => (
+export const Tooltip = ({
+  content,
+  trigger,
+  sideOffset,
+  onTriggerClick
+}: ITooltipProps) => (
   <RadixTooltip.Provider delayDuration={0} disableHoverableContent>
     <RadixTooltip.Root>
-      <Trigger type='button'>{trigger}</Trigger>
+      <Trigger type='button' onClick={onTriggerClick}>
+        {trigger}
+      </Trigger>
 
       <RadixTooltip.Portal>
         <Content align='start' sideOffset={sideOffset}>
