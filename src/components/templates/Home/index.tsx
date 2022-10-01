@@ -23,8 +23,8 @@ export const Home = () => {
       </Head>
 
       <SmartFixedNav
-        nav={<Navbar items={navItems} />}
         aboveContent={<Header />}
+        nav={<Navbar items={navItems} />}
       />
 
       <Techs ref={techsRef} />

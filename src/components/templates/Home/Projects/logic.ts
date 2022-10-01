@@ -8,12 +8,11 @@ export const useProjects = () => {
   const projectsRef = useRef<IHorizontalListForwarded>(null)
   const [project, setProject] = useState([0])
 
-  const onProjectChange = (e: any) => {
+  const onProjectChange = ({ value, index }: any) => {
     setProject(prev => {
-      if (prev[0] !== e[0])
-        projectsRef.current?.paginate(e[0] / 100 / (projects.length - 1))
+      if (prev[0] !== value) projectsRef.current?.paginate(index)
 
-      return e
+      return value
     })
   }
 

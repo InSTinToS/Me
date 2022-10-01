@@ -19,7 +19,7 @@ export const Style = styled('main', {
   zIndex: 2,
 
   pb: '$10',
-
+  minHeight: '100vh',
   color: '$white',
   boxShadow: '0px 10px 8px 2px rgba(0,0,0,0.3)',
   background: hexToRgba(theme.colors.black.value, 0.5)

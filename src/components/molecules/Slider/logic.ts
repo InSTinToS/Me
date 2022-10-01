@@ -20,11 +20,12 @@ const getFitSize = ({ thumbSize, stepsQuantity }: any) => {
   return positive.concat(negative)
 }
 
-const useSlider = ({
+export const useSlider = ({
   max,
   min,
   thumbSize,
   stepPadding,
+  onSliderChange,
   stepsQuantity
 }: IUseSliderParams) => {
   const dotsCSS: CSS[] = []
@@ -39,7 +40,9 @@ const useSlider = ({
       left: `calc(${stepSize * i}% + ${fitSize[i]}px)`
     })
 
-  return { getFitSize, stepSize, dotsCSS, thumbSize }
-}
+  const onValueChange = (value: number) => {
+    onSliderChange && onSliderChange({ value: value, index: value / stepSize })
+  }
 
-export { useSlider }
+  return { getFitSize, stepSize, dotsCSS, thumbSize, onValueChange }
+}

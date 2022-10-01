@@ -9,12 +9,12 @@ import {
   Info,
   InfoItem,
   LeftArrow,
-  Linkedin,
   Paragraph,
   Paragraphs,
   RightArrow,
   Style,
-  Title
+  Title,
+  URL
 } from './styles'
 import { IProjectProps } from './types'
 
@@ -24,10 +24,11 @@ export const Project = ({
   name,
   date,
   files,
+  links,
   subtitle,
   location,
-  occupations,
-  paragraphs
+  paragraphs,
+  occupations
 }: IProjectProps) => {
   const {
     ulRef,
@@ -40,7 +41,11 @@ export const Project = ({
   return (
     <Style>
       <Header>
-        <Linkedin />
+        {links?.url && (
+          <a href={links.url} target='_blank' rel='noreferrer'>
+            <URL />
+          </a>
+        )}
 
         <Title>{name}</Title>
 
@@ -48,7 +53,11 @@ export const Project = ({
           {date?.start && date.start} {date?.end && `-> ${date.end}`}
         </Date>
 
-        <Github />
+        {links?.project && (
+          <a href={links.project} target='_blank' rel='noreferrer'>
+            <Github />
+          </a>
+        )}
       </Header>
 
       <Paragraphs>
@@ -57,9 +66,9 @@ export const Project = ({
             <InfoItem key={index}>{occupation}</InfoItem>
           ))}
 
-          <InfoItem>{subtitle}</InfoItem>
+          {subtitle && <InfoItem>{subtitle}</InfoItem>}
 
-          <InfoItem>{location}</InfoItem>
+          {location && <InfoItem>{location}</InfoItem>}
         </Info>
 
         {paragraphs?.map((paragraph, index) => (
@@ -78,17 +87,23 @@ export const Project = ({
           )}
         </HorizontalList>
 
-        {showLeftArrow && (
-          <LeftArrow type='button' onClick={onLeftArrowClick}>
-            <Arrow />
+        <div style={{ display: 'flex' }}>
+          <LeftArrow
+            type='button'
+            disabled={!showLeftArrow}
+            onClick={onLeftArrowClick}
+          >
+            {showLeftArrow && <Arrow />}
           </LeftArrow>
-        )}
 
-        {showRightArrow && (
-          <RightArrow type='button' onClick={onRightArrowClick}>
-            <Arrow />
+          <RightArrow
+            type='button'
+            onClick={onRightArrowClick}
+            disabled={!showRightArrow}
+          >
+            {showRightArrow && <Arrow />}
           </RightArrow>
-        )}
+        </div>
       </Footer>
     </Style>
   )

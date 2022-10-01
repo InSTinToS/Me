@@ -1,7 +1,7 @@
 import { Icon } from '../..'
 import { IIconProps } from '../../types'
 
-export const Arrow = ({ ...props }: IIconProps) => (
+export const Link = ({ ...props }: IIconProps) => (
   <Icon viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg' {...props}>
     <path
       strokeWidth='2'
