@@ -40,15 +40,36 @@ export const projects: IProject[] = [
     }
   },
   {
+    name: 'Nike Clone',
+    date: { start: '01/2022' },
+    subtitle: 'Clone UI da Nike',
+    occupations: ['Desenvolvedor Front-end'],
+    files: [],
+    links: {
+      url: 'https://nike-vert.vercel.app/',
+      project: 'https://github.com/InSTinToS/Nike'
+    }
+  },
+  {
     name: 'Youtube Clone',
     date: { start: '07/2022' },
     subtitle: 'Clone UI do Youtube',
+    occupations: ['Desenvolvedor Full-stack'],
     files: [{ alt: 'feed', dir: '/youtubeClone/feed.png' }],
-    occupations: ['Desenvolvedor Full-stack', 'Designer UI/UX'],
-    paragraphs: [],
     links: {
       url: 'https://youtube-clone-lyart.vercel.app/',
       project: 'https://github.com/InSTinToS/Youtube-Clone'
+    }
+  },
+  {
+    name: 'TikTok Clone',
+    date: { start: '01/2022' },
+    subtitle: 'Clone UI do TikTok',
+    occupations: ['Desenvolvedor Front-end'],
+    files: [],
+    links: {
+      url: 'https://next-tiktok-ten.vercel.app/',
+      project: 'https://github.com/InSTinToS/Next-Tiktok'
     }
   }
 ]

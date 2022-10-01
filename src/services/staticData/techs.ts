@@ -1,85 +1,50 @@
 import { ITechCardProps } from '@app/components/templates/Home/Techs/TechCard/types'
 
 export const techs: ITechCardProps[] = [
-  {
-    name: 'React',
-    progress: 'high',
-    path: '/techs/react.png'
-  },
-  {
-    name: 'Styled Components',
-    progress: 'high'
-  },
-  {
-    name: 'Typescript',
-    progress: 'high'
-  },
-  {
-    name: 'HTML5',
-    progress: 'high'
-  },
-  {
-    name: 'CSS3',
-    progress: 'high'
-  },
-  {
-    name: 'Framer-motion',
-    progress: 'high'
-  },
-  {
-    name: 'Redux-Toolkit',
-    progress: 'high'
-  },
-  {
-    name: 'Next',
-    progress: 'high'
-  },
-  {
-    name: 'Github',
-    progress: 'high'
-  },
-  {
-    name: 'Javascript / Ecmascript',
-    progress: 'high'
-  },
-  {
-    name: 'Tailwind',
-    progress: 'high'
-  },
-  {
-    name: 'Docker',
-    progress: 'high'
-  },
-  {
-    name: 'Nest',
-    progress: 'high'
-  },
-  {
-    name: 'SQL',
-    progress: 'high'
-  },
-  {
-    name: 'No SQL',
-    progress: 'high'
-  },
-  {
-    name: 'Prisma',
-    progress: 'high'
-  },
-  {
-    name: 'Graph QL',
-    progress: 'high'
-  },
-  {
-    name: 'Axios',
-    progress: 'high'
-  },
-  {
-    name: 'Apollo Client',
-    progress: 'high'
-  },
-  {
-    name: 'Express',
-    progress: 'high'
-  }
+  { name: 'AWS', progress: 'low' },
+  { name: 'C++', progress: 'low' },
+  { name: 'Java', progress: 'low' },
+  { name: 'Git', progress: 'high' },
+  { name: 'CSS3', progress: 'high' },
+  { name: 'Next', progress: 'high' },
+  { name: 'Jest', progress: 'high' },
+  { name: 'Axios', progress: 'high' },
+  { name: 'HTML5', progress: 'high' },
+  { name: 'React', progress: 'high' },
+  { name: 'Figma', progress: 'high' },
+  { name: 'SQL', progress: 'medium' },
+  { name: 'SEO', progress: 'medium' },
+  { name: 'Github', progress: 'high' },
+  { name: 'Nest', progress: 'medium' },
+  { name: 'Prisma', progress: 'high' },
+  { name: 'Node', progress: 'medium' },
+  { name: 'Cypress', progress: 'high' },
+  { name: 'Docker', progress: 'medium' },
+  { name: 'Unform', progress: 'medium' },
+  { name: 'Formik', progress: 'medium' },
+  { name: 'Tailwind', progress: 'high' },
+  { name: 'Graph QL', progress: 'high' },
+  { name: 'Stitches', progress: 'high' },
+  { name: 'Express', progress: 'medium' },
+  { name: 'Kubernetes', progress: 'low' },
+  { name: 'React-Query', progress: 'low' },
+  { name: 'Radix UI', progress: 'medium' },
+  { name: 'Mongo DB', progress: 'medium' },
+  { name: 'Typescript', progress: 'high' },
+  { name: 'Storybook', progress: 'medium' },
+  { name: 'Photoshop', progress: 'medium' },
+  { name: 'FL Studio', progress: 'medium' },
+  { name: 'Redux-Toolkit', progress: 'high' },
+  { name: 'Framer-motion', progress: 'high' },
+  { name: 'Performance', progress: 'medium' },
+  { name: 'Illustrator', progress: 'medium' },
+  { name: 'Accessibility', progress: 'medium' },
+  { name: 'Apollo Client', progress: 'medium' },
+  { name: 'Cross browser', progress: 'medium' },
+  { name: 'Responsiveness', progress: 'medium' },
+  { name: 'Davinci Resolve', progress: 'medium' },
+  { name: 'React-hook-form', progress: 'medium' },
+  { name: 'Styled Components', progress: 'high' },
+  { name: 'React-testing-library', progress: 'high' },
+  { name: 'Javascript / Ecmascript', progress: 'high' }
 ]
