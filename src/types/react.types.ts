@@ -14,5 +14,5 @@ export type TButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 export type TTimer = string | number | NodeJS.Timeout | undefined
 
 export interface IChildrenProps {
-  children: ReactNode
+  children?: ReactNode
 }

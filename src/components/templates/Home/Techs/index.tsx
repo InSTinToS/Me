@@ -6,10 +6,12 @@ import { TechCard } from './TechCard'
 import { forwardRef } from 'react'
 
 export const Techs = forwardRef<any, any>(({ ...props }, ref) => {
-  const { onSearchChange, techList, themeState } = useTechs()
+  const { onSearchChange, techList, themeState, techsAnimations } = useTechs({
+    ref
+  })
 
   return (
-    <Style ref={ref} {...props}>
+    <Style ref={ref} {...techsAnimations} {...props}>
       <Filter css={{ borderBottomColor: themeState.contrast }}>
         <Search css={{ fill: themeState.contrast }} />
 

@@ -4,7 +4,9 @@ import { Social as OriginalSocial } from '@app/components/molecules/Social'
 
 import { hexToRgba } from '@app/utils/colors'
 
-export const Occupation = styled('h2', {
+import { motion } from 'framer-motion'
+
+export const Occupation = styled(motion.h2, {
   gridArea: 'occupation',
 
   mb: '$4',
@@ -19,7 +21,7 @@ export const Occupation = styled('h2', {
   }
 })
 
-export const Name = styled('h1', {
+export const Name = styled(motion.h1, {
   gridArea: 'name',
 
   fontSize: '$5',
@@ -32,7 +34,7 @@ export const Name = styled('h1', {
   }
 })
 
-export const Avatar = styled('div', {
+export const Avatar = styled(motion.div, {
   position: 'relative',
   overflow: 'hidden',
   gridArea: 'avatar',
@@ -54,7 +56,7 @@ export const Social = styled(OriginalSocial, {
   }
 })
 
-export const Style = styled('header', {
+export const Style = styled(motion.header, {
   position: 'relative',
   zIndex: 2,
 

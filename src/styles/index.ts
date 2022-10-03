@@ -44,6 +44,7 @@ export const globalStyles = globalCss({
 
   body: {
     minWidth: '$xs',
+    overflow: 'auto',
 
     theme: '$secondary',
 
