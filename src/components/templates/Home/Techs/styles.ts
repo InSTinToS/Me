@@ -5,6 +5,8 @@ import { Search as SearchIcon } from '@app/components/atoms/Icon/icons/Search'
 
 import { hexToRgba } from '@app/utils/colors'
 
+import { motion } from 'framer-motion'
+
 export const TechsList = styled('ul', {
   display: 'flex',
   flexWrap: 'wrap',
@@ -68,7 +70,7 @@ export const Filter = styled('div', {
   borderBottom: 'solid 1px'
 })
 
-export const Style = styled('section', {
+export const Style = styled(motion.section, {
   position: 'relative',
   zIndex: 2,
 

@@ -9,11 +9,15 @@ export const projects: IProject[] = [
     links: { url: 'https://dev.steamslab.com/home' },
     occupations: ['Desenvolvedor Front-end', 'Designer UI/UX'],
     files: [
-      { alt: 'Full app', dir: '/steamsLab/full.mp4', isVideo: true },
-      { alt: 'Sign-in page', dir: '/steamsLab/home.png' },
-      { alt: 'Sign-up page', dir: '/steamsLab/sign-up.png' },
-      { alt: 'Seasons page', dir: '/steamsLab/seasons.png' },
-      { alt: 'Solicitation page', dir: '/steamsLab/solicitation.png' }
+      {
+        isVideo: true,
+        dir: '/steamsLab/full.mp4',
+        alt: 'Todas as interações com o aplicativo atualmente'
+      },
+      { alt: 'Página de conectar', dir: '/steamsLab/home.png' },
+      { alt: 'Página de cadastro', dir: '/steamsLab/sign-up.png' },
+      { alt: 'Página de temporadas', dir: '/steamsLab/seasons.png' },
+      { alt: 'Página de solicitações', dir: '/steamsLab/solicitation.png' }
     ],
     paragraphs: [
       'No segundo semestre da universidade ingressei em um projeto de iniciação científica junto a um professor e dois alunos. O professor atuava como Product Owner e Scrum Master, um dos alunos como desenvolvedor back end, o outro como devops, e eu como front end e design.',
@@ -27,9 +31,14 @@ export const projects: IProject[] = [
     occupations: ['Desenvolvedor Full-stack', 'Designer UI/UX'],
     date: { start: '07/2022' },
     files: [
-      { alt: 'Feed', dir: '/myTattoo/feed.png' },
-      { alt: 'Sign-in', dir: '/myTattoo/sign-in.png' },
-      { alt: 'Sign-up', dir: '/myTattoo/sign-up.png' }
+      // {
+      //   isVideo: true,
+      //   dir: '/myTattoo/full.mp4',
+      //   alt: 'Todas as interações com o aplicativo atualmente'
+      // },
+      { alt: 'Página principal do aplicativo', dir: '/myTattoo/feed.png' },
+      { alt: 'Página de conectar', dir: '/myTattoo/sign-in.png' },
+      { alt: 'Página de cadastrar', dir: '/myTattoo/sign-up.png' }
     ],
     paragraphs: [
       'MyTattoo é um dos meus primeiros projetos para praticar meus conhecimentos Full-stack, por enquanto é apenas uma rede social com o tema de tatuagem, mas tenho objetivos ambiciosos para este projeto.'
@@ -54,7 +63,7 @@ export const projects: IProject[] = [
     date: { start: '07/2022' },
     subtitle: 'Clone UI do Youtube',
     occupations: ['Desenvolvedor Full-stack'],
-    files: [{ alt: 'feed', dir: '/youtubeClone/feed.png' }],
+    files: [{ alt: 'Página principal', dir: '/youtubeClone/feed.png' }],
     links: {
       url: 'https://youtube-clone-lyart.vercel.app/',
       project: 'https://github.com/InSTinToS/Youtube-Clone'

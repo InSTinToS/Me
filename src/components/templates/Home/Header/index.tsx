@@ -1,3 +1,4 @@
+import { useHeader } from './logic'
 import { Avatar, Name, Occupation, Social, Style } from './styles'
 import { IHeaderForwarded, IHeaderProps } from './types'
 
@@ -7,27 +8,31 @@ import Image from 'next/image'
 import { forwardRef } from 'react'
 
 export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
-  ({ ...props }, ref) => (
-    <Style ref={ref} {...props}>
-      <Social />
+  ({ ...props }, ref) => {
+    const { avatarAnimations, nameAnimations } = useHeader({ ref })
 
-      <ChangeTheme />
+    return (
+      <Style ref={ref} {...props}>
+        <Social />
 
-      <Avatar>
-        <Image
-          priority={true}
-          layout='fill'
-          objectFit='cover'
-          src='/avatar.png'
-          alt='Foto de perfil'
-        />
-      </Avatar>
+        <ChangeTheme />
 
-      <Name>Miguel Andrade Barreto</Name>
+        <Avatar {...avatarAnimations}>
+          <Image
+            priority={true}
+            layout='fill'
+            objectFit='cover'
+            src='/avatar.png'
+            alt='Foto de perfil'
+          />
+        </Avatar>
 
-      <Occupation>Desenvolvedor Web</Occupation>
-    </Style>
-  )
+        <Name {...nameAnimations}>Miguel Andrade Barreto</Name>
+
+        <Occupation {...nameAnimations}>Desenvolvedor Web</Occupation>
+      </Style>
+    )
+  }
 )
 
 Header.displayName = 'Header'

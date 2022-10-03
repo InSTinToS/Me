@@ -2,6 +2,8 @@ import { styled, theme } from '@app/styles'
 
 import { hexToRgba } from '@app/utils/colors'
 
+import { motion } from 'framer-motion'
+
 export const Header = styled('header', {
   flexCenter: 'row',
 
@@ -14,7 +16,7 @@ export const Header = styled('header', {
   }
 })
 
-export const Style = styled('main', {
+export const Style = styled(motion.main, {
   position: 'relative',
   zIndex: 2,
 
