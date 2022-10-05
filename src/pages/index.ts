@@ -10,5 +10,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const projects = await getProjects()
   const techs = await getTechs()
 
-  return { props: { projects: JSON.parse(projects), techs: JSON.parse(techs) } }
+  return {
+    props: {
+      projects: JSON.parse(projects) || null,
+      techs: JSON.parse(techs) || null
+    }
+  }
 }
