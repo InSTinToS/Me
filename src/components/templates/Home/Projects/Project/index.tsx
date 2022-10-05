@@ -20,7 +20,7 @@ import { IProjectProps } from './types'
 
 import { HorizontalList } from '@app/components/molecules/HorizontalList'
 
-export const Project = ({
+const Project = ({
   name,
   date,
   files,
@@ -122,3 +122,5 @@ export const Project = ({
     </Style>
   )
 }
+
+export default Project
