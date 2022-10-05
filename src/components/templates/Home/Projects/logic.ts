@@ -1,7 +1,5 @@
 import { IHorizontalListForwarded } from '@app/components/molecules/HorizontalList/types'
 
-import { projects } from '@app/services/staticData/projects'
-
 import { useRef, useState } from 'react'
 
 export const useProjects = () => {
@@ -16,5 +14,5 @@ export const useProjects = () => {
     })
   }
 
-  return { projects, project, onProjectChange, projectsRef }
+  return { project, onProjectChange, projectsRef }
 }

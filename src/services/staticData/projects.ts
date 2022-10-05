@@ -11,13 +11,16 @@ export const projects: IProject[] = [
     files: [
       {
         isVideo: true,
-        dir: '/steamsLab/full.mp4',
+        dir: 'projects/steamsLab/full.mp4',
         alt: 'Todas as interações com o aplicativo atualmente'
       },
-      { alt: 'Página de conectar', dir: '/steamsLab/home.png' },
-      { alt: 'Página de cadastro', dir: '/steamsLab/sign-up.png' },
-      { alt: 'Página de temporadas', dir: '/steamsLab/seasons.png' },
-      { alt: 'Página de solicitações', dir: '/steamsLab/solicitation.png' }
+      { alt: 'Página de conectar', dir: 'projects/steamsLab/home.png' },
+      { alt: 'Página de cadastro', dir: 'projects/steamsLab/sign-up.png' },
+      { alt: 'Página de temporadas', dir: 'projects/steamsLab/seasons.png' },
+      {
+        alt: 'Página de solicitações',
+        dir: 'projects/steamsLab/solicitation.png'
+      }
     ],
     paragraphs: [
       'No segundo semestre da universidade ingressei em um projeto de iniciação científica junto a um professor e dois alunos. O professor atuava como Product Owner e Scrum Master, um dos alunos como desenvolvedor back end, o outro como devops, e eu como front end e design.',
@@ -27,18 +30,22 @@ export const projects: IProject[] = [
   },
   {
     name: 'MyTattoo',
+    date: { start: '07/2022' },
     subtitle: 'Rede social de tatuagem',
     occupations: ['Desenvolvedor Full-stack', 'Designer UI/UX'],
-    date: { start: '07/2022' },
     files: [
-      // {
-      //   isVideo: true,
-      //   dir: '/myTattoo/full.mp4',
-      //   alt: 'Todas as interações com o aplicativo atualmente'
-      // },
-      { alt: 'Página principal do aplicativo', dir: '/myTattoo/feed.png' },
-      { alt: 'Página de conectar', dir: '/myTattoo/sign-in.png' },
-      { alt: 'Página de cadastrar', dir: '/myTattoo/sign-up.png' }
+      {
+        alt: 'Página principal do aplicativo',
+        dir: 'projects/myTattoo/feed.png'
+      },
+      {
+        alt: 'Página de acesso ao aplicativo',
+        dir: 'projects/myTattoo/sign-in.png'
+      },
+      {
+        alt: 'Página de cadastro do aplicativo',
+        dir: 'projects/myTattoo/sign-up.png'
+      }
     ],
     paragraphs: [
       'MyTattoo é um dos meus primeiros projetos para praticar meus conhecimentos Full-stack, por enquanto é apenas uma rede social com o tema de tatuagem, mas tenho objetivos ambiciosos para este projeto.'
@@ -63,7 +70,7 @@ export const projects: IProject[] = [
     date: { start: '07/2022' },
     subtitle: 'Clone UI do Youtube',
     occupations: ['Desenvolvedor Full-stack'],
-    files: [{ alt: 'Página principal', dir: '/youtubeClone/feed.png' }],
+    files: [{ alt: 'Página principal', dir: 'projects/youtubeClone/feed.png' }],
     links: {
       url: 'https://youtube-clone-lyart.vercel.app/',
       project: 'https://github.com/InSTinToS/Youtube-Clone'

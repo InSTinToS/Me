@@ -28,30 +28,22 @@ export const useHome = () => {
     {
       icon: <House />,
       label: 'Home',
-      onClick: () => {
-        globalThis.scrollTo({ top: 0, behavior: 'smooth' })
-      }
+      onClick: () => globalThis.scrollTo({ top: 0, behavior: 'smooth' })
     },
     {
       icon: <Phone />,
       label: 'Contato',
-      onClick: () => {
-        globalThis.scrollTo({ top: 0, behavior: 'smooth' })
-      }
+      onClick: () => globalThis.scrollTo({ top: 0, behavior: 'smooth' })
     },
     {
       icon: <Tech />,
       label: 'Tecnologia',
-      onClick: () => {
-        techsRef.current?.scrollIntoView({ behavior: 'smooth' })
-      }
+      onClick: () => techsRef.current?.scrollIntoView({ behavior: 'smooth' })
     },
     {
       icon: <Project />,
       label: 'Projeto',
-      onClick: () => {
-        projectsRef.current?.scrollIntoView({ behavior: 'smooth' })
-      }
+      onClick: () => projectsRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
   ]
 
