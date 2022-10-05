@@ -1,5 +1,6 @@
 import { useProjects } from './logic'
 import { Header, Style } from './styles'
+import { IProjectsProps } from './types'
 
 import { Project } from './Project'
 
@@ -12,29 +13,33 @@ import { remToPxNumber } from '@app/utils/pxAndRem'
 
 import { forwardRef } from 'react'
 
-export const Projects = forwardRef<any, any>((props, ref) => {
-  const { projects, projectsRef, onProjectChange, project } = useProjects()
+export const Projects = forwardRef<any, IProjectsProps>(
+  ({ projects, ...props }, ref) => {
+    const { projectsRef, onProjectChange, project } = useProjects()
 
-  return (
-    <Style ref={ref} {...props}>
-      <Header>
-        <Slider
-          name='project'
-          value={project}
-          stepsQuantity={projects.length}
-          onSliderChange={onProjectChange}
-          thumbSize={remToPxNumber(theme.sizes[8].value)}
-          stepPadding={remToPxNumber(theme.sizes[2].value)}
-        />
-      </Header>
+    return (
+      <Style ref={ref} {...props}>
+        <Header>
+          <Slider
+            name='project'
+            value={project}
+            onSliderChange={onProjectChange}
+            stepsQuantity={projects?.length || 0}
+            thumbSize={remToPxNumber(theme.sizes[8].value)}
+            stepPadding={remToPxNumber(theme.sizes[2].value)}
+          />
+        </Header>
 
-      <HorizontalList ref={projectsRef}>
-        {projects.map(data => (
-          <Project key={data.name} {...data} />
-        ))}
-      </HorizontalList>
-    </Style>
-  )
-})
+        {projects && (
+          <HorizontalList ref={projectsRef}>
+            {projects?.map(data => (
+              <Project key={data.name} {...data} />
+            ))}
+          </HorizontalList>
+        )}
+      </Style>
+    )
+  }
+)
 
 Projects.displayName = 'Projects'
