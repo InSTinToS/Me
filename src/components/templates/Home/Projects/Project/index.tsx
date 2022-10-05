@@ -81,9 +81,9 @@ export const Project = ({
           <HorizontalList ref={ulRef}>
             {files.map(file =>
               file.isVideo ? (
-                <File key={file.dir} as='video' src={file.dir} controls />
+                <File controls as='video' src={file.src} key={file.src} />
               ) : (
-                <File key={file.dir} as='img' src={file.dir} alt={file.alt} />
+                <File key={file.src} as='img' src={file.src} alt={file.alt} />
               )
             )}
           </HorizontalList>
