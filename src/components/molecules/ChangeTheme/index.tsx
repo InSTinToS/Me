@@ -8,7 +8,11 @@ export const ChangeTheme = () => {
   return (
     <Style>
       {showReset && (
-        <ResetButton type='button' onClick={onResetClick}>
+        <ResetButton
+          type='button'
+          onClick={onResetClick}
+          aria-label='Redefine a cor de fundo'
+        >
           <Reset color={themeState.contrastName} />
         </ResetButton>
       )}
@@ -17,6 +21,7 @@ export const ChangeTheme = () => {
         type='color'
         onChange={onColorChange}
         value={themeState.color}
+        aria-label='Alterar cor de fundo'
       />
     </Style>
   )

@@ -1,4 +1,4 @@
-import { getDBConnection } from '@app/services/db'
+import { getDBConnection } from '../shared/database'
 
 import { ITech } from '@app/types/api/tech.types'
 

@@ -10,13 +10,13 @@ export const Navbar = forwardRef<INavbarForwarded, INavbarProps>(
     <Style ref={ref} {...props}>
       <NavbarList>
         {items?.map(({ icon, onClick, label }) => (
-          <NavbarItem label={label} onButtonClick={onClick} key={label}>
+          <NavbarItem key={label} label={label} onButtonClick={onClick}>
             {icon}
           </NavbarItem>
         ))}
-
-        <Social />
       </NavbarList>
+
+      <Social />
     </Style>
   )
 )

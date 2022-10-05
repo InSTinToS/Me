@@ -42,7 +42,12 @@ export const Project = ({
     <Style>
       <Header>
         {links?.url && (
-          <a href={links.url} target='_blank' rel='noreferrer'>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={links.url}
+            aria-label={`${name} url`}
+          >
             <URL />
           </a>
         )}
@@ -54,7 +59,12 @@ export const Project = ({
         </Date>
 
         {links?.project && (
-          <a href={links.project} target='_blank' rel='noreferrer'>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={links.project}
+            aria-label={`${name} project`}
+          >
             <Github />
           </a>
         )}
@@ -93,14 +103,16 @@ export const Project = ({
               type='button'
               disabled={!showLeftArrow}
               onClick={onLeftArrowClick}
+              aria-label='Mostrar imagem anterior'
             >
               {showLeftArrow && <Arrow />}
             </LeftArrow>
 
             <RightArrow
               type='button'
-              onClick={onRightArrowClick}
               disabled={!showRightArrow}
+              onClick={onRightArrowClick}
+              aria-label='Mostrar próxima imagem'
             >
               {showRightArrow && <Arrow />}
             </RightArrow>
