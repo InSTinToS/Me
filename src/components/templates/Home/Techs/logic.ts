@@ -1,17 +1,16 @@
 import { IUseTechsParams } from './types'
 
-import { ITechCardProps } from './TechCard/types'
-
 import { useAppSelector } from '@app/hooks/useAppSelector'
 
-import { techs } from '@app/services/staticData/techs'
-
+import { ITech } from '@app/types/api/tech.types'
 import { TInputProps } from '@app/types/react.types'
 
 import { MotionProps, useInView } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-const onSearchValueChange = (searchedValue?: string) => {
+const onSearchValueChange = (searchedValue?: string, techs?: ITech[]) => {
+  if (!techs) return undefined
+
   if (!searchedValue) {
     const techsByProgress = [
       techs.filter(tech => tech.progress === 'high'),
@@ -22,17 +21,17 @@ const onSearchValueChange = (searchedValue?: string) => {
     return techsByProgress
   }
 
-  return techs.filter(({ name }) =>
+  return techs?.filter(({ name }) =>
     name.toLowerCase().includes(searchedValue.toLowerCase())
   )
 }
 
-export const useTechs = ({ ref }: IUseTechsParams) => {
+export const useTechs = ({ ref, techs }: IUseTechsParams) => {
   const isInView = useInView(ref, { once: true })
   const themeState = useAppSelector(({ theme }) => theme)
   const [searchValue, setSearchValue] = useState<string>()
-  const [techList, setTechList] = useState<ITechCardProps[]>(
-    onSearchValueChange(searchValue)
+  const [techList, setTechList] = useState<ITech[] | undefined>(
+    onSearchValueChange(searchValue, techs)
   )
 
   const techsAnimations: MotionProps = {
@@ -46,10 +45,10 @@ export const useTechs = ({ ref }: IUseTechsParams) => {
   }
 
   useEffect(() => {
-    const newValue = onSearchValueChange(searchValue)
+    const newValue = onSearchValueChange(searchValue, techs)
 
     setTechList(newValue)
-  }, [searchValue])
+  }, [searchValue, techs])
 
   return { onSearchChange, techList, themeState, techsAnimations }
 }
