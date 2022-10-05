@@ -11,8 +11,7 @@ import { SmartFixedNav } from '@app/components/utilities/SmartFixedNav'
 import Head from 'next/head'
 
 export const Home = ({ projects = null, techs = null }: IHomeProps) => {
-  const { techsRef, navItems, bgGradient, projectsAnimations, projectsRef } =
-    useHome()
+  const { techsRef, navItems, bgGradient, projectsRef } = useHome()
 
   return (
     <>
@@ -27,11 +26,7 @@ export const Home = ({ projects = null, techs = null }: IHomeProps) => {
 
       <Techs ref={techsRef} techs={techs || undefined} />
 
-      <Projects
-        ref={projectsRef}
-        projects={projects || undefined}
-        {...projectsAnimations}
-      />
+      <Projects ref={projectsRef as any} projects={projects || undefined} />
 
       <Background css={{ background: bgGradient }} />
     </>

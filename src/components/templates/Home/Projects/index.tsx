@@ -2,8 +2,6 @@ import { useProjects } from './logic'
 import { Header, Style } from './styles'
 import { IProjectsProps } from './types'
 
-import { Project } from './Project'
-
 import { theme } from '@app/styles'
 
 import { HorizontalList } from '@app/components/molecules/HorizontalList'
@@ -11,14 +9,25 @@ import { Slider } from '@app/components/molecules/Slider'
 
 import { remToPxNumber } from '@app/utils/pxAndRem'
 
+import dynamic from 'next/dynamic'
 import { forwardRef } from 'react'
+
+const DynamicProject = dynamic(() => import('./Project') as any, {
+  suspense: true
+})
 
 export const Projects = forwardRef<any, IProjectsProps>(
   ({ projects, ...props }, ref) => {
-    const { projectsRef, onProjectChange, project } = useProjects()
+    const {
+      projectsRef,
+      projectsAnimations,
+      onProjectChange,
+      project,
+      isInView
+    } = useProjects({ ref })
 
     return (
-      <Style ref={ref} {...props}>
+      <Style ref={ref} {...props} {...projectsAnimations}>
         <Header>
           <Slider
             name='project'
@@ -30,10 +39,10 @@ export const Projects = forwardRef<any, IProjectsProps>(
           />
         </Header>
 
-        {projects && (
+        {projects && isInView && (
           <HorizontalList ref={projectsRef}>
-            {projects?.map(data => (
-              <Project key={data.name} {...data} />
+            {projects.map(data => (
+              <DynamicProject key={data.name} {...data} />
             ))}
           </HorizontalList>
         )}

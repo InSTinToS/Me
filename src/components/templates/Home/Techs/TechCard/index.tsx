@@ -5,7 +5,9 @@ import { transition } from '@app/styles/transition'
 
 import { useAppSelector } from '@app/hooks/useAppSelector'
 
-export const TechCard = ({ name, path, progress }: ITechCardProps) => {
+import { memo } from 'react'
+
+const TechCardComponent = ({ name, path, progress }: ITechCardProps) => {
   const themeState = useAppSelector(({ theme }) => theme)
 
   return (
@@ -22,3 +24,5 @@ export const TechCard = ({ name, path, progress }: ITechCardProps) => {
     </Style>
   )
 }
+
+export const TechCard = memo(TechCardComponent)
