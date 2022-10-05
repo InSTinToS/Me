@@ -8,9 +8,9 @@ import { Whatsapp } from '@app/components/atoms/Icon/icons/Whatsapp'
 
 import { Tooltip } from '@app/components/molecules/Tooltip'
 
-import { personal } from '@app/services/staticData/personal'
-
 import { remToPxNumber } from '@app/utils/pxAndRem'
+
+import { personal } from '@app/static/personal'
 
 export const Social = ({ ...props }) => (
   <Style {...props}>
@@ -28,16 +28,18 @@ export const Social = ({ ...props }) => (
     <li>
       <a
         target='_blank'
+        aria-label='Whatsapp'
         href={`https://wa.me/${personal.phone}`}
         rel='author noreferrer external noopener'
       >
-        <Whatsapp title='whatsapp' />
+        <Whatsapp title='Whatsapp' />
       </a>
     </li>
 
     <li>
       <a
         target='_blank'
+        aria-label='Linkedin'
         href='https://www.linkedin.com/in/miguel-andrade-barreto-b0b410191/'
         rel='author noreferrer external noopener'
       >
@@ -48,6 +50,7 @@ export const Social = ({ ...props }) => (
     <li>
       <a
         target='_blank'
+        aria-label='Github'
         href='https://github.com/InSTinToS'
         rel='author noreferrer external noopener'
       >

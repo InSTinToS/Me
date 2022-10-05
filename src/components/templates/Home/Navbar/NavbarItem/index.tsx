@@ -8,7 +8,7 @@ export const NavbarItem = ({
   ...props
 }: INavbarItem) => (
   <Style {...props}>
-    <Button type='button' onClick={onButtonClick}>
+    <Button type='button' onClick={onButtonClick} aria-label={label}>
       {children}
 
       <Label>{label}</Label>

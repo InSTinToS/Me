@@ -19,8 +19,6 @@ export const NavbarList = styled('ul', {
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  py: '$4',
-  px: '$8',
   mx: 'auto',
   width: '100%',
   maxWidth: '$2xl',
@@ -31,6 +29,13 @@ export const NavbarList = styled('ul', {
 export const Style = styled('nav', {
   position: 'relative',
   zIndex: 3,
+
+  py: '$4',
+  px: '$8',
+
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 
   width: '100%',
 

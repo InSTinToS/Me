@@ -1,15 +1,14 @@
-import { getProjects } from './api/projects'
-import { getTechs } from './api/techs'
-
 import { Home } from '@app/components/templates/Home'
 
+import { getProjects } from '@app/backend/modules/projects'
+import { getTechs } from '@app/backend/modules/techs'
 import { GetStaticProps } from 'next'
 
-export const getStaticProps: GetStaticProps = async () => {
-  const projects = JSON.parse(await getProjects())
-  const techs = JSON.parse(await getTechs())
-
-  return { props: { projects, techs } }
-}
-
 export default Home
+
+export const getStaticProps: GetStaticProps = async () => {
+  const projects = await getProjects()
+  const techs = await getTechs()
+
+  return { props: { projects: JSON.parse(projects), techs: JSON.parse(techs) } }
+}

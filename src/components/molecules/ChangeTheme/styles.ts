@@ -43,7 +43,7 @@ export const ResetButton = styled('button', {
   }
 })
 
-export const Style = styled('div', {
+export const Style = styled('form', {
   gridArea: 'color',
 
   flexCenter: 'row',

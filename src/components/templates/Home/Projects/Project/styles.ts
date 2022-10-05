@@ -27,12 +27,6 @@ export const LeftArrow = styled(RightArrow, {
   svg: { rotate: '-180deg' }
 })
 
-export const Files = styled('ul', {
-  flexCenter: 'row',
-
-  li: { width: '100%' }
-})
-
 export const Paragraph = styled('p', {
   fontSize: '$4',
   fontWeight: '$2',

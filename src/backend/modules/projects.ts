@@ -1,5 +1,5 @@
-import { getObjectSignedUrl } from '@app/services/aws/s3'
-import { getDBConnection } from '@app/services/db'
+import { getObjectSignedUrl } from '../shared/aws/s3'
+import { getDBConnection } from '../shared/database'
 
 import { IProject } from '@app/types/api/project.types'
 

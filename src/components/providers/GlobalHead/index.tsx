@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import { personal } from '@app/services/staticData/personal'
+import { personal } from '@app/static/personal'
 
 export const Fonts = () => (
   <>
