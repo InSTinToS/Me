@@ -4,6 +4,19 @@ import { hexToRgba } from '@app/utils/colors'
 
 import * as Slider from '@radix-ui/react-slider'
 
+export const Name = styled('span', {
+  position: 'absolute',
+  left: 0,
+
+  display: 'none',
+
+  transform: 'translate(-50%,-200%)',
+
+  '@sm': {
+    display: 'block'
+  }
+})
+
 export const Thumb = styled(Slider.Thumb, {
   display: 'block',
 

@@ -6,6 +6,27 @@ import { hexToRgba } from '@app/utils/colors'
 
 import { motion } from 'framer-motion'
 
+export const Abstract = styled('p', {
+  gridArea: 'abstract',
+
+  py: '$4',
+
+  textAlign: 'center',
+
+  '&, a': {
+    fontSize: '$4',
+    fontWeight: '$2',
+
+    color: '$white'
+  },
+
+  '@md': {
+    py: 0,
+
+    textAlign: 'left'
+  }
+})
+
 export const Occupation = styled(motion.h2, {
   gridArea: 'occupation',
 
@@ -66,6 +87,7 @@ export const Style = styled(motion.header, {
     'avatar     avatar'
     'name       name'
     'occupation occupation'
+    'abstract   abstract'
   `,
 
   px: '$8',
@@ -79,7 +101,8 @@ export const Style = styled(motion.header, {
     gridColumnGap: '$6',
     grid: `
       'avatar  name       color' 
-      'avatar  occupation color' / ${theme.sizes['64'].value} 1fr 1fr
+      'avatar  occupation color' ${theme.sizes['13'].value}
+      'avatar  abstract   abstract'  / ${theme.sizes['64'].value} 1fr ${theme.sizes['8'].value}
     `
   },
 

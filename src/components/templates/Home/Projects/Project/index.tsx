@@ -109,25 +109,27 @@ const Project = ({
             )}
           </HorizontalList>
 
-          <div style={{ display: 'flex' }}>
-            <LeftArrow
-              type='button'
-              disabled={!showLeftArrow}
-              onClick={onLeftArrowClick}
-              aria-label='Mostrar imagem anterior'
-            >
-              {showLeftArrow && <Arrow />}
-            </LeftArrow>
+          {files.length !== 1 && (
+            <div style={{ display: 'flex' }}>
+              <LeftArrow
+                type='button'
+                disabled={!showLeftArrow}
+                onClick={onLeftArrowClick}
+                aria-label='Mostrar imagem anterior'
+              >
+                {showLeftArrow && <Arrow />}
+              </LeftArrow>
 
-            <RightArrow
-              type='button'
-              disabled={!showRightArrow}
-              onClick={onRightArrowClick}
-              aria-label='Mostrar próxima imagem'
-            >
-              {showRightArrow && <Arrow />}
-            </RightArrow>
-          </div>
+              <RightArrow
+                type='button'
+                disabled={!showRightArrow}
+                onClick={onRightArrowClick}
+                aria-label='Mostrar próxima imagem'
+              >
+                {showRightArrow && <Arrow />}
+              </RightArrow>
+            </div>
+          )}
         </Footer>
       )}
     </Style>
