@@ -10,7 +10,7 @@ export const Social = styled(OriginalSocial, {
   '@md': {
     display: 'flex',
 
-    ml: 'auto'
+    mr: 'auto'
   }
 })
 
@@ -19,9 +19,9 @@ export const NavbarList = styled('ul', {
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  mx: 'auto',
+  ml: 'auto',
   width: '100%',
-  maxWidth: '$2xl',
+  maxWidth: `calc(${theme.sizes['2xl'].value} - ${theme.sizes['44'].value} - ${theme.sizes['16'].value}) `,
 
   '@md': { justifyContent: 'flex-start' }
 })
@@ -35,7 +35,7 @@ export const Style = styled('nav', {
 
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
 
   width: '100%',
 

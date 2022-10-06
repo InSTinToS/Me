@@ -19,10 +19,8 @@ const s3Client = new S3Client({
 export const getObjectSignedUrl = async (fileName: string) => {
   const params = { Key: fileName, Bucket: s3Data.name }
 
-  const seconds = 100
   const command = new GetObjectCommand(params)
-
-  const url = await getSignedUrl(s3Client, command, { expiresIn: seconds })
+  const url = await getSignedUrl(s3Client, command)
 
   return url
 }

@@ -31,12 +31,13 @@ const Project = ({
   occupations
 }: IProjectProps) => {
   const {
+    urls,
     ulRef,
     showLeftArrow,
     showRightArrow,
     onLeftArrowClick,
     onRightArrowClick
-  } = useProject()
+  } = useProject({ files, name })
 
   return (
     <Style>
@@ -89,11 +90,21 @@ const Project = ({
       {files && (
         <Footer>
           <HorizontalList ref={ulRef}>
-            {files.map(file =>
+            {files.map((file, index) =>
               file.isVideo ? (
-                <File controls as='video' src={file.src} key={file.src} />
+                <File
+                  controls
+                  as='video'
+                  key={file.alt}
+                  src={urls?.[index] || ''}
+                />
               ) : (
-                <File key={file.src} as='img' src={file.src} alt={file.alt} />
+                <File
+                  as='img'
+                  key={file.alt}
+                  alt={file.alt}
+                  src={urls?.[index] || ''}
+                />
               )
             )}
           </HorizontalList>

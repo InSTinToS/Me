@@ -24,6 +24,7 @@
     "@reduxjs/toolkit": "^1.8.3",
     "@stitches/react": "^1.2.8",
     "aws-sdk": "^2.1228.0",
+    "axios": "^1.0.0",
     "dotenv": "^16.0.3",
     "framer-motion": "^6.5.1",
     "mongodb": "^4.10.0",

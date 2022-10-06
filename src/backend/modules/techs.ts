@@ -1,10 +1,8 @@
-import { getDBConnection } from '../shared/database'
-
 import { ITech } from '@app/types/api/tech.types'
 
-export const getTechs = async () => {
-  const dbConnection = await getDBConnection()
+import { MongoClient } from 'mongodb'
 
+export const getTechs = async (dbConnection: MongoClient) => {
   const techs = await dbConnection
     .db()
     .collection<ITech>('Techs')
