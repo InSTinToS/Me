@@ -6,7 +6,7 @@ import { store } from '@app/store'
 import { IChildrenProps } from '@app/types/react.types'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
+// import { ReactQueryDevtools } from 'react-query/devtools'
 import { Provider as ReduxProvider } from 'react-redux'
 
 const queryClient = new QueryClient()
@@ -18,7 +18,7 @@ export const GlobalProvider = ({ children }: IChildrenProps) => (
         <QueryClientProvider client={queryClient}>
           {children}
 
-          <ReactQueryDevtools />
+          {/* <ReactQueryDevtools /> */}
         </QueryClientProvider>
       </RadixProvider>
     </ThemeProvider>

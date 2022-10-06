@@ -76,7 +76,7 @@ export const GlobalHead = () => (
     />
     <meta
       name='keywords'
-      content='Miguel Andrade Barreto, Miguel, Desenvolvedor Web, front-end, front end, full stack, full-stack, react,next, nextjs, reactjs, react js, typescript, Steams Lab, Anhembi Morumbi, instintos, júnior'
+      content='Miguel Andrade Barreto, Miguel, Miguel Barreto, miguelbarreto, miguelandrade,  Desenvolvedor Web, front-end, front end, full stack, full-stack, react,next, nextjs, reactjs, react js, typescript, Steams Lab, Anhembi Morumbi, instintos, júnior'
     />
     <meta name='author' content={`Miguel Andrade Barreto, ${personal.email}`} />
     <meta
