@@ -1,10 +1,11 @@
 import { useSlider } from './logic'
-import { Range, Style, Thumb, Track } from './styles'
+import { Name, Range, Style, Thumb, Track } from './styles'
 import { ISliderProps } from './types'
 
 import { Dot } from './Dot'
 
 export const Slider = ({
+  labels,
   min = 0,
   max = 100,
   thumbSize,
@@ -26,7 +27,15 @@ export const Slider = ({
     <Style step={stepSize} onValueChange={onValueChange} {...props}>
       <Track>
         {dotsCSS.map((css, index) => (
-          <Dot key={index} css={css} />
+          <>
+            {labels && labels[index] && (
+              <Name key={index} css={{ ...css, p: 0, size: 'auto' }}>
+                {labels[index]}
+              </Name>
+            )}
+
+            <Dot key={index} css={css} />
+          </>
         ))}
 
         <Range />

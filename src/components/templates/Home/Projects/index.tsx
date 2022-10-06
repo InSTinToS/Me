@@ -16,11 +16,11 @@ import { forwardRef } from 'react'
 export const Projects = forwardRef<any, IProjectsProps>(
   ({ projects, ...props }, ref) => {
     const {
+      project,
+      isInView,
       projectsRef,
       projectsAnimations,
-      onProjectChange,
-      project,
-      isInView
+      onProjectChange
     } = useProjects({ ref })
 
     return (
@@ -31,6 +31,7 @@ export const Projects = forwardRef<any, IProjectsProps>(
             value={project}
             onSliderChange={onProjectChange}
             stepsQuantity={projects?.length || 0}
+            labels={projects?.map(project => project.name)}
             thumbSize={remToPxNumber(theme.sizes[8].value)}
             stepPadding={remToPxNumber(theme.sizes[2].value)}
           />
