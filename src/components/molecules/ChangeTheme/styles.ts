@@ -4,18 +4,14 @@ import { Reset as ResetIcon } from '@app/components/atoms/Icon/icons/Reset'
 
 export const ColorPicker = styled('input', {
   "&[type='color']": {
-    ml: 'auto',
     size: '$8',
+    minSize: '$8',
     radius: '$full',
     borderWidth: '$2',
     overflow: 'hidden',
 
     bg: 'transparent',
-    border: 'solid $white',
-
-    '@md': {
-      alignSelf: 'flex-start'
-    }
+    border: 'solid $white'
   }
 })
 
@@ -34,11 +30,11 @@ export const Reset = styled(ResetIcon, {
 
 export const ResetButton = styled('button', {
   mr: '$1',
+  mt: '$1',
 
   '@md': {
     alignSelf: 'flex-start',
 
-    mt: '$1',
     mr: '$3'
   }
 })
@@ -46,7 +42,7 @@ export const ResetButton = styled('button', {
 export const Style = styled('form', {
   gridArea: 'color',
 
-  flexCenter: 'row',
-
-  ml: 'auto'
+  display: 'flex',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-end'
 })
