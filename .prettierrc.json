@@ -19,6 +19,8 @@
     "^@app/components/organisms",
     "^@app/components/templates",
     "^@app/components/providers",
+    "^@app/components/utilities",
+    "^@app/static",
     "^@app/pages",
     "^@app/hooks",
     "^@app/store",

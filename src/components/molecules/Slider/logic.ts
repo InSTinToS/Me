@@ -1,8 +1,8 @@
-import { IUseSliderParams } from './types'
+import { IUseSliderParams, TGetFitSize } from './types'
 
 import { CSS } from '@stitches/react'
 
-const getFitSize = ({ thumbSize, stepsQuantity }: any) => {
+const getFitSize: TGetFitSize = ({ thumbSize, stepsQuantity }) => {
   const minus = thumbSize / (stepsQuantity - 1)
   const negative = []
 
@@ -25,8 +25,8 @@ export const useSlider = ({
   min,
   thumbSize,
   stepPadding,
-  onSliderChange,
-  stepsQuantity
+  stepsQuantity,
+  onSliderChange
 }: IUseSliderParams) => {
   const dotsCSS: CSS[] = []
   const stepSize = (max - min) / (stepsQuantity - 1)

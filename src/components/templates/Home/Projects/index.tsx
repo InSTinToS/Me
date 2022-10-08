@@ -6,8 +6,8 @@ import Project from './Project'
 
 import { theme } from '@app/styles'
 
-import { HorizontalList } from '@app/components/molecules/HorizontalList'
-import { Slider } from '@app/components/molecules/Slider'
+import { HorizontalList } from '@app/components/utilities/HorizontalList'
+import { Slider } from '@app/components/utilities/Slider'
 
 import { remToPxNumber } from '@app/utils/pxAndRem'
 

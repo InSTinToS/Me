@@ -1,6 +1,6 @@
 import { IUseProjectsParams } from './types'
 
-import { IHorizontalListForwarded } from '@app/components/molecules/HorizontalList/types'
+import { IHorizontalListForwarded } from '@app/components/utilities/HorizontalList/types'
 
 import { MotionProps, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'

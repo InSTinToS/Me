@@ -1,3 +1,4 @@
+import { useSocial } from './logic'
 import { Gmail, Style } from './styles'
 
 import { theme } from '@app/styles'
@@ -6,89 +7,53 @@ import { ColoredPDF } from '@app/components/atoms/Icon/icons/ColoredPDF'
 import { Github } from '@app/components/atoms/Icon/icons/Github'
 import { Linkedin } from '@app/components/atoms/Icon/icons/Linkedin'
 import { Whatsapp } from '@app/components/atoms/Icon/icons/Whatsapp'
+import { Link } from '@app/components/atoms/Link'
 
-import { Tooltip } from '@app/components/molecules/Tooltip'
+import { Tooltip } from '@app/components/utilities/Tooltip'
 
 import { remToPxNumber } from '@app/utils/pxAndRem'
 
-import { personal } from '@app/static/personal'
-import axios from 'axios'
-import { useQuery } from 'react-query'
-
 export const Social = ({ ...props }) => {
-  const { data } = useQuery(
-    `resume`,
-    async () => {
-      const res = await axios.post('/api/url', {
-        paths: [personal.resume]
-      })
-
-      return res.data
-    },
-    {
-      refetchOnMount: false,
-      keepPreviousData: true,
-      refetchOnWindowFocus: false
-    }
-  )
+  const { resume, personal, onTooltipClick } = useSocial()
 
   return (
     <Style {...props}>
-      {data?.urls[0] && (
+      {resume && (
         <li>
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href={data.urls[0]}
-            aria-label='resume'
-          >
+          <Link href={resume} aria-label='resume'>
             <ColoredPDF />
-          </a>
+          </Link>
         </li>
       )}
 
       <li>
         <Tooltip
-          sideOffset={remToPxNumber(theme.sizes['2'].value)}
-          content={<span>Copiar e-mail</span>}
+          onTriggerClick={onTooltipClick}
           trigger={<Gmail title='gmail' />}
-          onTriggerClick={() => {
-            navigator.clipboard.writeText(personal.email)
-          }}
+          content={<span>Copiar e-mail</span>}
+          sideOffset={remToPxNumber(theme.sizes['2'].value)}
         />
       </li>
 
       <li>
-        <a
-          target='_blank'
-          aria-label='Whatsapp'
-          href={`https://wa.me/${personal.phone}`}
-          rel='author noreferrer external noopener'
-        >
+        <Link aria-label='Whatsapp' href={`https://wa.me/${personal.phone}`}>
           <Whatsapp title='Whatsapp' />
-        </a>
+        </Link>
       </li>
 
       <li>
-        <a
-          target='_blank'
+        <Link
           aria-label='Linkedin'
           href='https://www.linkedin.com/in/miguel-andrade-barreto-b0b410191/'
-          rel='author noreferrer external noopener'
         >
           <Linkedin title='linkedin' />
-        </a>
+        </Link>
       </li>
 
       <li>
-        <a
-          target='_blank'
-          aria-label='Github'
-          href='https://github.com/InSTinToS'
-          rel='author noreferrer external noopener'
-        >
+        <Link aria-label='Github' href='https://github.com/InSTinToS'>
           <Github title='github' />
-        </a>
+        </Link>
       </li>
     </Style>
   )
