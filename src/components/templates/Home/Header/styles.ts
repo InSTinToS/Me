@@ -56,15 +56,16 @@ export const Name = styled(motion.h1, {
 })
 
 export const Avatar = styled(motion.div, {
-  position: 'relative',
-  overflow: 'hidden',
   gridArea: 'avatar',
+
+  position: 'relative',
 
   justifySelf: 'center',
 
   my: '$6',
   size: '$64',
   radius: '$8',
+  overflow: 'hidden',
 
   bg: '$white'
 })
@@ -102,7 +103,7 @@ export const Style = styled(motion.header, {
     grid: `
       'avatar  name       color' 
       'avatar  occupation color' ${theme.sizes['13'].value}
-      'avatar  abstract   abstract'  / ${theme.sizes['64'].value} 1fr ${theme.sizes['8'].value}
+      'avatar  abstract   abstract'  / ${theme.sizes['64'].value} 1fr ${theme.sizes['17'].value}
     `
   },
 

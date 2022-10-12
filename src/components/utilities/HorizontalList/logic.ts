@@ -47,7 +47,7 @@ export const useHorizontalList = ({
         newIndex = pageInfo.page.index + directionNumber
       }
 
-      const isOnLimit = newIndex < 0 || newIndex > children.length
+      const isOnLimit = newIndex < 0 || newIndex > children.length - 1
 
       const buttons = {
         showLeftButton: newIndex !== 0,

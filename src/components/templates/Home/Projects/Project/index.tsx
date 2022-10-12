@@ -18,7 +18,7 @@ import {
 } from './styles'
 import { IProjectProps } from './types'
 
-import { HorizontalList } from '@app/components/molecules/HorizontalList'
+import { HorizontalList } from '@app/components/utilities/HorizontalList'
 
 const Project = ({
   name,

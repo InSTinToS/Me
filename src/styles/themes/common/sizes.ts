@@ -1,16 +1,12 @@
+import { media } from './media'
+
 import { pxToRem } from '@app/utils/pxAndRem'
 
 export const sizes = {
   px: '1px',
   auto: 'auto',
 
-  xs: pxToRem(320),
-  sm: pxToRem(640),
-  md: pxToRem(768),
-  lg: pxToRem(1024),
-  xl: pxToRem(1280),
-  '2xl': pxToRem(1536),
-  '3xl': pxToRem(1920),
+  ...media,
 
   0: pxToRem(0),
   0.5: pxToRem(2),

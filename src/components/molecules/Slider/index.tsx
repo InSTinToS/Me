@@ -27,15 +27,13 @@ export const Slider = ({
     <Style step={stepSize} onValueChange={onValueChange} {...props}>
       <Track>
         {dotsCSS.map((css, index) => (
-          <>
+          <div key={index}>
             {labels && labels[index] && (
-              <Name key={index} css={{ ...css, p: 0, size: 'auto' }}>
-                {labels[index]}
-              </Name>
+              <Name css={{ ...css, p: 0, size: 'auto' }}>{labels[index]}</Name>
             )}
 
-            <Dot key={index} css={css} />
-          </>
+            <Dot css={css} />
+          </div>
         ))}
 
         <Range />

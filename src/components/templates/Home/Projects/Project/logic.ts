@@ -3,7 +3,7 @@ import { IUseProjectParams } from './types'
 import {
   IHorizontalListForwarded,
   IInfoState
-} from '@app/components/molecules/HorizontalList/types'
+} from '@app/components/utilities/HorizontalList/types'
 
 import axios from 'axios'
 import { useEffect, useRef, useState } from 'react'

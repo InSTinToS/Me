@@ -38,6 +38,7 @@ export const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
 
+    color: '$white',
     fontSize: '$3',
     fontFamily: '$roboto'
   },

@@ -18,3 +18,8 @@ export interface IUseSliderParams {
   stepsQuantity: ISliderProps['stepsQuantity']
   onSliderChange: ISliderProps['onSliderChange']
 }
+
+export type TGetFitSize = (params: {
+  thumbSize: IUseSliderParams['thumbSize']
+  stepsQuantity: IUseSliderParams['stepsQuantity']
+}) => number[]

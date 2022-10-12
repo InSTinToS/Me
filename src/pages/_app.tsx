@@ -1,5 +1,3 @@
-import { globalStyles } from '@app/styles'
-
 import { GlobalProvider } from '@app/components/providers/GlobalProvider'
 
 import type { TAppPropsWithLayout } from '@app/types/next.types'
@@ -14,8 +12,6 @@ const MyApp = ({ Component, pageProps }: TAppPropsWithLayout) => {
       const loader = document.getElementById('globalLoader')
       if (loader) loader.style.display = 'none'
     }
-
-    globalStyles()
   }, [])
 
   return getLayout(
