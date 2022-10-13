@@ -9,6 +9,8 @@ import { Techs } from './Techs'
 
 import { SmartFixedNav } from '@app/components/utilities/SmartFixedNav'
 
+import { personal } from '@app/static/personal'
+
 import Head from 'next/head'
 
 export const Home = ({ projects, techs }: IHomeProps) => {
@@ -17,6 +19,8 @@ export const Home = ({ projects, techs }: IHomeProps) => {
   return (
     <>
       <Head>
+        <link rel='canonical' href={personal.url} />
+
         <title>Miguel Andrade Barreto | Desenvolvedor Web</title>
       </Head>
 
