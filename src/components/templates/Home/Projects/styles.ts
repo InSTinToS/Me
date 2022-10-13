@@ -7,8 +7,8 @@ import { motion } from 'framer-motion'
 export const Header = styled('header', {
   flexCenter: 'row',
 
-  px: '$8',
-  py: '$10',
+  px: '$16',
+  py: '$20',
 
   '@xl': {
     mx: 'auto',

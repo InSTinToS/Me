@@ -1,4 +1,4 @@
-import { media } from './media'
+import { mediaInPx } from './media'
 
 import { pxToRem } from '@app/utils/pxAndRem'
 
@@ -6,7 +6,7 @@ export const sizes = {
   px: '1px',
   auto: 'auto',
 
-  ...media,
+  ...mediaInPx,
 
   0: pxToRem(0),
   0.5: pxToRem(2),
