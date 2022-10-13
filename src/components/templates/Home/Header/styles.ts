@@ -37,9 +37,7 @@ export const Occupation = styled(motion.h2, {
   fontWeight: '$3',
   textAlign: 'center',
 
-  '@md': {
-    justifySelf: 'flex-start'
-  }
+  '@md': { justifySelf: 'flex-start' }
 })
 
 export const Name = styled(motion.h1, {
@@ -64,18 +62,22 @@ export const Avatar = styled(motion.div, {
 
   my: '$6',
   size: '$64',
-  radius: '$8',
-  overflow: 'hidden',
+  radius: '$full',
+  border: 'solid 2px $white',
 
-  bg: '$white'
+  img: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+
+    size: '100%'
+  }
 })
 
 export const Social = styled(OriginalSocial, {
   gridArea: 'social',
 
-  '@md': {
-    display: 'none'
-  }
+  '@md': { display: 'none' }
 })
 
 export const Style = styled(motion.header, {

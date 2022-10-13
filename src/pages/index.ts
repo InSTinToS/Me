@@ -10,13 +10,8 @@ export default Home
 export const getStaticProps: GetStaticProps = async () => {
   const dbConnection = await getDBConnection()
 
-  const projects = await getProjects(dbConnection)
   const techs = await getTechs(dbConnection)
+  const projects = await getProjects(dbConnection)
 
-  return {
-    props: {
-      techs: JSON.parse(techs) || null,
-      projects: JSON.parse(projects) || null
-    }
-  }
+  return { props: { techs: JSON.parse(techs), projects: JSON.parse(projects) } }
 }

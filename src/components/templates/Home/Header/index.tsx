@@ -1,15 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
 import { useHeader } from './logic'
 import { Abstract, Avatar, Name, Occupation, Social, Style } from './styles'
 import { IHeaderForwarded, IHeaderProps } from './types'
 
 import { ChangeTheme } from '@app/components/molecules/ChangeTheme'
 
-import Image from 'next/image'
 import { forwardRef } from 'react'
 
 export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
   ({ ...props }, ref) => {
-    const { avatarAnimations, nameAnimations } = useHeader({ ref })
+    const { avatarAnimations, toggleAvatar, nameAnimations } = useHeader({
+      ref
+    })
 
     return (
       <Style ref={ref} {...props}>
@@ -17,13 +19,24 @@ export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
 
         <ChangeTheme />
 
-        <Avatar {...avatarAnimations}>
-          <Image
-            priority={true}
-            layout='fill'
-            objectFit='cover'
-            src='/avatar.png'
+        <Avatar {...avatarAnimations} onClick={() => toggleAvatar()}>
+          <img
+            alt='Avatar'
+            src='/avatar2.png'
+            style={{
+              position: 'absolute',
+              transform:
+                'perspective(10000px) translateZ(-1px) rotateY(-180deg)'
+            }}
+          />
+
+          <img
             alt='Foto de perfil'
+            src='/avatar-circle.png'
+            style={{
+              position: 'absolute',
+              transform: 'perspective(10000px) translateZ(1px)'
+            }}
           />
         </Avatar>
 

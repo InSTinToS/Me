@@ -8,7 +8,7 @@ export const Header = styled('header', {
   flexCenter: 'row',
 
   px: '$16',
-  py: '$20',
+  py: '$16',
 
   '@xl': {
     mx: 'auto',

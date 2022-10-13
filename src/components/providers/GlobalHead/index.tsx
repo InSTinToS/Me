@@ -16,22 +16,29 @@ export const Fonts = () => (
   </>
 )
 
-export const TwitterOG = () => (
-  <>
-    <meta name='twitter:image' content='/avatar.png' />
-    <meta property='twitter:url' content={personal.url} />
-    <meta name='twitter:card' content='summary_large_image' />
-    <meta property='twitter:domain' content={personal.domain} />
-    <meta
-      name='twitter:title'
-      content='Miguel Andrade Barreto | Desenvolvedor Web'
-    />
-    <meta
-      name='twitter:description'
-      content='Miguel A. Barreto, desenvolvedor web junior, focado em front-end com React, Next e Typescript'
-    />
-  </>
-)
+export const TwitterOG = () => {
+  return (
+    <>
+      <meta name='twitter:site' content={personal.twitter} />
+      <meta property='twitter:url' content={personal.url} />
+      <meta name='twitter:card' content='summary_large_image' />
+      <meta property='twitter:domain' content={personal.domain} />
+
+      <meta
+        name='twitter:image'
+        content={`${process.env.BUCKET_URL}/personal/avatar.png`}
+      />
+      <meta
+        name='twitter:title'
+        content='Miguel Andrade Barreto | Desenvolvedor Web'
+      />
+      <meta
+        name='twitter:description'
+        content='Miguel A. Barreto, desenvolvedor web junior, focado em front-end com React, Next e Typescript'
+      />
+    </>
+  )
+}
 
 export const FacebookOG = () => (
   <>
@@ -84,8 +91,8 @@ export const GlobalHead = () => (
       content='Portfólio de Miguel Andrade Barreto, desenvolvedor web focado em front-end com react e next'
     />
 
-    <link rel='icon' href='/favicon.ico' />
     <link rel='canonical' href={personal.url} />
+    <link rel='icon' href='/favicon.ico' type='image/x-icon' />
 
     <FacebookOG />
     <TwitterOG />
