@@ -4,5 +4,7 @@ export const personal = {
   domain: 'miguelbarreto.dev',
   resume: 'personal/resume.pdf',
   url: 'https://www.miguelbarreto.dev/',
-  email: 'miguelandradebarreto2@gmail.com'
+  email: 'miguelandradebarreto2@gmail.com',
+  avatar:
+    'https://instintos-me-bucket.s3.sa-east-1.amazonaws.com/personal/avatar.png'
 }

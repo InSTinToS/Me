@@ -20,14 +20,10 @@ export const TwitterOG = () => (
   <>
     <meta name='twitter:url'      content={personal.url} />
     <meta name='twitter:domain'   content={personal.domain} />
+    <meta name='twitter:image'    content={personal.avatar} />
     <meta name='twitter:site'     content={personal.twitter} />
     <meta name='twitter:creator'  content={personal.twitter} />
     <meta name='twitter:card'     content='summary_large_image' />
-
-    <meta
-      name='twitter:image'
-      content={`${process.env.BUCKET_URL}/personal/avatar.png`}
-    />
 
     <meta
       name='twitter:title'
@@ -41,7 +37,6 @@ export const TwitterOG = () => (
   </>
 )
 
-
 export const FacebookOG = () => (
   <>
     <meta name='application-name' content='Me' />
@@ -49,8 +44,8 @@ export const FacebookOG = () => (
     <meta name='og:url'           content={personal.url} />
     <meta name='og:email'         content={personal.email} />
     <meta name='og:phone_number'  content={personal.phone} />
-    <meta name='og:image'         content={`${process.env.BUCKET_URL}/personal/avatar.png`} />
-    
+    <meta name='og:image'         content={personal.avatar} />
+
     <meta
       name='og:title'
       content='Miguel Andrade Barreto | Desenvolvedor Web'
@@ -83,7 +78,7 @@ export const GlobalHead = () => (
     <meta name='author'         content={`Miguel Andrade Barreto, ${personal.email}`} />
 
     <meta
-      name='description' 
+      name='description'
       content='Portfólio de Miguel Andrade Barreto, desenvolvedor web júnior, focado em front-end com React, Next e Typescript'
     />
     <meta
@@ -95,7 +90,7 @@ export const GlobalHead = () => (
       content='Portfólio de Miguel Andrade Barreto, desenvolvedor web focado em front-end com react e next'
     />
 
-    <link rel='icon'      href='/favicon.ico' type='image/x-icon' />
+    <link rel='icon' href='/favicon.ico' type='image/x-icon' />
 
     <FacebookOG />
     <TwitterOG />
