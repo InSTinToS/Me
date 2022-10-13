@@ -21,7 +21,7 @@ export const NavbarList = styled('ul', {
 
   ml: 'auto',
   width: '100%',
-  maxWidth: `calc(${theme.sizes['2xl'].value} - ${theme.sizes['44'].value} - ${theme.sizes['16'].value}) `,
+  maxWidth: `calc(${theme.sizes['2xl'].value} - ${theme.sizes['44'].value} - ${theme.sizes['16'].value}  - ${theme.sizes['16'].value}) `,
 
   '@md': { justifyContent: 'flex-start' }
 })

@@ -75,9 +75,7 @@ export const Info = styled('ul', {
 })
 
 export const Paragraphs = styled('div', {
-  '@xl': {
-    gridArea: 'paragraphs'
-  }
+  '@xl': { gridArea: 'paragraphs' }
 })
 
 export const Github = styled(GithubIcon, {
@@ -118,9 +116,7 @@ export const Header = styled('header', {
 
   alignItems: 'center',
 
-  '@xl': {
-    gridArea: 'header'
-  }
+  '@xl': { gridArea: 'header' }
 })
 
 export const Style = styled('article', {
