@@ -1,3 +1,5 @@
+import { Avatar as OriginalAvatar } from './Avatar'
+
 import { styled, theme } from '@app/styles'
 
 import { Social as OriginalSocial } from '@app/components/molecules/Social'
@@ -5,27 +7,6 @@ import { Social as OriginalSocial } from '@app/components/molecules/Social'
 import { hexToRgba } from '@app/utils/colors'
 
 import { motion } from 'framer-motion'
-
-export const Abstract = styled('p', {
-  gridArea: 'abstract',
-
-  py: '$4',
-
-  textAlign: 'center',
-
-  '&, a': {
-    fontSize: '$4',
-    fontWeight: '$2',
-
-    color: '$white'
-  },
-
-  '@md': {
-    py: 0,
-
-    textAlign: 'left'
-  }
-})
 
 export const Occupation = styled(motion.h2, {
   gridArea: 'occupation',
@@ -53,25 +34,10 @@ export const Name = styled(motion.h1, {
   }
 })
 
-export const Avatar = styled(motion.div, {
+export const Avatar = styled(OriginalAvatar, {
   gridArea: 'avatar',
 
-  position: 'relative',
-
-  justifySelf: 'center',
-
-  my: '$6',
-  size: '$64',
-  radius: '$full',
-  border: 'solid 2px $white',
-
-  img: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-
-    size: '100%'
-  }
+  justifySelf: 'center'
 })
 
 export const Social = styled(OriginalSocial, {

@@ -19,7 +19,7 @@ export const useHome = () => {
   const navItems: INavbarProps['items'] = [
     {
       icon: <House />,
-      label: 'Home',
+      label: 'Início',
       onClick: () => globalThis.scrollTo({ top: 0, behavior: 'smooth' })
     },
     {
@@ -29,12 +29,12 @@ export const useHome = () => {
     },
     {
       icon: <Tech />,
-      label: 'Tecnologia',
+      label: 'Tecnologias',
       onClick: () => techsRef.current?.scrollIntoView({ behavior: 'smooth' })
     },
     {
       icon: <Project />,
-      label: 'Projeto',
+      label: 'Projetos',
       onClick: () => projectsRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
   ]

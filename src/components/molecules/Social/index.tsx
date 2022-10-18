@@ -20,7 +20,7 @@ export const Social = ({ ...props }) => {
     <Style {...props}>
       {resume && (
         <li>
-          <Link href={resume} aria-label='resume'>
+          <Link href={resume} aria-label='Currículo'>
             <ColoredPDF />
           </Link>
         </li>

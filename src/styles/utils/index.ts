@@ -1,3 +1,4 @@
+import { fonts } from './fonts'
 import { margin } from './margin'
 import { padding } from './padding'
 import { radius } from './radius'
@@ -36,6 +37,7 @@ export const utils = {
     }
   }),
 
+  ...fonts,
   ...size,
   ...radius,
   ...margin,

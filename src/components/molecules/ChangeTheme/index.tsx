@@ -11,7 +11,7 @@ export const ChangeTheme = () => {
         <ResetButton
           type='button'
           onClick={onResetClick}
-          aria-label='Redefine a cor de fundo'
+          aria-label='Redefinir cor de fundo'
         >
           <Reset color={themeState.contrastName} />
         </ResetButton>
