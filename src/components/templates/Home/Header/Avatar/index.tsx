@@ -18,6 +18,7 @@ export const Avatar = ({ ...props }: HTMLMotionProps<'button'>) => {
     >
       <Image
         layout='fill'
+        draggable='false'
         objectFit='cover'
         alt={avatarImageProps.alt}
         src={avatarImageProps.src}

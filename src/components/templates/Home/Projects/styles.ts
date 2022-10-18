@@ -20,6 +20,7 @@ export const Style = styled(motion.main, {
   position: 'relative',
   zIndex: 2,
 
+  pt: '$16',
   pb: '$10',
   minHeight: '100vh',
   color: '$white',

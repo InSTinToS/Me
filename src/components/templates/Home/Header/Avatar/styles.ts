@@ -15,6 +15,7 @@ export const Style = styled(motion.button, {
     top: 0,
     left: 0,
 
-    size: '100%'
+    size: '100%',
+    userSelect: 'none'
   }
 })

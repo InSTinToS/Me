@@ -6,6 +6,8 @@ import Project from './Project'
 
 import { theme } from '@app/styles'
 
+import { BackToNav } from '@app/components/atoms/BackToNav'
+
 import { Slider } from '@app/components/molecules/Slider'
 
 import { HorizontalList } from '@app/components/utilities/HorizontalList'
@@ -25,7 +27,9 @@ export const Projects = forwardRef<any, IProjectsProps>(
     } = useProjects({ ref })
 
     return (
-      <Style ref={ref} {...props} {...projectsAnimations}>
+      <Style id='projects' ref={ref} {...props} {...projectsAnimations}>
+        <BackToNav />
+
         <Header>
           <Slider
             name='project'

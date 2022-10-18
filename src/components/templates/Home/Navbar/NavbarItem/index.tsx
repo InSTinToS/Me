@@ -1,17 +1,29 @@
-import { Button, Label, Style } from './styles'
+import { ItemLink, Label, Style } from './styles'
 import { INavbarItem } from './types'
 
 export const NavbarItem = ({
+  href,
   label,
   children,
-  onButtonClick,
+  onItemClick,
   ...props
 }: INavbarItem) => (
   <Style {...props}>
-    <Button type='button' onClick={onButtonClick} aria-label={label}>
+    <ItemLink
+      href={href}
+      tabIndex={0}
+      aria-label={label}
+      onKeyPressCapture={e => {
+        if (e.key === ' ' && onItemClick) onItemClick()
+      }}
+      onMouseDown={e => {
+        e.preventDefault()
+        onItemClick && onItemClick()
+      }}
+    >
       {children}
 
       <Label>{label}</Label>
-    </Button>
+    </ItemLink>
   </Style>
 )

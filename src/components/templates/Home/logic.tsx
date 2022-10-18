@@ -20,21 +20,25 @@ export const useHome = () => {
     {
       icon: <House />,
       label: 'Início',
+      href: 'header',
       onClick: () => globalThis.scrollTo({ top: 0, behavior: 'smooth' })
     },
     {
       icon: <Phone />,
       label: 'Contato',
+      href: 'header',
       onClick: () => globalThis.scrollTo({ top: 0, behavior: 'smooth' })
     },
     {
       icon: <Tech />,
       label: 'Tecnologias',
+      href: 'techs',
       onClick: () => techsRef.current?.scrollIntoView({ behavior: 'smooth' })
     },
     {
       icon: <Project />,
       label: 'Projetos',
+      href: 'projects',
       onClick: () => projectsRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
   ]
@@ -45,10 +49,5 @@ export const useHome = () => {
     ${hexToRgba(themeState.color, 0.5)} 100%);
   `
 
-  return {
-    techsRef,
-    navItems,
-    projectsRef,
-    bgGradient
-  }
+  return { techsRef, navItems, projectsRef, bgGradient }
 }

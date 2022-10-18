@@ -13,7 +13,7 @@ export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
     const { nameAnimations } = useHeader({ ref })
 
     return (
-      <Style ref={ref} {...props}>
+      <Style ref={ref} id='header' {...props}>
         <Name {...nameAnimations} tabIndex={0}>
           Miguel Andrade Barreto
         </Name>
