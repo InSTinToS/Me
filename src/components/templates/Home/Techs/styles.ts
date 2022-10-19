@@ -75,8 +75,9 @@ export const Style = styled(motion.section, {
   zIndex: 2,
 
   px: '$8',
-  py: '$12',
+  pb: '$12',
   mx: 'auto',
   maxWidth: '$2xl',
-  minHeight: '100vh'
+  minHeight: '100vh',
+  pt: `calc(${theme.sizes[16].value} + ${theme.sizes[8].value})`
 })

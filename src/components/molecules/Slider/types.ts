@@ -5,6 +5,8 @@ export interface ISliderProps extends SliderProps {
   min?: number
   labels?: string[]
   thumbSize: number
+  ariaLabel?: string
+  ariaValue?: string
   stepPadding: number
   stepsQuantity: number
   onSliderChange: (values: { value: number[]; index: number }) => void
@@ -13,6 +15,9 @@ export interface ISliderProps extends SliderProps {
 export interface IUseSliderParams {
   max: number
   min: number
+
+  value: ISliderProps['value']
+  labels: ISliderProps['labels']
   thumbSize: ISliderProps['thumbSize']
   stepPadding: ISliderProps['stepPadding']
   stepsQuantity: ISliderProps['stepsQuantity']

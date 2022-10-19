@@ -18,6 +18,8 @@ import {
 } from './styles'
 import { IProjectProps } from './types'
 
+import { ScreenReaderText } from '@app/components/atoms/ScreenReaderText'
+
 import { HorizontalList } from '@app/components/utilities/HorizontalList'
 
 const Project = ({
@@ -35,36 +37,52 @@ const Project = ({
     ulRef,
     showLeftArrow,
     showRightArrow,
+    accessibleDate,
     onLeftArrowClick,
     onRightArrowClick
-  } = useProject({ files, name })
+  } = useProject({ files, name, date })
 
   return (
     <Style>
       <Header>
         {links?.url && (
           <a
+            tabIndex={0}
             target='_blank'
             rel='noreferrer'
             href={links.url}
-            aria-label={`${name} url`}
+            aria-label={`visitar ${name}`}
           >
             <URL />
           </a>
         )}
 
-        <Title>{name}</Title>
+        <Title tabIndex={0} lang='en'>
+          {name}
+        </Title>
 
-        <Date>
-          {date?.start && date.start} {date?.end && `-> ${date.end}`}
+        <Date tabIndex={0}>
+          <ScreenReaderText visibleInScreen={false} visibleToScreenReader>
+            {accessibleDate}
+          </ScreenReaderText>
+
+          <ScreenReaderText visibleInScreen visibleToScreenReader={false}>
+            {date?.start && date.start}
+          </ScreenReaderText>
+
+          <ScreenReaderText visibleInScreen visibleToScreenReader={false}>
+            {date?.end && ` -> ${date.end}`}
+          </ScreenReaderText>
         </Date>
 
         {links?.project && (
           <a
+            tabIndex={0}
             target='_blank'
             rel='noreferrer'
             href={links.project}
-            aria-label={`${name} project`}
+            lang='en'
+            aria-label={`${name} Github`}
           >
             <Github />
           </a>
@@ -72,7 +90,7 @@ const Project = ({
       </Header>
 
       <Paragraphs>
-        <Info>
+        <Info tabIndex={0}>
           {occupations?.map((occupation, index) => (
             <InfoItem key={index}>{occupation}</InfoItem>
           ))}
@@ -83,19 +101,22 @@ const Project = ({
         </Info>
 
         {paragraphs?.map((paragraph, index) => (
-          <Paragraph key={index}>{paragraph}</Paragraph>
+          <Paragraph tabIndex={0} key={index}>
+            {paragraph}
+          </Paragraph>
         ))}
       </Paragraphs>
 
       {files && (
         <Footer>
-          <HorizontalList ref={ulRef}>
+          <HorizontalList ref={ulRef} aria-live='polite'>
             {files.map((file, index) =>
               file.isVideo ? (
                 <File
                   controls
                   as='video'
                   key={file.alt}
+                  aria-label='Vídeo'
                   src={urls?.[index] || ''}
                 />
               ) : (

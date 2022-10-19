@@ -20,7 +20,7 @@ export const Social = ({ ...props }) => {
     <Style {...props}>
       {resume && (
         <li>
-          <Link href={resume} aria-label='resume'>
+          <Link href={resume} aria-label='Currículo'>
             <ColoredPDF />
           </Link>
         </li>
@@ -29,20 +29,25 @@ export const Social = ({ ...props }) => {
       <li>
         <Tooltip
           onTriggerClick={onTooltipClick}
-          trigger={<Gmail title='gmail' />}
           content={<span>Copiar e-mail</span>}
+          trigger={<Gmail lang='en' title='Gmail' />}
           sideOffset={remToPxNumber(theme.sizes['2'].value)}
         />
       </li>
 
       <li>
-        <Link aria-label='Whatsapp' href={`https://wa.me/${personal.phone}`}>
+        <Link
+          lang='en'
+          aria-label='Whatsapp'
+          href={`https://wa.me/${personal.phone}`}
+        >
           <Whatsapp title='Whatsapp' />
         </Link>
       </li>
 
       <li>
         <Link
+          lang='en'
           aria-label='Linkedin'
           href='https://www.linkedin.com/in/miguel-andrade-barreto-b0b410191/'
         >
@@ -51,7 +56,7 @@ export const Social = ({ ...props }) => {
       </li>
 
       <li>
-        <Link aria-label='Github' href='https://github.com/InSTinToS'>
+        <Link lang='en' aria-label='Github' href='https://github.com/InSTinToS'>
           <Github title='github' />
         </Link>
       </li>

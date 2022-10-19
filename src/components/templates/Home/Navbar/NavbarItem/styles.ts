@@ -10,10 +10,13 @@ export const Label = styled('span', {
   '@md': { display: 'inline' }
 })
 
-export const Button = styled('button', {
+export const ItemLink = styled('a', {
   flexCenter: 'row',
 
   height: '$7',
+
+  cursor: 'pointer',
+  textDecoration: 'none',
 
   svg: { size: '$7', fill: '$white' }
 })

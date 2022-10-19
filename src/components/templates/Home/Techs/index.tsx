@@ -4,6 +4,8 @@ import { ITechsProps } from './types'
 
 import { TechCard } from './TechCard'
 
+import { BackToNav } from '@app/components/atoms/BackToNav'
+
 import { forwardRef } from 'react'
 
 export const Techs = forwardRef<any, ITechsProps>(
@@ -14,7 +16,9 @@ export const Techs = forwardRef<any, ITechsProps>(
     })
 
     return (
-      <Style ref={ref} {...techsAnimations} {...props}>
+      <Style id='techs' ref={ref} {...techsAnimations} {...props}>
+        <BackToNav />
+
         <Filter css={{ borderBottomColor: themeState.contrast }}>
           <Search css={{ fill: themeState.contrast }} />
 
@@ -22,11 +26,15 @@ export const Techs = forwardRef<any, ITechsProps>(
             type='text'
             onChange={onSearchChange}
             color={themeState.contrastName}
-            placeholder='Pesquisar tecnologia...'
+            placeholder='Filtrar tecnologias conhecidas...'
           />
         </Filter>
 
-        <TechsList color={themeState.contrastName}>
+        <TechsList
+          tabIndex={0}
+          color={themeState.contrastName}
+          aria-label='Tecnologias conhecidas'
+        >
           {techList?.map(tech => (
             <TechCard {...tech} key={tech.name} />
           ))}

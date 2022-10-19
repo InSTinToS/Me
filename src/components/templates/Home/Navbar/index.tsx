@@ -8,9 +8,14 @@ import { forwardRef } from 'react'
 export const Navbar = forwardRef<INavbarForwarded, INavbarProps>(
   ({ items, ...props }, ref) => (
     <Style ref={ref} {...props}>
-      <NavbarList>
-        {items?.map(({ icon, onClick, label }) => (
-          <NavbarItem key={label} label={label} onButtonClick={onClick}>
+      <NavbarList id='nav'>
+        {items?.map(({ icon, onClick, label, href }) => (
+          <NavbarItem
+            key={label}
+            label={label}
+            href={`#${href}`}
+            onItemClick={() => onClick && onClick()}
+          >
             {icon}
           </NavbarItem>
         ))}

@@ -4,7 +4,7 @@ import { hexToRgba } from '@app/utils/colors'
 
 import { motion } from 'framer-motion'
 
-export const Progress = styled('hr', {
+export const Progress = styled('div', {
   width: '100%',
 
   mt: '$4',
