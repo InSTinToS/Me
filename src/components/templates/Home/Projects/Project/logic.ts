@@ -6,12 +6,37 @@ import {
 } from '@app/components/utilities/HorizontalList/types'
 
 import axios from 'axios'
+import { format } from 'date-fns'
+import pt from 'date-fns/locale/pt'
 import { useEffect, useRef, useState } from 'react'
 import { useQuery } from 'react-query'
 
-export const useProject = ({ files, name }: IUseProjectParams) => {
+export const useProject = ({ files, name, date }: IUseProjectParams) => {
   const [info, setInfo] = useState<IInfoState>()
   const ulRef = useRef<IHorizontalListForwarded>(null)
+
+  const start = {
+    month: Number(date?.start.split('/')[0]) || 1,
+    year: Number(date?.start.split('/')[1]) || 1
+  }
+
+  const end = {
+    month: date?.end ? Number(date?.end.split('/')[0]) || 1 : 1,
+    year: date?.end ? Number(date?.end.split('/')[1]) || 1 : 1
+  }
+
+  const formattedMonth = {
+    start: format(new Date(start.year, start.month, 0), 'MMMMMM', {
+      locale: pt
+    }),
+    end: format(new Date(end.year, end.month, 0), 'MMMMMM', {
+      locale: pt
+    })
+  }
+
+  const accessibleDate = `Projeto criado em ${formattedMonth.start} de ${
+    start.year
+  } ${date?.end ? `e finalizado em ${formattedMonth.end} de ${end.year}` : ''}`
 
   const { data } = useQuery(
     `${name}-urls`,
@@ -43,9 +68,10 @@ export const useProject = ({ files, name }: IUseProjectParams) => {
 
   return {
     ulRef,
+    accessibleDate,
     onLeftArrowClick,
-    onRightArrowClick,
     urls: data?.urls,
+    onRightArrowClick,
     showLeftArrow: info?.showLeftButton,
     showRightArrow: info?.showRightButton
   }

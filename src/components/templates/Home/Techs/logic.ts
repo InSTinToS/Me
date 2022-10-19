@@ -8,22 +8,23 @@ import { TInputProps } from '@app/types/react.types'
 import { MotionProps, useInView } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
+const orderByProgress = (techs: ITech[]) =>
+  [
+    techs.filter(tech => tech.progress === 'high'),
+    techs.filter(tech => tech.progress === 'medium'),
+    techs.filter(tech => tech.progress === 'low')
+  ].flat()
+
 const onSearchValueChange = (searchedValue?: string, techs?: ITech[]) => {
   if (!techs) return undefined
 
-  if (!searchedValue) {
-    const techsByProgress = [
-      techs.filter(tech => tech.progress === 'high'),
-      techs.filter(tech => tech.progress === 'medium'),
-      techs.filter(tech => tech.progress === 'low')
-    ].flat()
+  if (!searchedValue) return orderByProgress(techs)
 
-    return techsByProgress
-  }
-
-  return techs?.filter(({ name }) =>
+  const filteredByValue = techs?.filter(({ name }) =>
     name.toLowerCase().includes(searchedValue.toLowerCase())
   )
+
+  return orderByProgress(filteredByValue)
 }
 
 export const useTechs = ({ ref, techs }: IUseTechsParams) => {

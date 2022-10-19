@@ -22,8 +22,8 @@ export const Projects = forwardRef<any, IProjectsProps>(
       project,
       isInView,
       projectsRef,
-      projectsAnimations,
-      onProjectChange
+      onProjectChange,
+      projectsAnimations
     } = useProjects({ ref })
 
     return (
@@ -34,6 +34,7 @@ export const Projects = forwardRef<any, IProjectsProps>(
           <Slider
             name='project'
             value={project}
+            ariaLabel='MeusProjetos'
             onSliderChange={onProjectChange}
             stepsQuantity={projects?.length || 0}
             labels={projects?.map(project => project.name)}

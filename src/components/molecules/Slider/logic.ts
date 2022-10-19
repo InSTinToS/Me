@@ -23,6 +23,8 @@ const getFitSize: TGetFitSize = ({ thumbSize, stepsQuantity }) => {
 export const useSlider = ({
   max,
   min,
+  value,
+  labels,
   thumbSize,
   stepPadding,
   stepsQuantity,
@@ -30,8 +32,11 @@ export const useSlider = ({
 }: IUseSliderParams) => {
   const dotsCSS: CSS[] = []
   const stepSize = (max - min) / (stepsQuantity - 1)
-
   const fitSize = getFitSize({ thumbSize, stepsQuantity })
+
+  let ariaValue
+
+  if (labels && value) ariaValue = labels[value / stepSize]
 
   for (let i = 0; i < stepsQuantity; i++)
     dotsCSS.push({
@@ -45,5 +50,5 @@ export const useSlider = ({
       onSliderChange({ value: value, index: value[0] / stepSize })
   }
 
-  return { getFitSize, stepSize, dotsCSS, thumbSize, onValueChange }
+  return { getFitSize, stepSize, dotsCSS, thumbSize, onValueChange, ariaValue }
 }

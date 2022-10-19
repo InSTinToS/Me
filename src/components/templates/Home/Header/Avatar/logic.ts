@@ -3,15 +3,13 @@ import { useEffect, useRef, useState } from 'react'
 
 export const useAvatar = () => {
   const avatarRef = useRef<HTMLButtonElement>(null)
-  const isInView = useInView(avatarRef, { once: true })
-
   const [showAvatar, setShowAvatar] = useState(false)
-
+  const isInView = useInView(avatarRef, { once: true })
   const [avatarImageProps, setAvatarImageProps] = useState({
-    style: { transform: 'perspective(10000px) translateZ(1px)' },
     ariaLive: 'off',
     alt: 'Foto de perfil',
-    src: '/avatar-circle.png'
+    src: '/avatar-circle.png',
+    style: { transform: 'perspective(10000px) translateZ(1px)' }
   })
 
   const toggleAvatar = () => {

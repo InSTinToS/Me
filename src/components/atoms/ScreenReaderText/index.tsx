@@ -4,9 +4,14 @@ import { IScreenReaderTextProps } from './types'
 export const ScreenReaderText = ({
   children,
   visibleInScreen,
-  visibleToScreenReader
+  visibleToScreenReader,
+  ...props
 }: IScreenReaderTextProps) => (
-  <Style aria-hidden={!visibleToScreenReader} visibleInScreen={visibleInScreen}>
+  <Style
+    aria-hidden={!visibleToScreenReader}
+    visibleInScreen={visibleInScreen}
+    {...props}
+  >
     {children}
   </Style>
 )

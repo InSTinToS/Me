@@ -26,11 +26,15 @@ export const Techs = forwardRef<any, ITechsProps>(
             type='text'
             onChange={onSearchChange}
             color={themeState.contrastName}
-            placeholder='Pesquisar tecnologia...'
+            placeholder='Filtrar tecnologias conhecidas...'
           />
         </Filter>
 
-        <TechsList color={themeState.contrastName}>
+        <TechsList
+          tabIndex={0}
+          color={themeState.contrastName}
+          aria-label='Tecnologias conhecidas'
+        >
           {techList?.map(tech => (
             <TechCard {...tech} key={tech.name} />
           ))}

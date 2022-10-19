@@ -5,4 +5,5 @@ export interface IProjectProps extends IProject {}
 export interface IUseProjectParams {
   files: IProject['files']
   name: IProject['name']
+  date: IProject['date']
 }
