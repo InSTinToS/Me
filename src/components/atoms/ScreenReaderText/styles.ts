@@ -4,7 +4,7 @@ export const Style = styled('span', {
   variants: {
     visibleInScreen: {
       false: {
-        display: 'block',
+        display: 'inline-block',
 
         width: 0,
         height: 0,

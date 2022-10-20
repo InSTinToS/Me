@@ -1,7 +1,9 @@
+import { CSS } from '@stitches/react'
 import { ReactNode } from 'react'
 
 export interface IScreenReaderTextProps {
-  children: ReactNodede
+  css?: CSS
+  children: ReactNode
   visibleInScreen: boolean
   visibleToScreenReader: boolean
 }

@@ -62,7 +62,11 @@ const Project = ({
         </Title>
 
         <Date tabIndex={0}>
-          <ScreenReaderText visibleInScreen={false} visibleToScreenReader>
+          <ScreenReaderText
+            visibleToScreenReader
+            visibleInScreen={false}
+            css={{ display: 'block' }}
+          >
             {accessibleDate}
           </ScreenReaderText>
 
