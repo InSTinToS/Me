@@ -21,7 +21,7 @@ export const Navbar = forwardRef<INavbarForwarded, INavbarProps>(
         ))}
       </NavbarList>
 
-      <Social />
+      <Social visible='biggerMd' />
     </Style>
   )
 )
