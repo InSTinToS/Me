@@ -1,9 +1,6 @@
 import { useSocial } from './logic'
-import { Gmail, Style } from './styles'
+import { BlackPDF, ColoredPDF, Gmail, Style } from './styles'
 
-import { theme } from '@app/styles'
-
-import { ColoredPDF } from '@app/components/atoms/Icon/icons/ColoredPDF'
 import { Github } from '@app/components/atoms/Icon/icons/Github'
 import { Linkedin } from '@app/components/atoms/Icon/icons/Linkedin'
 import { Whatsapp } from '@app/components/atoms/Icon/icons/Whatsapp'
@@ -11,27 +8,44 @@ import { Link } from '@app/components/atoms/Link'
 
 import { Tooltip } from '@app/components/utilities/Tooltip'
 
-import { remToPxNumber } from '@app/utils/pxAndRem'
-
 export const Social = ({ ...props }) => {
-  const { resume, personal, onTooltipClick } = useSocial()
+  const { resume, personal, onGoogleClick, printResume, gmail } = useSocial()
 
   return (
     <Style {...props}>
       {resume && (
         <li>
-          <Link href={resume} aria-label='Currículo'>
-            <ColoredPDF />
-          </Link>
+          <Tooltip
+            content='Acessar currículo colorido'
+            trigger={
+              <Link href={resume} aria-label='Currículo colorido'>
+                <ColoredPDF />
+              </Link>
+            }
+          />
+        </li>
+      )}
+
+      {printResume && (
+        <li>
+          <Tooltip
+            content='Acessar currículo em preto e branco'
+            trigger={
+              <Link href={printResume} aria-label='Currículo para imprimir'>
+                <BlackPDF />
+              </Link>
+            }
+          />
         </li>
       )}
 
       <li>
         <Tooltip
-          onTriggerClick={onTooltipClick}
-          content={<span>Copiar e-mail</span>}
+          open={gmail.open}
+          content={gmail.text}
+          variant={gmail.variant}
+          onTriggerClick={onGoogleClick}
           trigger={<Gmail lang='en' title='Gmail' />}
-          sideOffset={remToPxNumber(theme.sizes['2'].value)}
         />
       </li>
 

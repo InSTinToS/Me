@@ -26,7 +26,7 @@ export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
 
         <Avatar />
 
-        <Social tabIndex={0} />
+        <Social visible='smallerMd' />
 
         <ChangeTheme />
       </Style>

@@ -15,7 +15,6 @@ export interface ISliderProps extends SliderProps {
 export interface IUseSliderParams {
   max: number
   min: number
-
   value: ISliderProps['value']
   labels: ISliderProps['labels']
   thumbSize: ISliderProps['thumbSize']

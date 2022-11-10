@@ -3,6 +3,7 @@ export const personal = {
   twitter: '@InSTinToS123',
   domain: 'miguelbarreto.dev',
   resume: 'personal/resume.pdf',
+  resumeBW: 'personal/resumeBW.pdf',
   url: 'https://www.miguelbarreto.dev/',
   email: 'miguelandradebarreto2@gmail.com',
   avatar:

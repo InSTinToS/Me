@@ -4,15 +4,7 @@ import { Social as OriginalSocial } from '@app/components/molecules/Social'
 
 import { hexToRgba } from '@app/utils/colors'
 
-export const Social = styled(OriginalSocial, {
-  display: 'none',
-
-  '@md': {
-    display: 'flex',
-
-    mr: 'auto'
-  }
-})
+export const Social = styled(OriginalSocial, {})
 
 export const NavbarList = styled('ul', {
   display: 'flex',

@@ -7,17 +7,31 @@ import {
 } from '@radix-ui/react-tooltip'
 
 export const Arrow = styled(RadixArrow, {
-  fill: '$white'
+  variants: {
+    variant: {
+      error: { fill: '$error' },
+      default: { fill: '$info' },
+      success: { fill: '$success' }
+    }
+  }
 })
 
 export const Content = styled(RadixContent, {
+  position: 'relative',
+  zIndex: 3,
+
   p: '$2',
-  bg: '$white',
-  color: '$primary',
   borderRadius: '$3',
 
-  position: 'relative',
-  zIndex: 3
+  color: '$secondary',
+
+  variants: {
+    variant: {
+      error: { bg: '$error' },
+      default: { bg: '$info' },
+      success: { bg: '$success' }
+    }
+  }
 })
 
 export const Trigger = styled(RadixTrigger, {})

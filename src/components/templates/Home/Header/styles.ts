@@ -40,11 +40,7 @@ export const Avatar = styled(OriginalAvatar, {
   justifySelf: 'center'
 })
 
-export const Social = styled(OriginalSocial, {
-  gridArea: 'social',
-
-  '@md': { display: 'none' }
-})
+export const Social = styled(OriginalSocial, {})
 
 export const Style = styled(motion.header, {
   position: 'relative',

@@ -36,7 +36,7 @@ export const useSlider = ({
 
   let ariaValue
 
-  if (labels && value) ariaValue = labels[value / stepSize]
+  if (labels && value) ariaValue = labels[(value as any) / stepSize]
 
   for (let i = 0; i < stepsQuantity; i++)
     dotsCSS.push({

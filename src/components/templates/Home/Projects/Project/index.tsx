@@ -32,14 +32,7 @@ const Project = ({
   paragraphs,
   occupations
 }: IProjectProps) => {
-  const {
-    urls,
-    ulRef,
-    showLeftArrow,
-    showRightArrow,
-    accessibleDate,
-    onLeftArrowClick,
-    onRightArrowClick
+  const {urls,ulRef,showLeftArrow,showRightArrow,accessibleDate,onLeftArrowClick,onRightArrowClick
   } = useProject({ files, name, date })
 
   return (
@@ -81,11 +74,11 @@ const Project = ({
 
         {links?.project && (
           <a
+            lang='en'
             tabIndex={0}
             target='_blank'
             rel='noreferrer'
             href={links.project}
-            lang='en'
             aria-label={`${name} Github`}
           >
             <Github />
