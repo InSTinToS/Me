@@ -1,10 +1,16 @@
 import { useHeader } from './logic'
-import { Avatar, Name, Occupation, Social, Style } from './styles'
+import {
+  Avatar,
+  ChangeTheme,
+  MobileChangeTheme,
+  Name,
+  Occupation,
+  Social,
+  Style
+} from './styles'
 import { IHeaderForwarded, IHeaderProps } from './types'
 
 import { Abstract } from './Abstract'
-
-import { ChangeTheme } from '@app/components/molecules/ChangeTheme'
 
 import { forwardRef } from 'react'
 
@@ -14,6 +20,8 @@ export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
 
     return (
       <Style ref={ref} id='header' {...props}>
+        <ChangeTheme />
+
         <Name {...nameAnimations} tabIndex={0}>
           Miguel Andrade Barreto
         </Name>
@@ -26,9 +34,11 @@ export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
 
         <Avatar />
 
-        <Social visible='smallerMd' />
-
-        <ChangeTheme />
+        <Social>
+          <li>
+            <MobileChangeTheme />
+          </li>
+        </Social>
       </Style>
     )
   }

@@ -1,15 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 import { useSocial } from './logic'
-import { BlackPDF, ColoredPDF, Gmail, Style } from './styles'
+import { Style } from './styles'
+import { ISocialProps } from './types'
 
-import { Github } from '@app/components/atoms/Icon/icons/Github'
-import { Linkedin } from '@app/components/atoms/Icon/icons/Linkedin'
-import { Whatsapp } from '@app/components/atoms/Icon/icons/Whatsapp'
 import { Link } from '@app/components/atoms/Link'
 
 import { Tooltip } from '@app/components/utilities/Tooltip'
 
-export const Social = ({ ...props }) => {
-  const { resume, personal, onGoogleClick, printResume, gmail } = useSocial()
+export const Social = ({ children, ...props }: ISocialProps) => {
+  const { gmail, resume, personal, printResume, onGoogleClick } = useSocial()
 
   return (
     <Style {...props}>
@@ -19,7 +18,7 @@ export const Social = ({ ...props }) => {
             content='Acessar currículo colorido'
             trigger={
               <Link href={resume} aria-label='Currículo colorido'>
-                <ColoredPDF />
+                <img src='/icons/coloredPDF.svg' alt='PDF Colorido' />
               </Link>
             }
           />
@@ -32,7 +31,7 @@ export const Social = ({ ...props }) => {
             content='Acessar currículo em preto e branco'
             trigger={
               <Link href={printResume} aria-label='Currículo para imprimir'>
-                <BlackPDF />
+                <img src='/icons/blackPDF.svg' alt='PDF preto e branco' />
               </Link>
             }
           />
@@ -45,18 +44,23 @@ export const Social = ({ ...props }) => {
           content={gmail.text}
           variant={gmail.variant}
           onTriggerClick={onGoogleClick}
-          trigger={<Gmail lang='en' title='Gmail' />}
+          trigger={<img src='/icons/google.svg' alt='Google' lang='en' />}
         />
       </li>
 
       <li>
-        <Link
-          lang='en'
-          aria-label='Whatsapp'
-          href={`https://wa.me/${personal.phone}`}
-        >
-          <Whatsapp title='Whatsapp' />
-        </Link>
+        <Tooltip
+          content='Whatsapp'
+          trigger={
+            <Link
+              lang='en'
+              aria-label='Whatsapp'
+              href={`https://wa.me/${personal.phone}`}
+            >
+              <img src='/icons/whatsapp.svg' alt='Whatsapp' lang='en' />
+            </Link>
+          }
+        />
       </li>
 
       <li>
@@ -65,15 +69,17 @@ export const Social = ({ ...props }) => {
           aria-label='Linkedin'
           href='https://www.linkedin.com/in/miguel-andrade-barreto-b0b410191/'
         >
-          <Linkedin title='linkedin' />
+          <img src='/icons/linkedin.svg' alt='Linkedin' lang='en' />
         </Link>
       </li>
 
       <li>
         <Link lang='en' aria-label='Github' href='https://github.com/InSTinToS'>
-          <Github title='github' />
+          <img src='/icons/github.svg' alt='Github' lang='en' />
         </Link>
       </li>
+
+      {children}
     </Style>
   )
 }
