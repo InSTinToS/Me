@@ -11,23 +11,34 @@ export const NavbarList = styled('ul', {
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  ml: 'auto',
+  px: '$8',
   width: '100%',
-  maxWidth: `calc(${theme.sizes['2xl'].value} - ${theme.sizes['44'].value} - ${theme.sizes['16'].value}  - ${theme.sizes['16'].value}) `,
+  maxWidth: '$2xl',
 
-  '@md': { justifyContent: 'flex-start' }
+  '> li:last-child': {
+    display: 'none'
+  },
+
+  '@md': {
+    justifyContent: 'flex-start',
+
+    '> li:last-child': {
+      display: 'flex',
+
+      ml: 'auto'
+    }
+  }
 })
 
 export const Style = styled('nav', {
   position: 'relative',
   zIndex: 3,
 
-  py: '$4',
-  px: '$8',
-
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+
+  py: '$4',
 
   width: '100%',
 

@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 export const Style = styled(motion.button, {
   position: 'relative',
 
-  my: '$6',
   size: '$64',
   radius: '$full',
   border: 'solid 2px $white',

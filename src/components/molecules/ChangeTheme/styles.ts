@@ -40,9 +40,5 @@ export const ResetButton = styled('button', {
 })
 
 export const Style = styled('form', {
-  gridArea: 'color',
-
-  display: 'flex',
-  alignItems: 'flex-start',
-  justifyContent: 'flex-end'
+  height: '$8'
 })

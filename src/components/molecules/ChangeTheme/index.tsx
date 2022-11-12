@@ -1,12 +1,12 @@
 import { useChangeTheme } from './logic'
 import { ColorPicker, Reset, ResetButton, Style } from './styles'
 
-export const ChangeTheme = () => {
+export const ChangeTheme = ({ ...props }) => {
   const { showReset, themeState, onResetClick, onColorChange } =
     useChangeTheme()
 
   return (
-    <Style>
+    <Style {...props}>
       {showReset && (
         <ResetButton
           type='button'
