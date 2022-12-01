@@ -64,19 +64,33 @@ export const Social = ({ children, ...props }: ISocialProps) => {
       </li>
 
       <li>
-        <Link
-          lang='en'
-          aria-label='Linkedin'
-          href='https://www.linkedin.com/in/miguel-andrade-barreto-b0b410191/'
-        >
-          <img src='/icons/linkedin.svg' alt='Linkedin' lang='en' />
-        </Link>
+        <Tooltip
+          content='Linkedin'
+          trigger={
+            <Link
+              lang='en'
+              aria-label='Linkedin'
+              href='https://www.linkedin.com/in/miguel-andrade-barreto-b0b410191/'
+            >
+              <img src='/icons/linkedin.svg' alt='Linkedin' lang='en' />
+            </Link>
+          }
+        />
       </li>
 
       <li>
-        <Link lang='en' aria-label='Github' href='https://github.com/InSTinToS'>
-          <img src='/icons/github.svg' alt='Github' lang='en' />
-        </Link>
+        <Tooltip
+          content='Github'
+          trigger={
+            <Link
+              lang='en'
+              aria-label='Github'
+              href='https://github.com/InSTinToS'
+            >
+              <img src='/icons/github.svg' alt='Github' lang='en' />
+            </Link>
+          }
+        />
       </li>
 
       {children}
