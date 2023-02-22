@@ -1,10 +1,6 @@
 import { styled, theme } from '@app/styles'
 import { scrollbar } from '@app/styles/utils/scrollbar'
 
-import { Search as SearchIcon } from '@app/components/atoms/Icon/icons/Search'
-
-import { hexToRgba } from '@app/utils/colors'
-
 import { motion } from 'framer-motion'
 
 export const TechsList = styled('ul', {
@@ -34,45 +30,13 @@ export const TechsList = styled('ul', {
   }
 })
 
-export const Input = styled('input', {
-  ml: '$4',
-  width: '100%',
-
-  fontSize: '$4',
-
-  variants: {
-    color: {
-      white: {
-        color: '$white',
-
-        '&::placeholder': { color: hexToRgba(theme.colors.white.value, 0.7) }
-      },
-      black: {
-        color: '$black',
-
-        '&::placeholder': { color: hexToRgba(theme.colors.black.value, 0.7) }
-      }
-    }
-  }
-})
-
-export const Search = styled(SearchIcon, {
-  size: '$6',
-  minSize: '$6'
-})
-
-export const Filter = styled('div', {
-  display: 'flex',
-
-  pb: '$3',
-  px: '$2',
-
-  borderBottom: 'solid 1px'
-})
-
-export const Style = styled(motion.section, {
+export const Content = styled('div', {
   position: 'relative',
   zIndex: 2,
+
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 
   px: '$8',
   pb: '$12',
@@ -88,4 +52,19 @@ export const Style = styled(motion.section, {
   '@md': {
     px: '$20'
   }
+})
+
+export const Bg = styled('div', {
+  position: 'absolute',
+  top: 0,
+  opacity: 0.2,
+  zIndex: 1,
+  backgroundColor: '#000',
+  width: '100%',
+  height: '100%'
+})
+
+export const Style = styled(motion.section, {
+  position: 'relative',
+  zIndex: 2
 })

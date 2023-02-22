@@ -20,11 +20,11 @@ const TechCardComponent = ({ name, path, progress }: ITechCardProps) => {
     <Style
       layoutId={name}
       transition={transition}
-      color={themeState.contrastName}
+      style={{ backgroundColor: themeState.color }}
     >
       {path && <Image src={path} alt={name} />}
 
-      <Name lang='en'>{name}</Name>
+      <Name lang='en' style={{ color: themeState.contrast }}>{name}</Name>
 
       <Progress progress={progress} aria-label={`${percentage[progress]}`} />
     </Style>

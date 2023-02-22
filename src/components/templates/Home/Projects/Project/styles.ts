@@ -4,6 +4,7 @@ import { Arrow as ArrowIcon } from '@app/components/atoms/Icon/icons/Arrow'
 import { Github as GithubIcon } from '@app/components/atoms/Icon/icons/Github'
 import { Link as LinkIcon } from '@app/components/atoms/Icon/icons/Link'
 
+import { hexToRgba } from '@app/utils/colors'
 import { remToPx } from '@app/utils/pxAndRem'
 
 export const Arrow = styled(ArrowIcon, {
@@ -108,6 +109,10 @@ export const URL = styled(LinkIcon, {
 })
 
 export const Header = styled('header', {
+  backgroundColor: hexToRgba('#000000', 0.1),
+  p: '$4',
+  borderRadius: '$4',
+
   display: 'grid',
   grid: `
     'link title github' 1fr

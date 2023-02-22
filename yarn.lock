@@ -3271,6 +3271,20 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@splinetool/react-spline@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@splinetool/react-spline/-/react-spline-2.2.5.tgz#ad8df79e5ade3de19895f67ce0bca6243a363dc9"
+  integrity sha512-eAD6+GteOT9S7Z3OdsT/6o6WNYk5NLx48zmHXathdNVdfW/P3npTxEGzEhiM+aMsf2+HbRZx0pX0WHt59HDjlg==
+  dependencies:
+    react-merge-refs "^1.1.0"
+
+"@splinetool/runtime@^0.9.223":
+  version "0.9.223"
+  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-0.9.223.tgz#10c2c49d5ca075deae24bbe69f75f34cd3db25c1"
+  integrity sha512-HDNRcgHDO/7xIoZNs+ACQHFgBgAGVKjsXMENxI6HIsjLaC73rsbK3PylXgsfaKV/QtH12mxQO7ykhpY0zHLttw==
+  dependencies:
+    on-change "^4.0.0"
+
 "@stitches/react@^1.2.8":
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.8.tgz#954f8008be8d9c65c4e58efa0937f32388ce3a38"
@@ -11373,6 +11387,11 @@ oblivious-set@1.0.0:
   resolved "https://registry.yarnpkg.com/oblivious-set/-/oblivious-set-1.0.0.tgz#c8316f2c2fb6ff7b11b6158db3234c49f733c566"
   integrity sha512-z+pI07qxo4c2CulUHCDf9lcqDlMSo72N/4rLUpRXf6fu+q8vjt8y0xS+Tlf8NTJDdTXHbdeO1n3MlbctwEoXZw==
 
+on-change@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/on-change/-/on-change-4.0.2.tgz#838129790f09dc2ed04284944bda6e82b92c10b8"
+  integrity sha512-cMtCyuJmTx/bg2HCpHo3ZLeF7FZnBOapLqZHr2AlLeJ5Ul0Zu2mUJJz051Fdwu/Et2YW04ZD+TtU+gVy0ACNCA==
+
 on-finished@2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.4.1.tgz#58c8c44116e54845ad57f14ab10b03533184ac3f"
@@ -12333,7 +12352,7 @@ react-is@^18.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-merge-refs@^1.0.0:
+react-merge-refs@^1.0.0, react-merge-refs@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
   integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
