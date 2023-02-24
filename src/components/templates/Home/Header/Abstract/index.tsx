@@ -11,7 +11,7 @@ const En = ({ children, ...props }: any) => (
 
 export const Abstract = () => (
   <Style tabIndex={0}>
-    {`Cursando Engenharia da Computação (8º Semestre), estudo desenvolvimento web, mais focado em `}
+    {`Cursando Engenharia da Computação (9º Semestre), estudo desenvolvimento web, mais focado em `}
     <En>Front-end</En>
     {`. Durante a faculdade, fiz o bootcamp Ignite da `}
     <Link target='_blank' href='https://www.rocketseat.com.br/'>

@@ -9,12 +9,14 @@ import { hexToRgba } from '@app/utils/colors'
 
 import { motion } from 'framer-motion'
 
-export const MobileChangeTheme = styled(OriginalChangeTheme, {})
+export const MobileChangeTheme = styled(OriginalChangeTheme, {
+  flexCenter: 'column-reverse'
+})
 
 export const ChangeTheme = styled(OriginalChangeTheme, {
   display: 'none',
 
-  '@md': { display: 'block' }
+  '@md': { flexCenter: 'row' }
 })
 
 export const Occupation = styled(motion.h2, {
@@ -66,13 +68,9 @@ export const Social = styled(OriginalSocial, {
     justifyContent: 'flex-start',
 
     li: {
-      '& + li': {
-        ml: '$4'
-      },
+      '& + li': { ml: '$4' },
 
-      '&:last-child': {
-        ml: 'auto'
-      }
+      '&:last-child': { ml: 'auto' }
     }
   },
 

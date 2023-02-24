@@ -24,8 +24,6 @@ export const ItemLink = styled('a', {
 export const Style = styled('li', {
   flexCenter: 'row',
 
-  '&:first-child': { display: 'none' },
-
   '@md': {
     px: '$4',
 
@@ -38,8 +36,6 @@ export const Style = styled('li', {
       borderLeft: 'none',
 
       span: { display: 'none' }
-    },
-
-    '&:nth-child(2)': { display: 'none' }
+    }
   }
 })

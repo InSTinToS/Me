@@ -22,6 +22,8 @@
     "@radix-ui/react-slider": "^1.0.0",
     "@radix-ui/react-tooltip": "^1.0.0",
     "@reduxjs/toolkit": "^1.8.3",
+    "@splinetool/react-spline": "^2.2.5",
+    "@splinetool/runtime": "^0.9.223",
     "@stitches/react": "^1.2.8",
     "aws-sdk": "^2.1228.0",
     "axios": "^1.0.0",

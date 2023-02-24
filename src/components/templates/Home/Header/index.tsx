@@ -19,7 +19,7 @@ export const Header = forwardRef<IHeaderForwarded, IHeaderProps>(
     const { nameAnimations } = useHeader({ ref })
 
     return (
-      <Style ref={ref} id='header' {...props}>
+      <Style ref={ref} id='header' {...props} >
         <ChangeTheme />
 
         <Name {...nameAnimations} tabIndex={0}>

@@ -1,17 +1,19 @@
-import { styled, theme } from '@app/styles'
-
-import { hexToRgba } from '@app/utils/colors'
+import { styled } from '@app/styles'
 
 import { motion } from 'framer-motion'
 
 export const Progress = styled('div', {
   width: '100%',
 
-  mt: '$4',
-  radius: '$2',
+  mt: 'auto',
+
   borderWidth: '$1',
   borderStyle: 'solid',
 
+  borderBottomLeftRadius: '$2',
+  borderBottomRightRadius: '$2',
+
+  mb: 0,
   variants: {
     progress: {
       low: { borderColor: '$error', mr: '75%' },
@@ -28,13 +30,13 @@ export const Image = styled('img', {
 
 export const Name = styled('div', {
   flexCenter: 'row',
+
   flex: 1,
+
   textAlign: 'center',
 
   mx: 'auto',
-  height: '$11',
-
-  color: '$white'
+  height: '100%'
 })
 
 export const Style = styled(motion.li, {
@@ -42,16 +44,19 @@ export const Style = styled(motion.li, {
   flexCenter: 'row',
 
   m: '$4',
-  p: '$4',
+
   width: '$55',
-  radius: '$4',
   height: '$25',
   maxWidth: '$55',
 
+  borderTopLeftRadius: '$4',
+  borderTopRightRadius: '$4',
+
   variants: {
-    color: {
-      white: { background: hexToRgba(theme.colors.white.value, 0.3) },
-      black: { background: hexToRgba(theme.colors.black.value, 0.3) }
+    progress: {
+      high: {},
+      medium: { borderBottomRightRadius: '$4' },
+      low: { borderBottomRightRadius: '$4' }
     }
   }
 })

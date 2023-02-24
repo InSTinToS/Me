@@ -29,13 +29,12 @@ export const Reset = styled(ResetIcon, {
 })
 
 export const ResetButton = styled('button', {
-  mr: '$1',
-  mt: '$1',
+  flexCenter: 'row',
+  mt: '$2',
 
   '@md': {
-    alignSelf: 'flex-start',
-
-    mr: '$3'
+    mt: '$0',
+    mr: '$2'
   }
 })
 

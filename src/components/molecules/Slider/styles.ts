@@ -5,15 +5,15 @@ import { hexToRgba } from '@app/utils/colors'
 import * as Slider from '@radix-ui/react-slider'
 
 export const Name = styled('span', {
-  position: 'absolute',
-  left: 0,
-
   display: 'none',
 
-  transform: 'translate(-50%,-200%)',
+  '@md': {
+    position: 'absolute',
 
-  '@sm': {
-    display: 'block'
+    display: 'flex',
+    transform: `translateX(-50%) translateY(calc(-100% - ${theme.sizes[6]}))`,
+
+    textAlign: 'center'
   }
 })
 
@@ -26,6 +26,7 @@ export const Thumb = styled(Slider.Thumb, {
   bg: 'transparent',
   border: 'solid 2px $white',
   boxShadow: `0 2px 10px ${hexToRgba(theme.colors.black.value, 0.5)}`,
+  transform: 'translateY(-1px)',
 
   '&:hover': { cursor: 'ew-resize' },
 

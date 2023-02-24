@@ -1,9 +1,9 @@
 import { useHome } from './logic'
 import { Background } from './styles'
 import { IHomeProps } from './types'
+import { Navbar } from './Navbar'
 
 import { Header } from './Header'
-import { Navbar } from './Navbar'
 import { Projects } from './Projects'
 import { Techs } from './Techs'
 
