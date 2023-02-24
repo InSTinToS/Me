@@ -24,12 +24,6 @@ export const useHome = () => {
       onClick: () => globalThis.scrollTo({ top: 0, behavior: 'smooth' })
     },
     {
-      icon: <Phone />,
-      label: 'Contato',
-      href: 'header',
-      onClick: () => globalThis.scrollTo({ top: 0, behavior: 'smooth' })
-    },
-    {
       icon: <Tech />,
       label: 'Tecnologias',
       href: 'techs',

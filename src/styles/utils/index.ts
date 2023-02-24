@@ -4,6 +4,8 @@ import { padding } from './padding'
 import { radius } from './radius'
 import { size } from './size'
 
+import { CSSProperties } from 'react'
+
 export const utils = {
   b1: (color: string) => ({
     border: `solid 1px ${color}`
@@ -20,11 +22,11 @@ export const utils = {
 
   bg: (backgroundColor: string) => ({ backgroundColor }),
 
-  flexCenter: (direction: 'row' | 'col') => ({
+  flexCenter: (direction: CSSProperties['flexDirection'] | 'col') => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: direction === 'col' ? 'column' : 'row'
+    flexDirection: direction === 'col' ? 'column' : direction
   }),
 
   autoFill: (textColor: string) => ({
