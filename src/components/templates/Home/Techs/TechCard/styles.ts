@@ -1,6 +1,4 @@
-import { styled, theme } from '@app/styles'
-
-import { hexToRgba } from '@app/utils/colors'
+import { styled } from '@app/styles'
 
 import { motion } from 'framer-motion'
 
@@ -52,5 +50,13 @@ export const Style = styled(motion.li, {
   maxWidth: '$55',
 
   borderTopLeftRadius: '$4',
-  borderTopRightRadius: '$4'
+  borderTopRightRadius: '$4',
+
+  variants: {
+    progress: {
+      high: {},
+      medium: { borderBottomRightRadius: '$4' },
+      low: { borderBottomRightRadius: '$4' }
+    }
+  }
 })

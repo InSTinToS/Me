@@ -6,6 +6,7 @@ import { transition } from '@app/styles/transition'
 import { useAppSelector } from '@app/hooks/useAppSelector'
 
 import { memo } from 'react'
+import { hexToRgba } from '@app/utils/colors'
 
 const TechCardComponent = ({ name, path, progress }: ITechCardProps) => {
   const themeState = useAppSelector(({ theme }) => theme)
@@ -19,8 +20,9 @@ const TechCardComponent = ({ name, path, progress }: ITechCardProps) => {
   return (
     <Style
       layoutId={name}
+      progress={progress}
       transition={transition}
-      style={{ backgroundColor: themeState.color }}
+      style={{ backgroundColor: hexToRgba(themeState.color, 0.9) }}
     >
       {path && <Image src={path} alt={name} />}
 
